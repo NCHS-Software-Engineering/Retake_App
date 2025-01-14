@@ -26,4 +26,9 @@ router.get("/account", (req, res) => {
     return res.status(200).render("account");
 })
 
+// Auth page
+router.get("/auth", (req, res) => {
+    return res.status(200).render("auth");
+})
+
 module.exports = router;
