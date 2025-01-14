@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const db = require("./config/database");
+//const db = require("./config/database");
 
 // Initialize express app
 const app = express();
@@ -33,6 +33,8 @@ app.use("/img", express.static("./public/img"));
 // Route setup for page routes
 app.use("/", require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
+app.use("/dash", require("./routes/dash"));
+app.use("/account", require("./routes/account"));
 
 // Add in 404 page
 app.use((req, res, next) => {
