@@ -2,19 +2,19 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-//const db = require("./config/database");
+const db = require("./config/database");
 
 // Initialize express app
 const app = express();
 
 // Database connection setup
-// db.connect(err => {
-//     if (err) {
-//         console.error("Database connection error:", err);
-//     } else {
-//         console.log("Successfully connected to the database.");
-//     }
-// });
+db.connect(err => {
+    if (err) {
+        console.error("Database connection error:", err);
+    } else {
+        console.log("Successfully connected to the database.");
+    }
+});
 
 // Middleware setup
 app.use(cors()); // Enable Cross-Origin Resource Sharing

@@ -2,12 +2,10 @@ const express = require("express");
 const router = express();
 
 // Teacher Dashboard Controllers
-const classesController = require("../controllers/teacherDash/classesController")
-const emailController = require("../controllers/teacherDash/emailController");
+const teacherDashController = require("../controllers/teacherDashController");
 
 // Student Dashboard Controllers
-const trackerController = require("../controllers/studentDash/trackerController");
-
+const studentDashController = require("../controllers/studentDashController");
 
 
 module.exports = router;
