@@ -1,4 +1,4 @@
-    host: 'db.redhawks.us',
-    user: 'redhawks_retake',
-    RETAKE_DB_PASSWORD = password123
-    database: 'redhawks_retake'
+Host: ec2-54-209-177-70.compute-1.amazonaws.com
+Username: retake
+Password: #usi=rltACUtR!=0ubO#
+
