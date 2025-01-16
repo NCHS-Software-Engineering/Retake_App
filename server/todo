@@ -10,3 +10,7 @@ DB side:
 Frontend:
     1. Create shell to the frontend for each page
     2. Once db routes finnished, finnish the frontend (in mean time test with test json data, DB step comes first)
+
+
+LATER TODO:
+    1. For dashboard, make the routes go to /dash/student/tracker so its not /dash/tracker for teachers to beacuse that route does not exist for teachers?

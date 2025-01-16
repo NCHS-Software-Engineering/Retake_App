@@ -118,7 +118,7 @@
 <body>
 
 <div class="auth-container">
-    <% if (err) { %>
+    <% if (typeof err !== 'undefined' && err) { %>
         <div class="error-message"><%= err %></div>
     <% } %>
     <div class="header">
