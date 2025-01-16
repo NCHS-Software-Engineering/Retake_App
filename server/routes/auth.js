@@ -4,12 +4,8 @@ const router = express();
 // Controllers
 const authController = require("../controllers/authController");
 
-router.post("/login", (req, res) => {
-    return res.status(400).json({err: true, msg: "Cant find account"});
-})
+router.post("/login", authController.login)
 
-router.post("/signin", (req, res) => {
-    return res.status(400).json({err: true, msg: "Cant create account"});
-})
+router.post("/signin", authController.signin)
 
 module.exports = router;

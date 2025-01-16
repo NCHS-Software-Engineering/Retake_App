@@ -1,0 +1,12 @@
+Auth side:
+    1. Make db of users, have it include, hash password, email, username
+    2. Find hashing string tool instead of bcrypt since it has mem leaks?
+    3. Finnish the querys to the login and signin with sql database
+
+DB side:
+    1. Everyone needs to come and think about how our database is going to get setup
+    2. How our app will handle new tests, how our json will get send out to frontend to render ect
+
+Frontend:
+    1. Create shell to the frontend for each page
+    2. Once db routes finnished, finnish the frontend (in mean time test with test json data, DB step comes first)

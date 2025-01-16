@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff6b6b, #ff4757);
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .auth-container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .header {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 90%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .toggle-btn.active {
+            background: #ff4757;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .form {
+            transition: transform 0.4s ease-in-out, opacity 0.4s;
+        }
+
+        .hidden {
+            transform: translateX(100%);
+            opacity: 0;
+            position: absolute;
+        }
+
+        .strength-indicator {
+            text-align: left;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 300px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .strength-indicator span {
+            font-weight: bold;
+        }
+
+        .submit-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #e63946;
+        }
+    </style>
+</head>
+<body>
+
+<div class="auth-container">
+    <% if (err) { %>
+        <div class="error-message"><%= err %></div>
+    <% } %>
+    <div class="header">
+        <button id="signin-btn" class="toggle-btn active">Sign Up</button>
+        <button id="login-btn" class="toggle-btn">Login</button>
+    </div>
+
+    <form id="signin-form" class="form" action="/auth/signin" method="POST">
+        <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="signup-username">Username</label>
+            <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+            <div class="strength-indicator" id="password-strength">Strength: <span>Weak</span></div>
+        </div>
+        <div class="form-group">
+            <label for="signup-password-confirm">Verify Password</label>
+            <input type="password" id="signup-password-confirm" placeholder="Verify your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Create Account</button>
+    </form>
+
+    <form id="login-form" class="form hidden" action="/auth/login" method="POST">
+        <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="submit-btn">Log In</button>
+    </form>
+</div>
+
+<script>
+    const signinBtn = document.getElementById('signin-btn');
+    const loginBtn = document.getElementById('login-btn');
+    const signinForm = document.getElementById('signin-form');
+    const loginForm = document.getElementById('login-form');
+    const passwordInput = document.getElementById('signup-password');
+    const passwordStrength = document.getElementById('password-strength');
+    const verifyPasswordInput = document.getElementById('signup-password-confirm');
+
+    signinBtn.addEventListener('click', () => {
+        signinForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        signinBtn.classList.add('active');
+        loginBtn.classList.remove('active');
+    });
+
+    loginBtn.addEventListener('click', () => {
+        signinForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+        signinBtn.classList.remove('active');
+        loginBtn.classList.add('active');
+    });
+
+    passwordInput.addEventListener('input', () => {
+        const value = passwordInput.value;
+        let strength = 'Weak';
+        if (value.length >= 8 && /[A-Z]/.test(value) && /[0-9]/.test(value) && /[^A-Za-z0-9]/.test(value)) {
+            strength = 'Strong';
+        } else if (value.length >= 6 && (/[A-Z]/.test(value) || /[0-9]/.test(value))) {
+            strength = 'Medium';
+        }
+        passwordStrength.querySelector('span').textContent = strength;
+    });
+
+    verifyPasswordInput.addEventListener('input', () => {
+        if (verifyPasswordInput.value !== passwordInput.value) {
+            verifyPasswordInput.setCustomValidity("Passwords do not match");
+        } else {
+            verifyPasswordInput.setCustomValidity("");
+        }
+    });
+</script>
+
+</body>
+</html>
