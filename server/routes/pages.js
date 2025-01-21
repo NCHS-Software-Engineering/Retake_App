@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+const { validateToken } = require("../middleware/jwt");
+
 // Home Page
 router.get("/", (req, res) => {
     return res.status(200).render("pages/home");
@@ -16,13 +18,8 @@ router.get("/help", (req, res) => {
     return res.status(200).render("pages/help");
 })
 
-// Dashboard Page
-router.get("/dash", (req, res) => {
-    return res.status(200).render("pages/dash");
-})
-
 // User Account Page
-router.get("/account", (req, res) => {
+router.get("/account", validateToken, (req, res) => {
     return res.status(200).render("pages/account");
 })
 

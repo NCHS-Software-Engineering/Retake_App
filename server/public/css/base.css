@@ -1,0 +1,108 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Use Montserrat font */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    background-color: #fffdfd;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo-container img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header .logo-container h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #dc4c4c;
+}
+
+.header .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.header .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header .nav-links a:hover {
+    color: #007bff;
+}
+
+.header .login-button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.header .login-button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #d14b4b;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Ensures it starts from the far left */
+    width: 100%;
+}
+
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1rem;
+}
+
+.main-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #dc4c4c;
+    margin-bottom: 2rem;
+}
+
+.main-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}

@@ -12,5 +12,11 @@ Frontend:
     2. Once db routes finnished, finnish the frontend (in mean time test with test json data, DB step comes first)
 
 
+LATER PROBLEMS:
+    1. When I create JWT TOKEN I use there username too, if they change that in settings, in the settings need to give them new accessToken
+
 LATER TODO:
     1. For dashboard, make the routes go to /dash/student/tracker so its not /dash/tracker for teachers to beacuse that route does not exist for teachers?
+        1.1. Mabye instead of using username in token use the user ID, so it would be faster to query their user (WILL DO)
+    2. Make access-token more secure (more settings)
+    3. Make it so there can be more than 1 teacher per class

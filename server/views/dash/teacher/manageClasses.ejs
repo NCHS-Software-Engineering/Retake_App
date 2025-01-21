@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classes Dashboard</title>
+  <link rel="stylesheet" href="/css/base.css" />
+
+  <style>
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+      background-color: #f5f5f5 !important;
+    }
+
+    .main-content {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      margin-top: 0 !important;
+      padding: 20px !important;
+      width: 100% !important;
+    }
+
+    #classes-container,
+    #test-container {
+      flex: 0 0 50% !important;
+      max-width: 50% !important;
+      margin: 0 !important;
+      background: #fffefe !important;
+      padding: 15px !important;
+      border-radius: 5px !important;
+      transition: background-color 0.3s !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Grey out tests container until a class is selected */
+    #test-container.disabled {
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+
+    .header-buttons {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      margin-bottom: 15px !important;
+    }
+
+    .btn {
+      padding: 10px 15px !important;
+      border: none !important;
+      cursor: pointer !important;
+      font-weight: bold !important;
+      text-transform: uppercase !important;
+    }
+
+    .btn-add {
+      background-color: #0bc536 !important;
+      color: white !important;
+    }
+    .btn-add:hover {
+      background-color: #38a34f !important;
+    }
+
+    /* "Rename" (was "Edit") */
+    .btn-rename {
+      background-color: #ffcc00 !important;
+      color: white !important;
+    }
+    .btn-rename:hover {
+      background-color: #e6b800 !important;
+    }
+
+    .btn-delete {
+      background-color: #dc3545 !important;
+      color: white !important;
+    }
+    .btn-delete:hover {
+      background-color: #c82333 !important;
+    }
+
+    /* New SELECT (blue) */
+    .btn-select {
+      background-color: #007bff !important;
+      color: #fff !important;
+    }
+    .btn-select:hover {
+      background-color: #0069d9 !important;
+    }
+
+    /* ---------------------------------------
+       Layout of each item: two lines
+         1) Name
+         2) Buttons row
+       --------------------------------------- */
+    .item {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      padding: 10px !important;
+      border: 1px solid #ddd !important;
+      margin-bottom: 10px !important;
+      background: #d4d4d4 !important;
+    }
+    .item.selected {
+      background: rgba(0, 255, 0, 0.1) !important;
+      border: 2px solid green !important;
+    }
+
+    /* The top line is just a <p> with the name */
+    .item p {
+      margin: 0 0 8px 0 !important;
+      font-weight: bold !important;
+    }
+
+    /* The second line: all 3 buttons in a row */
+    .item-buttons {
+      display: flex !important;
+      gap: 10px !important;
+    }
+
+    /* Popup styles */
+    .addItemPopup {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-color: rgba(0, 0, 0, 0.5) !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      transition: visibility 0s, opacity 0.3s !important;
+    }
+    .addItemPopup.active {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    .addItemPopup-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      background: #fff !important;
+      padding: 20px !important;
+      border-radius: 8px !important;
+      position: relative !important;
+      min-width: 300px !important;
+    }
+
+    .addItemPopup-content h3 {
+      margin-bottom: 20px !important;
+    }
+
+    .addItemPopup-content input#addItemPopup-input {
+      width: 80% !important;
+      margin-bottom: 20px !important;
+      padding: 10px 15px !important;
+      font-size: 1rem !important;
+      box-sizing: border-box !important;
+    }
+
+    .addItemPopup-buttons {
+      display: flex !important;
+      gap: 10px !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+
+    #addItemPopup-save {
+      background-color: #0bc536 !important;
+      color: white !important;
+      padding: 10px 15px !important;
+      border: none !important;
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      text-transform: uppercase !important;
+    }
+    #addItemPopup-save:hover {
+      background-color: #38a34f !important;
+    }
+
+    #addItemPopup-close {
+      background-color: #dc3545 !important;
+      color: white !important;
+      padding: 10px 15px !important;
+      border: none !important;
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      text-transform: uppercase !important;
+    }
+    #addItemPopup-close:hover {
+      background-color: #c82333 !important;
+    }
+
+    .scrollable {
+      max-height: 300px !important;
+      overflow-y: auto !important;
+    }
+    .scrollable::-webkit-scrollbar {
+      width: 6px !important;
+    }
+    .scrollable::-webkit-scrollbar-thumb {
+      background: #007BFF !important;
+      border-radius: 3px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <%- include("../../partials/header") %>
+
+  <main class="main-content">
+    <div id="classes-container">
+        <div class="header-buttons">
+          <h3>Classes</h3>
+          <button id="add-class-btn" class="btn btn-add">Add Class</button>
+        </div>
+        <div class="scrollable" id="classes-list">
+          <% if (!err && classes && classes.length > 0) { %>
+            <% classes.forEach((classObj) => { %>
+              <div class="item" data-class-id="<%= classObj.classId %>">
+                <p><%= classObj.className %></p>
+                <div class="item-buttons">
+                  <button class="btn btn-select">Select</button>
+                  <button class="btn btn-rename">Rename</button>
+                  <button class="btn btn-delete">Delete</button>
+                </div>
+              </div>
+            <% }); %>
+          <% } %>
+
+        </div>
+      </div>
+      
+
+    <div id="test-container">
+      <div class="header-buttons">
+        <h3>Tests</h3>
+        <button id="add-test-btn" class="btn btn-add">Add Test</button>
+      </div>
+      <div class="scrollable" id="tests-list"></div>
+    </div>
+  </main>
+
+  <!-- addItemPopup -->
+  <div class="addItemPopup" id="addItemPopup">
+    <div class="addItemPopup-content">
+      <h3 id="addItemPopup-title">Add New Item</h3>
+      <input type="text" id="addItemPopup-input" placeholder="Enter name here" />
+      <div class="addItemPopup-buttons">
+        <button id="addItemPopup-save" class="btn btn-add">Save</button>
+        <button id="addItemPopup-close" class="btn btn-delete">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <%- include("../../partials/footer") %>
+  
+  <script src = "/js/classes.js"></script>
+</body>
+</html>
