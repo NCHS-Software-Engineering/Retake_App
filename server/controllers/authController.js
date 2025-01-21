@@ -81,15 +81,16 @@ exports.signin = async (req, res) => {
         const hashedPassword = await hashPassword(password);
 
         const [result] = await pool.query(
-            'INSERT INTO users (email, username, type, passHash) VALUES (?, ?, ?, ?) RETURNING userId, type', [
-            email,
-            username,
-            "teacher",
-            hashedPassword,
-        ]
+            'INSERT INTO users (email, username, type, passHash) VALUES (?, ?, ?, ?)', [
+                email,
+                username,
+                "teacher",
+                hashedPassword,
+            ]
         );
-
-        const { userId, type } = result[0];
+        
+        const userId = result.insertId;
+        const type = "teacher";
 
         const tokenData = { email: email, id: userId, type: type };
         const accessToken = createToken(tokenData);
@@ -99,7 +100,7 @@ exports.signin = async (req, res) => {
             httpOnly: true
         })
 
-        return res.status(200).render("pages/dash", { msg: "Created Account Successfully" });
+        return res.status(200).render("dash/teacher/dash", { msg: "Created Account Successfully" });
     } catch (err) {
         console.error('Error during registration:', err);
         return res.status(500).render("pages/auth", { err: 'An error occurred, please try again later.' });
