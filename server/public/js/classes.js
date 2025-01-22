@@ -1,133 +1,330 @@
-// DOM Elements
+// --------------------------
+// DOM ELEMENT REFERENCES
+// --------------------------
 const classList = document.getElementById("classes-list");
 const testList = document.getElementById("tests-list");
 const testContainer = document.getElementById("test-container");
 
-// Add Item popup
+// Add Item Popup
 const addItemPopup = document.getElementById("addItemPopup");
 const addItemPopupClose = document.getElementById("addItemPopup-close");
 const addItemPopupTitle = document.getElementById("addItemPopup-title");
 const addItemPopupInput = document.getElementById("addItemPopup-input");
 const addItemPopupSave = document.getElementById("addItemPopup-save");
 
-// Attach event listeners for each class item
-document.querySelectorAll(".item").forEach(item => {
-    // Make sure no tests are enabled
-    testContainer.classList.add("disabled");
-    testList.innerHTML = "";
+// Buttons
+const addClassBtn = document.getElementById("add-class-btn");
+const addTestBtn = document.getElementById("add-test-btn");
 
-    const classId = item.getAttribute("data-class-id");
-  const selectBtn = item.querySelector(".btn-select");
+// --------------------------
+// EVENT LISTENERS
+// --------------------------
 
-  // Handle "Select/Deselect" button
-  selectBtn.addEventListener("click", () => {
-    handleSelectedClass(classId, item, selectBtn);
-  });
-
-  // Popup to rename class
-  item.querySelector(".btn-rename").addEventListener("click", () => {
-    // ...
-  });
-
-  // Popup to delete class
-  item.querySelector(".btn-delete").addEventListener("click", () => {
-    // ...
-  });
-});
-
-function handleSelectedClass(classId, item, selectBtn) {
-    const isAlreadySelected = item.classList.contains("selected");
-    
-    if (isAlreadySelected) {
-      // Deselect
-      item.classList.remove("selected");
-      selectBtn.textContent = "Select";
-      
-      // Add "disabled" class back to test container
-      testContainer.classList.add("disabled");
-      testList.innerHTML = "";
-    } else {
-      // Deselect anything else
-      document.querySelectorAll(".item.selected").forEach(selectedItem => {
-        selectedItem.classList.remove("selected");
-        selectedItem.querySelector(".btn-select").textContent = "Select";
-      });
-      
-      // Select this item
-      item.classList.add("selected");
-      selectBtn.textContent = "Deselect";
-      
-      // Remove "disabled" class, making the container active
-      testContainer.classList.remove("disabled");
-      
-      // Now fetch and render tests for the selected class, etc.
-      // testList.innerHTML = "...";
-    }
-  }
-  
-
-// Handle opening add item popup
-function openAddItemPopup(title, existingValue, callback) {
-  addItemPopupTitle.textContent = title;
-  addItemPopupInput.value = existingValue;
-  addItemPopup.classList.add("active");
-
-  addItemPopupSave.onclick = () => {
-    const value = addItemPopupInput.value.trim();
-    if(!value) return; // Make sure its truthy
-    callback(value);
-    closePopup();
-  }
-}
-
-// Close popup
-function closePopup() {
-  addItemPopup.classList.remove("active");
-}
+// Close popup event
 addItemPopupClose.addEventListener("click", closePopup);
 
-// Handle Adding Class
-const addClassBtn = document.getElementById("add-class-btn");
+// Add Class button
 addClassBtn.addEventListener("click", () => {
-  openAddItemPopup("Add Class", "", async (newClassName) => {
-    // Create new class in server
-    try {
-      const res = await fetch("/dash/saveClass", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ className: newClassName })
-      });
-
-      const result = await res.json();
-      if(result.err) {
-        alert(result.err);
-      } else {
-        alert(result.msg + result.classId);
-        // Rerender classes (ASC)
-
-        // Select the class by default when creating a new class (if desired):
-        //   1) Deselect all classes
-        //   2) Programmatically create or re-fetch class items
-        //   3) Call handleSelectedClass on the new one
-        //
-        // For the Tests list side, rename title to Tests (Class Name Here) etc.
-      }
-    } catch(err) {
-      console.log(err);
-      alert("Error creating class");
-    }
-  })
+    openAddItemPopup("Add Class", "", async (newClassName) => {
+        await handleAddClass(newClassName);
+    });
 });
 
-// Handle Adding Test
-const addTestBtn = document.getElementById("add-test-btn");
+// Add Test button
 addTestBtn.addEventListener("click", () => {
-  openAddItemPopup("Add Test", "", (newTestName) => {
-    // Create new test in server
-    // TODO: fetch("/dash/saveTest"...) etc.
-
-    // On success, re-render tests by ASC
-  })
+    openAddItemPopup("Add Test", "", async (newTestName) => {
+        await handleAddTest(newTestName);
+    });
 });
+
+// --------------------------
+// MAIN FUNCTIONS
+// --------------------------
+
+// Render all classes from the server, if a class is specified select it
+async function renderClasses(selectedClassId = null) {
+    try {
+        const response = await fetch("/dash/listClasses");
+        const data = await response.json();
+
+        if (data.err) {
+            alert(data.err);
+            return;
+        }
+
+        classList.innerHTML = "";
+
+        data.classes.forEach((classObj) => {
+            classList.innerHTML += createClassItemHTML(classObj, selectedClassId);
+        });
+
+        addListenersForClassItems();
+
+        // If a class is already selected, enable tests and render them
+        if (selectedClassId !== null) {
+            testContainer.classList.remove("disabled");
+            await renderTests(selectedClassId);
+        }
+    } catch (err) {
+        console.error("Error fetching classes:", err);
+    }
+}
+
+// Handle adding a new class, then re-render and select the new class
+async function handleAddClass(newClassName) {
+    try {
+        const res = await fetch("/dash/saveClass", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ className: newClassName })
+        });
+
+        const result = await res.json();
+        if (result.err) {
+            alert(result.err);
+            return;
+        }
+
+        alert(`${result.msg} (Class ID: ${result.classId})`);
+        await renderClasses(result.classId);
+    } catch (err) {
+        console.error(err);
+        alert("Error creating class");
+    }
+}
+
+// Handle adding a new test, then re-render tests for the selected class
+async function handleAddTest(newTestName) {
+    const selectedClass = document.querySelector(".item.selected");
+    const classId = parseInt(selectedClass.getAttribute("data-class-id"));
+
+    try {
+        const res = await fetch("/dash/saveTest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ testName: newTestName, classId: classId })
+        });
+
+        const result = await res.json();
+        if (result.err) {
+            alert(result.err);
+            return;
+        } else {
+            // If a class is selected, rerender tests for that class
+            await renderTests(classId);
+        }
+    } catch (err) {
+        alert("Error creating tests")
+    }
+}
+
+// Render tests for the selected class
+async function renderTests(classId) {
+    try {
+        testList.innerHTML = "";
+
+        const response = await fetch(`/dash/listTests?classId=${classId}`);
+        const data = await response.json();
+
+        if (data.err) {
+            alert(data.err);
+            return;
+        }
+
+        data.tests.forEach((test) => {
+            testList.innerHTML += createTestItemHTML(test.testName, test.testId);
+        });
+
+        addListenersForTestItems();
+    } catch (err) {
+        console.error("Error fetching tests:", err);
+    }
+}
+
+// Create the HTML for a class item
+function createClassItemHTML(classObj, selectedClassId) {
+    const isSelected = selectedClassId === classObj.classId;
+    const selectBtnText = isSelected ? "Deselect" : "Select";
+    const selectedClass = isSelected ? "selected" : "";
+
+    return `
+    <div class="item ${selectedClass}" data-class-id="${classObj.classId}">
+      <p>${classObj.className}</p>
+      <div class="item-buttons">
+        <button class="btn btn-select">${selectBtnText}</button>
+        <button class="btn btn-rename">Rename</button>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    `;
+}
+
+// Create the HTML for a test item
+function createTestItemHTML(testName, testId) {
+    return `
+    <div class="test-item" data-test-id="${testId}">
+      <p>${testName}</p>
+      <div class="item-buttons">
+        <button class="btn btn-edit">Edit</button>
+        <button class="btn btn-rename">Rename</button>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    `;
+}
+
+// --------------------------
+// HELPER / UTILITY FUNCTIONS
+// --------------------------
+
+// Add event listeners to each class item
+function addListenersForClassItems() {
+    const items = document.querySelectorAll("#classes-list .item");
+
+    items.forEach(item => {
+        const classId = item.getAttribute("data-class-id");
+        const selectBtn = item.querySelector(".btn-select");
+        const renameBtn = item.querySelector(".btn-rename");
+        const deleteBtn = item.querySelector(".btn-delete");
+
+        testContainer.classList.add("disabled");
+        testList.innerHTML = "";
+
+        selectBtn.addEventListener("click", () => {
+            handleSelectedClass(classId, item, selectBtn);
+        });
+
+        renameBtn.addEventListener("click", () => {
+            openAddItemPopup("Rename Class", item.querySelector("p").textContent, async (newName) => {
+                await renameClass(classId, newName);
+            });
+        });
+
+        deleteBtn.addEventListener("click", () => {
+            deleteClass(classId);
+        });
+    });
+}
+
+// Add event listeners to each test item
+function addListenersForTestItems() {
+    const testItems = document.querySelectorAll("#tests-list .test-item");
+
+    testItems.forEach(testItem => {
+        const testId = testItem.getAttribute("data-test-id");
+        const editBtn = testItem.querySelector(".btn-edit");
+        const renameBtn = testItem.querySelector(".btn-rename");
+        const deleteBtn = testItem.querySelector(".btn-delete");
+
+        editBtn.addEventListener("click", () => {
+            // TODO: Implement "Edit Test" logic
+            console.log(`Editing test with ID: ${testId}`);
+            alert(`Editing test with ID: ${testId} (server logic not implemented).`);
+        });
+
+        renameBtn.addEventListener("click", () => {
+            openAddItemPopup("Rename Test", testItem.querySelector("p").textContent, async (newTestName) => {
+                await renameTest(testId, newTestName);
+            });
+        });
+
+        deleteBtn.addEventListener("click", () => {
+            deleteTest(testId);
+        });
+    });
+}
+
+// Select or Deselect a class, enable or disable the test container
+async function handleSelectedClass(classId, item, selectBtn) {
+    const isSelected = item.classList.contains("selected");
+
+    if (isSelected) {
+        item.classList.remove("selected");
+        selectBtn.textContent = "Select";
+        testContainer.classList.add("disabled");
+        testList.innerHTML = "";
+    } else {
+        document.querySelectorAll(".item.selected").forEach(selectedItem => {
+            selectedItem.classList.remove("selected");
+            selectedItem.querySelector(".btn-select").textContent = "Select";
+        });
+
+        item.classList.add("selected");
+        selectBtn.textContent = "Deselect";
+        testContainer.classList.remove("disabled");
+
+        await renderTests(classId);
+    }
+}
+
+// Open a popup for adding/renaming
+function openAddItemPopup(title, existingValue, callback) {
+    addItemPopupTitle.textContent = title;
+    addItemPopupInput.value = existingValue;
+    addItemPopup.classList.add("active");
+
+    addItemPopupSave.onclick = () => {
+        const value = addItemPopupInput.value.trim();
+        if (!value) return;
+        callback(value);
+        closePopup();
+    };
+}
+
+// Close the popup
+function closePopup() {
+    addItemPopup.classList.remove("active");
+}
+
+// Rename a class 
+async function renameClass(classId, newName) {
+    try {
+        // /dash/renameClass body: className and classId
+        const res = await fetch("/dash/renameClass", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ className: newName, classId: parseInt(classId) })
+        })
+
+        const result = await res.json();
+        if (result.err) {
+            alert(result.err);
+        } else {
+            await renderClasses(); // Rerender classes
+            alert(result.msg);
+        }
+    } catch (err) {
+        console.log(err);
+        alert("Cant rename the class right now, try again later");
+    }
+}
+
+// Rename a test 
+async function renameTest(testId, newTestName) {
+    console.log(`Renaming test ${testId} to ${newTestName}`);
+    alert(`Test renamed to "${newTestName}" (server logic not implemented).`);
+    // e.g. const selectedClass = document.querySelector(".item.selected");
+    // if (selectedClass) await renderTests(selectedClass.getAttribute("data-class-id"));
+}
+
+// Delete a class 
+async function deleteClass(classId) {
+    console.log(`Deleting class ${classId}`);
+    alert(`Class with ID ${classId} deleted (server logic not implemented).`);
+    // e.g. await renderClasses();
+}
+
+// Delete a test 
+async function deleteTest(testId) {
+    // TODO: Implement server request to delete a test
+    console.log(`Deleting test ${testId}`);
+    alert(`Test with ID ${testId} deleted (server logic not implemented).`);
+    // e.g. const selectedClass = document.querySelector(".item.selected");
+    // if (selectedClass) await renderTests(selectedClass.getAttribute("data-class-id"));
+}
+
+// --------------------------
+// INITIALIZATION
+// --------------------------
+renderClasses();
+testContainer.classList.add("disabled");

@@ -1,7 +1,18 @@
 const pool = require("../config/database");
 const { getUsersTokenData } = require("../middleware/jwt");
 
-// Save Class to DB
+// Render classes page
+exports.classes = async (req, res) => {
+    try {
+        const userData = getUsersTokenData(req);
+        const [results] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY className ASC", [userData.id]);
+        return res.status(200).render("dash/teacher/manageClasses", { err: false, classes: results });
+    } catch (err) {
+        return res.status(400).render("dash/teacher/manageClasses", { err: "Something went wrong with rendering page" });
+    }
+}
+
+// Save teacher class to DB
 exports.saveClass = async (req, res) => {
     const className = req.body.className;
 
@@ -24,7 +35,7 @@ exports.saveClass = async (req, res) => {
             'INSERT INTO classes (className, teacherId) VALUES (?, ?)',
             [className, teacherData.id]
         );
-        
+
         res.status(200).json({ err: false, msg: 'Class saved successfully!', classId: insertResult.insertId });
     } catch (err) {
         console.log(err);
@@ -32,8 +43,56 @@ exports.saveClass = async (req, res) => {
     }
 
 }
+// List teachers classes 
+exports.listClasses = async (req, res) => {
+    try {
+        const userData = getUsersTokenData(req);
+        const [results] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY className ASC", [userData.id]);
+        return res.status(200).json({ err: false, classes: results });
+    } catch (err) {
+        return res.status(200).json({ err: "Something went wrong with getting the classes" });
+    }
+}
 
-// Save Test to DB
+// Rename class 
+exports.renameClass = async (req, res) => {
+    const className = req.body.className;
+    const classId = req.body.classId;
+
+    if (typeof classId !== "number" || typeof className !== "string") {
+        return res.status(400).json({ err: "Class Name needs to be a string and classId number" });
+    }
+
+    if (className.length > 100 || className.length < 3) {
+        return res.status(400).json({ err: "Class name needs to be between 3 and 100 characters" });
+    }
+
+    try {
+
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Could not load data correctly" })
+        }
+
+        await pool.query(
+            'UPDATE classes SET className = ? WHERE classId = ? AND teacherId = ?',
+            [className, classId, teacherData.id]
+        );
+
+        res.status(200).json({ err: false, msg: 'Class renamed successfully' });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ err: "Error with renaming your class, Try again later." });
+    }
+
+}
+
+// Delete class 
+exports.deleteClass = async (req, res) => {
+    
+}
+
+// Save teacher test to DB
 exports.saveTest = async (req, res) => {
     const testName = req.body.testName;
     const classId = req.body.classId;
@@ -52,7 +111,7 @@ exports.saveTest = async (req, res) => {
             return res.status(400).json({ err: "Could not load data correctly" })
         }
 
-        await pool.promise().query('INSERT INTO tests (testName, teacherId, classId) VALUES (?, ?, ?)', [testName, teacherData.id, classId]);
+        await pool.query('INSERT INTO tests (testName, teacherId, classId) VALUES (?, ?, ?)', [testName, teacherData.id, classId]);
         res.status(200).json({ err: false, msg: 'Test saved successfully!' });
 
     } catch (err) {
@@ -61,6 +120,29 @@ exports.saveTest = async (req, res) => {
             return res.status(500).json({ err: "Error with saving your test, Try again later." });
         }
     }
+
+}
+
+// List teachers tests
+exports.listTests = async (req, res) => {
+    try {
+        const classId = req.query.classId;
+        if(!classId) throw new Error;
+        const userData = getUsersTokenData(req);
+        const [results] = await pool.query("SELECT testId, testName FROM tests WHERE teacherId = ? AND classId = ? ORDER BY testName ASC", [userData.id, classId]);
+        return res.status(200).json({ err: false, tests: results });
+    } catch (err) {
+        return res.status(200).json({ err: "Something went wrong with getting the tests" });
+    }
+}
+
+// Rename test
+exports.renameTest = async (req, res) => {
+
+}
+
+// Delete test
+exports.deleteTest = async (req, res) => {
 
 }
 

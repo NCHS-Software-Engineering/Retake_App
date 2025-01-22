@@ -84,11 +84,13 @@
     }
 
     /* New SELECT (blue) */
-    .btn-select {
+    .btn-select,
+    .btn-edit {
       background-color: #007bff !important;
       color: #fff !important;
     }
-    .btn-select:hover {
+    .btn-select:hover,
+    .btn-edit:hover {
       background-color: #0069d9 !important;
     }
 
@@ -97,7 +99,8 @@
          1) Name
          2) Buttons row
        --------------------------------------- */
-    .item {
+    .item,
+    .test-item {
       display: flex !important;
       flex-direction: column !important;
       justify-content: flex-start !important;
@@ -113,7 +116,8 @@
     }
 
     /* The top line is just a <p> with the name */
-    .item p {
+    .item p,
+    .test-item p {
       margin: 0 0 8px 0 !important;
       font-weight: bold !important;
     }
