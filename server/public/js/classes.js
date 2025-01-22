@@ -301,10 +301,25 @@ async function renameClass(classId, newName) {
 
 // Rename a test 
 async function renameTest(testId, newTestName) {
-    console.log(`Renaming test ${testId} to ${newTestName}`);
-    alert(`Test renamed to "${newTestName}" (server logic not implemented).`);
-    // e.g. const selectedClass = document.querySelector(".item.selected");
-    // if (selectedClass) await renderTests(selectedClass.getAttribute("data-class-id"));
+    try {
+        const res = await fetch("/dash/renameTest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ testName: newTestName, testId: parseInt(testId) })
+        })
+
+        const result = await res.json();
+        if(result.err) {
+            alert(result.err);
+        } else {
+            const selectedClass = document.querySelector(".item.selected");
+            if (selectedClass) await renderTests(parseInt(selectedClass.getAttribute("data-class-id")));
+            alert(result.msg);
+        }
+    } catch(err) {
+        console.log("Err");
+        alert(err);
+    }
 }
 
 // Delete a class 

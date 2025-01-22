@@ -138,7 +138,34 @@ exports.listTests = async (req, res) => {
 
 // Rename test
 exports.renameTest = async (req, res) => {
+    const testName = req.body.testName;
+    const testId = req.body.testId;
 
+    if (typeof testId !== "number" || typeof testName !== "string") {
+        return res.status(400).json({ err: "Class Name needs to be a string and classId number" });
+    }
+
+    if (testName.length > 500 || testName.length < 3) {
+        return res.status(400).json({ err: "Class name needs to be between 3 and 500 characters" });
+    }
+
+    try {
+
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Could not load data correctly" })
+        }
+
+        await pool.query(
+            'UPDATE tests SET testName = ? WHERE testId = ? AND teacherId = ?',
+            [testName, testId, teacherData.id]
+        );
+
+        res.status(200).json({ err: false, msg: 'Test renamed successfully' });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ err: "Error with renaming your test, Try again later." });
+    }
 }
 
 // Delete test
