@@ -309,14 +309,14 @@ async function renameTest(testId, newTestName) {
         })
 
         const result = await res.json();
-        if(result.err) {
+        if (result.err) {
             alert(result.err);
         } else {
             const selectedClass = document.querySelector(".item.selected");
             if (selectedClass) await renderTests(parseInt(selectedClass.getAttribute("data-class-id")));
             alert(result.msg);
         }
-    } catch(err) {
+    } catch (err) {
         console.log("Err");
         alert(err);
     }
@@ -324,19 +324,93 @@ async function renameTest(testId, newTestName) {
 
 // Delete a class 
 async function deleteClass(classId) {
-    console.log(`Deleting class ${classId}`);
-    alert(`Class with ID ${classId} deleted (server logic not implemented).`);
-    // e.g. await renderClasses();
+    try {
+        const res = await fetch("/dash/deleteClass", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ classId: classId })
+        })
+
+        const result = await res.json();
+        if (result.err) {
+            alert(result.err);
+        } else {
+            testList.innerHTML = "";
+            await renderClasses();
+            alert(result.msg);
+        }
+    } catch (err) {
+        alert("Something went wrong, cant delete class, try again later.")
+    }
 }
 
 // Delete a test 
 async function deleteTest(testId) {
-    // TODO: Implement server request to delete a test
-    console.log(`Deleting test ${testId}`);
-    alert(`Test with ID ${testId} deleted (server logic not implemented).`);
-    // e.g. const selectedClass = document.querySelector(".item.selected");
-    // if (selectedClass) await renderTests(selectedClass.getAttribute("data-class-id"));
+    try {
+        const res = await fetch("/dash/deleteTest", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ testId: testId })
+        })
+
+        const result = await res.json();
+        if(result.err) {
+            alert(result.err);
+        } else {
+            const selectedClass = document.querySelector(".item.selected");
+            if (selectedClass) await renderTests(parseInt(selectedClass.getAttribute("data-class-id")));
+            alert(result.msg);
+        }
+
+    } catch (err) {
+        alert("Something went wrong, cant delete test, try again later");
+    }
 }
+
+
+// Function to create and display a temporary alert box
+function alertStatus(err, msg) {
+    // Create the alert box element
+    const alertBox = document.createElement('div');
+    alertBox.textContent = msg;
+
+    // Apply styles directly to ensure they are not overridden
+    Object.assign(alertBox.style, {
+        position: 'fixed',
+        bottom: '20px',
+        right: '-300px', // Start outside the screen
+        backgroundColor: err ? 'red' : 'green',
+        color: 'white',
+        padding: '10px 20px',
+        borderRadius: '5px',
+        fontFamily: 'Arial, sans-serif',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        zIndex: '9999',
+        transition: 'all 0.5s ease-in-out',
+        opacity: '1',
+    });
+
+    // Append the alert box to the body
+    document.body.appendChild(alertBox);
+
+    // Trigger slide-in animation
+    setTimeout(() => {
+        alertBox.style.right = '20px';
+    }, 50); // Small delay to allow transition to apply
+
+    // Fade out and remove the alert box after 3 seconds
+    setTimeout(() => {
+        alertBox.style.opacity = '0';
+        alertBox.style.transform = 'translateY(20px)'; // Slight slide down on fade out
+        setTimeout(() => {
+            document.body.removeChild(alertBox);
+        }, 500); // Wait for fade-out transition to complete
+    }, 3000);
+}
+
+
 
 // --------------------------
 // INITIALIZATION

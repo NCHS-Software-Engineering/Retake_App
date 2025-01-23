@@ -89,8 +89,45 @@ exports.renameClass = async (req, res) => {
 
 // Delete class 
 exports.deleteClass = async (req, res) => {
-    
-}
+    const classId = Number(req.body.classId); // Convert to a number
+
+    if (!Number.isInteger(classId)) {
+        return res.status(400).json({ err: "Class Id must be a valid integer" });
+    }
+
+    try {
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Cannot load teacher data correctly" });
+        }
+
+        // Delete from questions
+        await pool.query(
+            `DELETE FROM questions WHERE testId IN (
+                SELECT testId FROM tests WHERE classId = ?
+            )`,
+            [classId]
+        );
+
+        // Delete from tests
+        await pool.query(
+            `DELETE FROM tests WHERE classId = ?`,
+            [classId]
+        );
+
+        // Delete from classes
+        await pool.query(
+            `DELETE FROM classes WHERE classId = ? AND teacherId = ?`,
+            [classId, teacherData.id]
+        );
+
+        res.status(200).json({ err: false, msg: "Deleted class successfully!" });
+    } catch (err) {
+        console.error("Error deleting class:", err);
+        res.status(500).json({ err: "Cannot delete class, try again later" });
+    }
+};
+
 
 // Save teacher test to DB
 exports.saveTest = async (req, res) => {
@@ -127,7 +164,7 @@ exports.saveTest = async (req, res) => {
 exports.listTests = async (req, res) => {
     try {
         const classId = req.query.classId;
-        if(!classId) throw new Error;
+        if (!classId) throw new Error;
         const userData = getUsersTokenData(req);
         const [results] = await pool.query("SELECT testId, testName FROM tests WHERE teacherId = ? AND classId = ? ORDER BY testName ASC", [userData.id, classId]);
         return res.status(200).json({ err: false, tests: results });
@@ -170,6 +207,35 @@ exports.renameTest = async (req, res) => {
 
 // Delete test
 exports.deleteTest = async (req, res) => {
+    const testId = Number(req.body.testId);
+
+    if (!Number.isInteger(testId)) {
+        return res.status(400).json({ err: "TestId must be a valid integer" });
+    }
+
+    try {
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Cannot load teacher data correctly" });
+        }
+
+        // Delete from questions
+        await pool.query(
+            `DELETE FROM questions WHERE testId = ?`,
+            [testId]
+        );
+
+        // Delete from tests
+        await pool.query(
+            `DELETE FROM tests WHERE testId = ? and teacherId = ?`,
+            [testId, teacherData.id]
+        );
+
+        res.status(200).json({ err: false, msg: "Deleted test successfully!" });
+    } catch (err) {
+        console.error("Error deleting class:", err);
+        res.status(500).json({ err: "Cannot delete test, try again later" });
+    }
 
 }
 
