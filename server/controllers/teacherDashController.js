@@ -128,7 +128,6 @@ exports.deleteClass = async (req, res) => {
     }
 };
 
-
 // Save teacher test to DB
 exports.saveTest = async (req, res) => {
     const testName = req.body.testName;
@@ -235,6 +234,95 @@ exports.deleteTest = async (req, res) => {
     } catch (err) {
         console.error("Error deleting class:", err);
         res.status(500).json({ err: "Cannot delete test, try again later" });
+    }
+
+}
+
+// List questions and test name from test id
+exports.listQuestions = async (req, res) => {
+    const testId = Number(req.query.testId);
+
+    if (!Number.isInteger(testId)) {
+        return res.status(400).json({ err: "TestId must be a valid integer" });
+    }
+
+    try {
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Cannot load teacher data correctly" });
+        }
+
+        const teacherId = teacherData.id;
+
+        const query = `
+            SELECT 
+                t.testName,
+                q.questionNum,
+                q.question
+            FROM 
+                tests t
+            LEFT JOIN 
+                questions q 
+            ON 
+                t.testId = q.testId
+            WHERE 
+                t.testId = ? AND t.teacherId = ?
+            ORDER BY 
+                q.questionNum ASC
+        `;
+
+        const [results] = await pool.query(query, [testId, teacherId]);
+
+        if (results.length === 0) {
+            return res.status(404).json({ err: "No test found for the given testId and teacherId" });
+        }
+
+        // Structure the response
+        const response = {
+            testName: results[0].testName || null,
+            questions: results[0].questionNum
+                ? results.map(row => ({
+                    questionNum: row.questionNum,
+                    question: row.question
+                }))
+                : []
+        };
+
+        return res.status(200).json(response);
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ err: "Can't list the questions for that testId" });
+    }
+};
+
+// Update questions from test id
+exports.updateQuestions = async (req, res) => {
+    const testId = req.body.testId;
+    const questions = req.body.questions;
+
+    if (!Number.isInteger(testId)) {
+        return res.status(400).json({ err: "TestId must be a valid integer" });
+    }
+
+    try {
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Cannot load teacher data correctly" });
+        }
+        const teacherId = teacherData.id;
+
+        // Delete questions
+        await pool.query(`DELETE q FROM questions q INNER JOIN tests t ON q.testId = t.testId WHERE q.testId = ? AND t.teacherId = ?`, [testId, teacherId]);
+
+        // Add new test Questions
+        for(let i = 0; i < questions.length; i++) {
+            await pool.query("INSERT INTO questions (questionNum, question, testId) VALUES (?, ?, ?)", [questions[i].number, questions[i].question, testId])
+        }
+
+        return res.status(200).json({ err: false, msg: "Questions saved successfully" });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ err: "Can't save the questions for that test" });
     }
 
 }

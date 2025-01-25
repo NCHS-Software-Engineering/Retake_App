@@ -16,6 +16,14 @@ const addItemPopupSave = document.getElementById("addItemPopup-save");
 const addClassBtn = document.getElementById("add-class-btn");
 const addTestBtn = document.getElementById("add-test-btn");
 
+// Test Form Modal
+const testFormOverlay = document.getElementById("testFormOverlay");
+const testFormTitle = document.getElementById("testFormTitle");
+const questionsContainer = document.getElementById("questionsContainer");
+const addQuestionBtn = document.getElementById("addQuestionBtn");
+const cancelBtn = document.getElementById("cancelBtn");
+const saveBtn = document.getElementById("saveBtn");
+
 // --------------------------
 // EVENT LISTENERS
 // --------------------------
@@ -37,6 +45,55 @@ addTestBtn.addEventListener("click", () => {
     });
 });
 
+// Add question to test form
+addQuestionBtn.addEventListener("click", () => addQuestionToForm());
+
+// Cancel editing test form
+cancelBtn.addEventListener("click", () => {
+    questionsContainer.innerHTML = "";
+    hideTestForm();
+});
+
+// Save test form
+saveBtn.addEventListener("click", async () => {
+    const questionRows = questionsContainer.querySelectorAll(".test-question-row");
+    let questionsData = [];
+
+    questionRows.forEach((row, i) => {
+        const textarea = row.querySelector("textarea");
+        questionsData.push({
+            number: i + 1,
+            question: textarea.value
+        });
+    });
+
+    const testId = parseInt(document.getElementById("testFormTitle").getAttribute("data-class-id"));
+    console.log(testId);
+
+    try {
+        const res = await fetch("/dash/updateQuestions", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ testId: testId, questions: questionsData })
+        })
+
+        const result = await res.json();
+        if (result.err) {
+            alertStatus(true, result.err);
+        } else {
+            alertStatus(false, result.msg);
+        }
+
+    } catch (err) {
+        if (err) {
+            alertStatus(true, "Could not save the test questions");
+        }
+    }
+
+    // Hide the form afterwards
+    hideTestForm();
+});
+
 // --------------------------
 // MAIN FUNCTIONS
 // --------------------------
@@ -48,7 +105,7 @@ async function renderClasses(selectedClassId = null) {
         const data = await response.json();
 
         if (data.err) {
-            alert(data.err);
+            alertStatus(true, data.err);
             return;
         }
 
@@ -81,15 +138,15 @@ async function handleAddClass(newClassName) {
 
         const result = await res.json();
         if (result.err) {
-            alert(result.err);
+            alertStatus(true, result.err);
             return;
         }
 
-        alert(`${result.msg} (Class ID: ${result.classId})`);
+        alertStatus(false, `${result.msg}`);
         await renderClasses(result.classId);
     } catch (err) {
         console.error(err);
-        alert("Error creating class");
+        alertStatus(true, "Error creating class");
     }
 }
 
@@ -107,14 +164,15 @@ async function handleAddTest(newTestName) {
 
         const result = await res.json();
         if (result.err) {
-            alert(result.err);
+            alertStatus(true, result.err);
             return;
         } else {
             // If a class is selected, rerender tests for that class
             await renderTests(classId);
+            alertStatus(false, result.msg)
         }
     } catch (err) {
-        alert("Error creating tests")
+        alertStatus(true, "Error creating tests")
     }
 }
 
@@ -127,7 +185,7 @@ async function renderTests(classId) {
         const data = await response.json();
 
         if (data.err) {
-            alert(data.err);
+            alertStatus(true, data.err);
             return;
         }
 
@@ -137,7 +195,7 @@ async function renderTests(classId) {
 
         addListenersForTestItems();
     } catch (err) {
-        console.error("Error fetching tests:", err);
+        alertStatus(true, "Error fetching tests")
     }
 }
 
@@ -216,10 +274,21 @@ function addListenersForTestItems() {
         const renameBtn = testItem.querySelector(".btn-rename");
         const deleteBtn = testItem.querySelector(".btn-delete");
 
-        editBtn.addEventListener("click", () => {
-            // TODO: Implement "Edit Test" logic
-            console.log(`Editing test with ID: ${testId}`);
-            alert(`Editing test with ID: ${testId} (server logic not implemented).`);
+        editBtn.addEventListener("click", async () => {
+            document.getElementById("testFormTitle").setAttribute("data-class-id", testId);
+
+            try {
+                const res = await fetch(`/dash/listQuestions?testId=${testId}`);
+                const data = await res.json();
+                if (data.err) {
+                    alertStatus(true, data.err);
+                    return;
+                }
+                showTestForm(data.testName, data.questions);
+            } catch (err) {
+                console.error("Cannot fetch test details", err);
+                alertStatus(true, "Cannot load test details");
+            }
         });
 
         renameBtn.addEventListener("click", () => {
@@ -279,7 +348,6 @@ function closePopup() {
 // Rename a class 
 async function renameClass(classId, newName) {
     try {
-        // /dash/renameClass body: className and classId
         const res = await fetch("/dash/renameClass", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -288,14 +356,13 @@ async function renameClass(classId, newName) {
 
         const result = await res.json();
         if (result.err) {
-            alert(result.err);
+            alertStatus(true, result.err);
         } else {
             await renderClasses(); // Rerender classes
-            alert(result.msg);
+            alertStatus(false, result.msg);
         }
     } catch (err) {
-        console.log(err);
-        alert("Cant rename the class right now, try again later");
+        alertStatus(true, "Cant rename the class right now, try again later");
     }
 }
 
@@ -310,15 +377,14 @@ async function renameTest(testId, newTestName) {
 
         const result = await res.json();
         if (result.err) {
-            alert(result.err);
+            alertStatus(true, result.err);
         } else {
             const selectedClass = document.querySelector(".item.selected");
             if (selectedClass) await renderTests(parseInt(selectedClass.getAttribute("data-class-id")));
-            alert(result.msg);
+            alertStatus(false, result.msg);
         }
     } catch (err) {
-        console.log("Err");
-        alert(err);
+        alertStatus(true, "Error with renaming test");
     }
 }
 
@@ -333,14 +399,14 @@ async function deleteClass(classId) {
 
         const result = await res.json();
         if (result.err) {
-            alert(result.err);
+            alertStatus(true, result.err);
         } else {
             testList.innerHTML = "";
             await renderClasses();
-            alert(result.msg);
+            alertStatus(false, result.msg);
         }
     } catch (err) {
-        alert("Something went wrong, cant delete class, try again later.")
+        alertStatus(true, "Something went wrong, cant delete class, try again later.")
     }
 }
 
@@ -354,63 +420,147 @@ async function deleteTest(testId) {
         })
 
         const result = await res.json();
-        if(result.err) {
-            alert(result.err);
+        if (result.err) {
+            alertStatus(true, result.err);
         } else {
             const selectedClass = document.querySelector(".item.selected");
             if (selectedClass) await renderTests(parseInt(selectedClass.getAttribute("data-class-id")));
-            alert(result.msg);
+            alertStatus(false, result.msg);
         }
 
     } catch (err) {
-        alert("Something went wrong, cant delete test, try again later");
+        alertStatus(true, "Something went wrong, cant delete test, try again later");
     }
 }
 
 
-// Function to create and display a temporary alert box
+// Alert box function
 function alertStatus(err, msg) {
-    // Create the alert box element
     const alertBox = document.createElement('div');
     alertBox.textContent = msg;
-
-    // Apply styles directly to ensure they are not overridden
     Object.assign(alertBox.style, {
         position: 'fixed',
-        bottom: '20px',
-        right: '-300px', // Start outside the screen
-        backgroundColor: err ? 'red' : 'green',
+        bottom: '50px',
+        right: '-400px',
+        backgroundColor: err ? '#ff4d4d' : '#4caf50',
         color: 'white',
-        padding: '10px 20px',
-        borderRadius: '5px',
+        padding: '15px 30px',
+        borderRadius: '10px',
         fontFamily: 'Arial, sans-serif',
-        fontSize: '14px',
+        fontSize: '18px',
         fontWeight: 'bold',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 6px 10px rgba(0, 0, 0, 0.15)',
         zIndex: '9999',
         transition: 'all 0.5s ease-in-out',
         opacity: '1',
+        maxWidth: '400px',
+        wordWrap: 'break-word',
     });
-
-    // Append the alert box to the body
     document.body.appendChild(alertBox);
 
-    // Trigger slide-in animation
     setTimeout(() => {
-        alertBox.style.right = '20px';
-    }, 50); // Small delay to allow transition to apply
+        alertBox.style.right = '30px';
+    }, 50);
 
-    // Fade out and remove the alert box after 3 seconds
     setTimeout(() => {
         alertBox.style.opacity = '0';
-        alertBox.style.transform = 'translateY(20px)'; // Slight slide down on fade out
+        alertBox.style.transform = 'translateY(20px)';
         setTimeout(() => {
             document.body.removeChild(alertBox);
-        }, 500); // Wait for fade-out transition to complete
+        }, 500);
     }, 3000);
 }
 
+function showTestForm(testName, questions) {
+    questionsContainer.innerHTML = "";
 
+    testFormTitle.textContent = testName || "Untitled Test";
+
+    if (questions && questions.length > 0) {
+        questions.forEach(q => {
+            addQuestionToForm(q.question);
+        });
+    }
+
+    testFormOverlay.classList.remove("hidden");
+}
+
+
+
+// Hide the modal form 
+function hideTestForm() {
+    testFormOverlay.classList.add("hidden");
+}
+
+
+// Add a new question row to the form. 
+function addQuestionToForm(initialText = "") {
+    const questionRow = document.createElement("div");
+    questionRow.className = "test-question-row";
+
+    const questionHeader = document.createElement("div");
+    questionHeader.className = "test-question-header";
+
+    const label = document.createElement("label");
+    label.textContent = "";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.className = "btn-delete-question";
+    deleteBtn.textContent = "✕";
+    deleteBtn.addEventListener("click", () => {
+        questionsContainer.removeChild(questionRow);
+        renumberQuestions();
+    });
+
+    questionHeader.appendChild(label);
+    questionHeader.appendChild(deleteBtn);
+
+    const textarea = document.createElement("textarea");
+    textarea.className = "test-question-textarea";
+    textarea.value = initialText; // prefill if provided
+    questionRow.appendChild(questionHeader);
+    questionRow.appendChild(textarea);
+
+    questionsContainer.appendChild(questionRow);
+
+    renumberQuestions();
+    questionRow.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+// Renumber all questions in the container
+function renumberQuestions() {
+    const rows = questionsContainer.querySelectorAll(".test-question-row");
+    rows.forEach((row, index) => {
+        const label = row.querySelector("label");
+        label.textContent = `Question ${index + 1}:`;
+
+        const textarea = row.querySelector("textarea");
+        textarea.placeholder = `Enter question ${index + 1} here...`;
+    });
+}
+
+// Example fetch to update a test with new questions
+async function updateTest(testId, questions) {
+    try {
+        const res = await fetch("/dash/updateTest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                testId,
+                questions
+            })
+        });
+        const data = await res.json();
+        if (data.err) {
+            alertStatus(true, data.err);
+            return;
+        }
+        alertStatus(false, data.msg || "Test updated successfully");
+    } catch (err) {
+        alertStatus(true, "Error updating test");
+    }
+}
 
 // --------------------------
 // INITIALIZATION

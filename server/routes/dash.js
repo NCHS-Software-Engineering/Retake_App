@@ -49,6 +49,12 @@ router.post("/renameTest", validateTeacher, teacherDashController.renameTest);
 // Route to delete test for a teacher with all questions tied to it
 router.delete("/deleteTest", validateTeacher, teacherDashController.deleteTest);
 
+// Route to list testName and questions from testId
+router.get("/listQuestions", validateTeacher, teacherDashController.listQuestions);
+
+// Route to update questions with testId
+router.post("/updateQuestions", validateTeacher, teacherDashController.updateQuestions);
+
 // --------------------------------------------------
 // Student Routes
 // --------------------------------------------------
