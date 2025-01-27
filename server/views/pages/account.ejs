@@ -1,31 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Account</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Account</title>
 
-    <!-- Google Font: Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/base.css" />
+  <!-- Google Font: Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Base Stylesheet (unchanged) -->
+  <link rel="stylesheet" href="/css/base.css" />
+
+  <!-- Additional Styles -->
+  <style>
+    /* Container for Sidebar + Main Sections */
+    .account-container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fffdfd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    /* Sidebar Styling */
+    .account-sidebar {
+      flex: 0 0 220px;
+      border-right: 1px solid #ddd;
+      padding-right: 2rem;
+    }
+    .account-sidebar ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .account-sidebar li {
+      margin-bottom: 1rem;
+    }
+    .account-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+    .account-sidebar a:hover {
+      color: #dc4c4c;
+    }
+
+    /* Main Content Area */
+    .account-details {
+      flex: 1;
+      padding-left: 2rem;
+    }
+
+    /* Each section within .account-details */
+    .section-content {
+      display: none; /* Hide all sections by default; JS will show the active one */
+    }
+
+    /* Profile Section */
+    .profile-top {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .profile-top img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+    .profile-info h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: #dc4c4c;
+    }
+    .profile-info p {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .profile-form {
+      margin-top: 1rem;
+    }
+    .profile-form .form-group {
+      margin-bottom: 1rem;
+    }
+    .profile-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .profile-form input[type="text"],
+    .profile-form input[type="email"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* About Me */
+    .about-content {
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Notifications */
+    .notifications-list {
+      margin-top: 1rem;
+    }
+    .notification-item {
+      background-color: #fafafa;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .notification-item h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Settings (Change Password / Delete Account) */
+    .settings-section {
+      margin-top: 1rem;
+    }
+    .setting-group {
+      margin-bottom: 1.5rem;
+    }
+    .setting-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .setting-group input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* Button Styles */
+    .save-button,
+    .delete-button {
+      margin-top: 1rem;
+      background-color: #dc4c4c;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      margin-right: 1rem;
+    }
+    .save-button:hover,
+    .delete-button:hover {
+      background-color: #b53737;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .account-container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .account-sidebar {
+        flex: 1 1 auto;
+        border: none;
+        padding-right: 0;
+        margin-bottom: 2rem;
+      }
+      .account-details {
+        padding-left: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Header Partial -->
+  <%- include("../partials/header") %>
 
-    <%- include("../partials/header") %>
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <h1>My Account</h1>
+    <p>One convenient page for all your account management needs.</p>
 
+    <div class="account-container">
+      <!-- SIDEBAR -->
+      <div class="account-sidebar">
+        <ul>
+          <!-- Each link calls showSection() and passes an ID of the section to show -->
+          <li><a onclick="showSection('profile-section')">Profile</a></li>
+          <li><a onclick="showSection('about-section')">About Me</a></li>
+          <li><a onclick="showSection('notifications-section')">Notifications</a></li>
+          <li><a onclick="showSection('settings-section')">Settings</a></li>
+        </ul>
+      </div>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
-        <h1>My Account</h1>
-        <p>
-            Account page
-        </p>
-    </main>
+      <!-- ACCOUNT DETAILS (All content in one place) -->
+      <div class="account-details">
 
-    <%- include("../partials/footer") %>
+        <!-- PROFILE SECTION -->
+        <div id="profile-section" class="section-content">
+          <div class="profile-top">
+            <img src="/img/profile.png" alt="Profile Avatar" />
+            <div class="profile-info">
+              <h2>Jane Doe</h2>
+              <p>Nickname: JDizzle</p>
+              <p>Joined: January 2023</p>
+            </div>
+          </div>
+          <hr/>
+          <h3>Update Profile</h3>
+          <form class="profile-form">
+            <div class="form-group">
+              <label for="nickname">Nickname</label>
+              <input type="text" id="nickname" value="JDizzle" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" value="jane.doe@example.com" />
+            </div>
+            <button class="save-button" type="button">Save Profile</button>
+          </form>
+        </div>
 
+        <!-- ABOUT ME SECTION -->
+        <div id="about-section" class="section-content">
+          <h2>About Me</h2>
+          <hr/>
+          <div class="about-content">
+            <p>
+              <strong>Bio:</strong> 
+              Hello, I'm Jane! I'm passionate about web development, data science, and exploring the great outdoors. In my free time, I love hiking, traveling, and trying new coffee spots.
+            </p>
+            <p>
+              <strong>Hobbies & Interests:</strong><br/>
+              - Hiking and outdoor adventures<br/>
+              - Experimenting with new web technologies<br/>
+              - Reading sci-fi novels<br/>
+              - Learning new languages
+            </p>
+            <p>
+              <strong>Goals:</strong><br/>
+              - Contribute to open-source projects<br/>
+              - Develop user-centric applications<br/>
+              - Continue learning advanced data analytics
+            </p>
+          </div>
+        </div>
+
+        <!-- NOTIFICATIONS SECTION -->
+        <div id="notifications-section" class="section-content">
+          <h2>Notifications</h2>
+          <hr/>
+          <p>Here are your recent notifications and updates.</p>
+          <div class="notifications-list">
+            <div class="notification-item">
+              <h4>Retake Request</h4>
+              <p>User <strong>JohnSmith</strong> wants to retake the "Advanced JavaScript" test.</p>
+              <p><em>2 hours ago</em></p>
+            </div>
+            <div class="notification-item">
+              <h4>Profile View</h4>
+              <p><strong>AlishaJ</strong> visited your profile page.</p>
+              <p><em>Yesterday</em></p>
+            </div>
+            <div class="notification-item">
+              <h4>Password Change</h4>
+              <p>Your password was successfully updated.</p>
+              <p><em>3 days ago</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS SECTION -->
+        <div id="settings-section" class="section-content">
+          <h2>Settings</h2>
+          <hr/>
+          <p>Manage your account security and preferences below.</p>
+
+          <!-- Change Password -->
+          <div class="settings-section">
+            <h3>Change Password</h3>
+            <div class="setting-group">
+              <label for="currentPassword">Current Password</label>
+              <input type="password" id="currentPassword" placeholder="••••••" />
+            </div>
+            <div class="setting-group">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" placeholder="••••••••" />
+            </div>
+            <div class="setting-group">
+              <label for="confirmPassword">Confirm New Password</label>
+              <input type="password" id="confirmPassword" placeholder="••••••••" />
+            </div>
+            <button class="save-button" type="button">Update Password</button>
+          </div>
+
+          <hr/>
+
+          <!-- Delete Account -->
+          <div class="settings-section">
+            <h3>Delete Account</h3>
+            <p>If you wish to permanently close your account, click the button below. <strong>This action cannot be undone.</strong></p>
+            <button class="delete-button" type="button">Delete My Account</button>
+          </div>
+        </div>
+        
+      </div> <!-- END .account-details -->
+    </div> <!-- END .account-container -->
+  </main>
+
+  <!-- Footer Partial -->
+  <%- include("../partials/footer") %>
+
+  <!-- Simple JS to Toggle Sections -->
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section-content').forEach((section) => {
+        section.style.display = 'none';
+      });
+
+      // Show the requested section
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    // On page load, default to showing the profile
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('profile-section');
+    });
+  </script>
 </body>
-
 </html>
