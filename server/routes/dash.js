@@ -15,11 +15,6 @@ const pool = require("../config/database");
 // Return manage classes page, send classes to frontend by defualt
 router.get("/classes", validateTeacher, teacherDashController.classes)
 
-// Return instructions page
-router.get("/instructions", validateTeacher, (req, res) => {
-    return res.status(200).render("dash/teacher/instructions");
-})
-
 // return manage email page
 router.get("/email", validateTeacher, (req, res) => {
     return res.status(200).render("dash/teacher/email");
