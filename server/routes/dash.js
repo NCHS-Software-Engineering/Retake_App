@@ -16,9 +16,7 @@ const pool = require("../config/database");
 router.get("/classes", validateTeacher, teacherDashController.classes)
 
 // return manage email page
-router.get("/email", validateTeacher, (req, res) => {
-    return res.status(200).render("dash/teacher/email");
-})
+router.get("/email", validateTeacher, teacherDashController.email)
 
 // Route to save a class for a teacher
 router.post("/saveClass", validateTeacher, teacherDashController.saveClass)

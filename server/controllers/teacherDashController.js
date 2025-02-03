@@ -12,6 +12,25 @@ exports.classes = async (req, res) => {
     }
 }
 
+// Render email page
+exports.email = async (req, res) => {
+
+    try {
+        const userData = getUsersTokenData(req);
+        const [results] = await pool.query(
+            `SELECT r.userId, r.testId 
+             FROM retakeRequests r
+             JOIN tests t ON r.testId = t.testId
+             WHERE t.teacherId = ?`, [userData.id]);
+        return res.status(200).render("dash/teacher/email", {err: false, requests: results});
+    } catch (err) {
+        console.log(err);
+        return res.status(400).render("dash/teacher/email", {err: "Something went wrong"})
+    }
+
+    return res.status(200).render("dash/teacher/email")
+}
+
 // Save teacher class to DB
 exports.saveClass = async (req, res) => {
     const className = req.body.className;
@@ -315,7 +334,7 @@ exports.updateQuestions = async (req, res) => {
         await pool.query(`DELETE q FROM questions q INNER JOIN tests t ON q.testId = t.testId WHERE q.testId = ? AND t.teacherId = ?`, [testId, teacherId]);
 
         // Add new test Questions
-        for(let i = 0; i < questions.length; i++) {
+        for (let i = 0; i < questions.length; i++) {
             await pool.query("INSERT INTO questions (questionNum, question, testId) VALUES (?, ?, ?)", [questions[i].number, questions[i].question, testId])
         }
 

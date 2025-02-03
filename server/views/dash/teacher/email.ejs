@@ -110,25 +110,12 @@
             <button class="add-btn" onclick="openPopup('addStudentPopup')">+</button>
         </div>
         <div class="request-list" id="request-list">
-            <!-- Test data -->
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    const requestList = document.getElementById("request-list");
-                    const testData = [
-                        { student: "Alice Johnson", class: "Math 101", test: "Midterm" },
-                        { student: "Bob Smith", class: "Physics 201", test: "Final Exammmmmmmmmmmmmmmmmmmmmmmm testing 123" },
-                        { student: "Charlie Lee", class: "History 150", test: "Quiz 2" }
-                    ];
-                    
-                    testData.forEach(data => {
-                        const div = document.createElement("div");
-                        div.classList.add("request-item");
-                        div.innerHTML = `<strong>${data.student}</strong> | ${data.class} | ${data.test}`;
-                        div.onclick = () => openPopup('viewStudentPopup');
-                        requestList.appendChild(div);
-                    });
-                });
-            </script>
+
+            <% if(!err && requests && requests.length > 0) { %>
+                <% requests.forEach((request) => { %>
+                    <div class="request-item" onclick="openPopup('viewStudentPopup')">UserId: <strong><%=request.userId%></strong>| TestId: <%= request.testId %></div>    
+                    <% }) %>
+            <% } %>
         </div>
     </main>
 
