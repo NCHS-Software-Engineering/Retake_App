@@ -26,6 +26,7 @@ body {
     border-radius: 5px !important;
     transition: background-color 0.3s !important;
     box-sizing: border-box !important;
+    border-radius: 50px;
 }
 
 /* Grey out tests container until a class is selected */
@@ -47,6 +48,7 @@ body {
     cursor: pointer !important;
     font-weight: bold !important;
     text-transform: uppercase !important;
+    border-radius: 15px;
 }
 
 .btn-add {
@@ -104,6 +106,7 @@ Layout of each item: two lines
     border: 1px solid #ddd !important;
     margin-bottom: 10px !important;
     background: #d4d4d4 !important;
+    border-radius: 15px;
 }
 
 .item.selected {
