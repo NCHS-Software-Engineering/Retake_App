@@ -17,6 +17,21 @@
 - npm i
 - npm start
 8. High level desciption of your projects architecture:
+- MVC (Model View Controller) Express handles routing and middleware and SQL holds datastrucure
 9. Detailed description of project data schema:
+- Uses SQL db
+- Users: ID (INT) | username (STRING) | email (STRING) | password hash (TEXT) | role (STRING)
+- classes: ID (INT) | Class Name (STRING) | teacherId (INT)
+- tests: ID (INT) | test Name (STRING) | teacherId (INT)
+- questions: ID (INT) | question num (INT) | question (STRING) 
 10. Capture all user stories that remain in product backlog:
+As a student, I want to receive an email confirmation after submitting a retake request so that I know my request was received and is being processed.
+As a teacher, I want to filter requests by class and status so that I can handle approvals more quickly.
+As a student, I want to view my retake history and final grades after each retake so that I can track my progress over time.
+As a teacher, I want to automatically generate retake questions only for the topics students struggled with so that retakes focus on areas of improvement.
+As an administrator, I want to manage (add/remove/edit) teachers and classes so that the system remains up to date.
+As a teacher, I want an automated email reminder system for upcoming retakes so that students are reminded to show up.
+As a student, I want to see the date and time of an approved retake in my dashboard so that I can prepare.
+As a teacher, I want to be able to override retake dates or student eligibility in emergency circumstances so that exceptions can be handled easily.
 11. Capture all known issues:
+- UI style needs work and is diffrent styles for most pages, needs fix
