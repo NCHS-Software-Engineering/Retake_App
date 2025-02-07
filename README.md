@@ -13,7 +13,7 @@
 6. Instuctions on how to configure project so its runnable:
 - Everythign configues automaticly when ran
 7. Instuctions on how to run project:
-- git clone [this repo]
+- git clone https://github.com/NCHS-Software-Engineering/RetakeAppAustinJackMitch.git
 - npm i
 - npm start
 8. High level desciption of your projects architecture:
