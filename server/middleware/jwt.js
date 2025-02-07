@@ -9,7 +9,7 @@ const token_code = config.jwtToken;
  * @returns {string} - The generated JWT token as a string.
  */
 const createToken = (user) => {
-    // Create a JWT token using the user's username and email
+    // Create a JWT token using the user's username, email, and role
     const accessToken = sign(user, token_code);
     return accessToken;
 };

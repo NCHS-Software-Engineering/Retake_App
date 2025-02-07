@@ -6,3 +6,12 @@ function togglePassword(inputId) {
         input.type = "password";
     }
 }
+
+// ... Add the account fetch logic here
+function changeNickname() {
+    try {
+        fetch("URL")
+    } catch(err) {
+        console.log(err);
+    }
+}

@@ -110,7 +110,6 @@
             <button class="add-btn" onclick="openPopup('addStudentPopup')">+</button>
         </div>
         <div class="request-list" id="request-list">
-
             <% if(!err && requests && requests.length > 0) { %>
                 <% requests.forEach((request) => { %>
                     <div class="request-item" onclick="openPopup('viewStudentPopup')">UserId: <strong><%=request.userId%></strong>| TestId: <%= request.testId %></div>    
