@@ -35,3 +35,4 @@ As a student, I want to see the date and time of an approved retake in my dashbo
 As a teacher, I want to be able to override retake dates or student eligibility in emergency circumstances so that exceptions can be handled easily.
 11. Capture all known issues:
 - UI style needs work and is diffrent styles for most pages, needs fix
+- Otherwise there are no issues rather than the app not being done, everything that is done is functional 
