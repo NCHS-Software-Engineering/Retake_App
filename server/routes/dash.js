@@ -2,8 +2,11 @@ const express = require("express");
 const router = express();
 
 // Controllers
-const teacherDashController = require("../controllers/teacherDashController");
+const teacherClassesController = require("../controllers/teacherClassesController");
+const teacherEmailController = require("../controllers/teacherEmailController");
+
 const studentDashController = require("../controllers/studentDashController");
+
 const { validateStudent, validateTeacher } = require("../middleware/roleValidation");
 const { getUsersTokenData } = require("../middleware/jwt");
 const pool = require("../config/database");
@@ -12,41 +15,21 @@ const pool = require("../config/database");
 // Teacher Routes
 // --------------------------------------------------
 
-// Return manage classes page, send classes to frontend by defualt
-router.get("/classes", validateTeacher, teacherDashController.classes)
+// Dashboard
+router.get("/classes", validateTeacher, teacherClassesController.classes)
+router.post("/saveClass", validateTeacher, teacherClassesController.saveClass)
+router.get("/listClasses", validateTeacher, teacherClassesController.listClasses);
+router.post("/renameClass", validateTeacher, teacherClassesController.renameClass);
+router.delete("/deleteClass", validateTeacher, teacherClassesController.deleteClass);
+router.post("/saveTest", validateTeacher, teacherClassesController.saveTest);
+router.get("/listTests", validateTeacher, teacherClassesController.listTests);
+router.post("/renameTest", validateTeacher, teacherClassesController.renameTest);
+router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTest);
+router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
+router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
 
-// return manage email page
-router.get("/email", validateTeacher, teacherDashController.email)
-
-// Route to save a class for a teacher
-router.post("/saveClass", validateTeacher, teacherDashController.saveClass)
-
-// Route to list all classes for a teacher
-router.get("/listClasses", validateTeacher, teacherDashController.listClasses);
-
-// Route to rename a class for a teacher
-router.post("/renameClass", validateTeacher, teacherDashController.renameClass);
-
-// Route to delete class for a teacher with all tests tied to it with all questions tied to it
-router.delete("/deleteClass", validateTeacher, teacherDashController.deleteClass);
-
-// Route to save test for a teacher
-router.post("/saveTest", validateTeacher, teacherDashController.saveTest);
-
-// Route to list all tests for a teacher
-router.get("/listTests", validateTeacher, teacherDashController.listTests);
-
-// Route to rename test for a teacher
-router.post("/renameTest", validateTeacher, teacherDashController.renameTest);
-
-// Route to delete test for a teacher with all questions tied to it
-router.delete("/deleteTest", validateTeacher, teacherDashController.deleteTest);
-
-// Route to list testName and questions from testId
-router.get("/listQuestions", validateTeacher, teacherDashController.listQuestions);
-
-// Route to update questions with testId
-router.post("/updateQuestions", validateTeacher, teacherDashController.updateQuestions);
+// Email
+router.get("/email", validateTeacher, teacherEmailController.email)
 
 // --------------------------------------------------
 // Student Routes
@@ -57,7 +40,9 @@ router.get("/tracker", validateStudent, (req, res) => {
     return res.status(200).render("/dash/student/tracker");
 })
 
-// Determine if its a student or teacher and what dash to render for them
+// --------------------------------------------------
+// Send dash to student or teacher
+// --------------------------------------------------
 router.get("/", async (req, res) => {
     const userData = getUsersTokenData(req);
     if (!userData) {
