@@ -10,7 +10,7 @@ function validateParams(email, password, username = "0000") {
     if (typeof email !== 'string' || typeof password !== 'string' || typeof username !== 'string') {
         return { err: 'Invalid input type' };
     }
-
+    
     // Ensure password is between 4 and 64 characters
     if (password.length <= 3 || password.length >= 64) {
         return { err: 'Password must be greater than 3 characters and less than 64 characters' };

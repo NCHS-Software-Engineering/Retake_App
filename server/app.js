@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const { authMiddleware } = require("./middleware/jwt");
 
 // Initialize express app
 const app = express();
@@ -24,6 +25,7 @@ app.use(cors()); // Enable Cross-Origin Resource Sharing
 app.use(express.json()); // Parse incoming JSON requests
 app.use(cookieParser()); // Parse cookies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded data
+app.use(authMiddleware); // Add loggedIn status for frontend to view
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
@@ -52,3 +54,4 @@ const PORT = 8080;
 app.listen(PORT, () => {
     console.log(`Server running at: http://localhost:${PORT}`);
 });
+ 

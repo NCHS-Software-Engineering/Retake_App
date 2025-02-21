@@ -79,4 +79,20 @@ const validateToken = (req, res, next) => {
     }
 };
 
-module.exports = { createToken, getUsersTokenData, validateToken };
+/**
+ * Check if the user has an access token
+ * @param {Object} req - The HTTP request object.
+ * @param {Object} res - The HTTP response object.
+ * @param {Function} next - The next middleware function in the stack.
+ * @returns {Object|void} - Proceeds to the next middleware if token is valid, otherwise responds with an error.
+ */
+const authMiddleware = (req, res, next) => {
+    if (req.cookies && req.cookies['access-token']) {
+        res.locals.loggedIn = true;
+    } else {
+        res.locals.loggedIn = false;
+    }
+    next();
+};
+
+module.exports = { createToken, getUsersTokenData, validateToken, authMiddleware };

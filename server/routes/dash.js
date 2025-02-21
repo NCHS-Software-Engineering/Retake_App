@@ -3,7 +3,7 @@ const router = express();
 
 // Controllers
 const teacherClassesController = require("../controllers/teacherClassesController");
-const teacherEmailController = require("../controllers/teacherEmailController");
+const teacherRequestController = require("../controllers/teacherRequestController");
 
 const studentDashController = require("../controllers/studentDashController");
 
@@ -15,7 +15,7 @@ const pool = require("../config/database");
 // Teacher Routes
 // --------------------------------------------------
 
-// Dashboard
+// Manage Classes
 router.get("/classes", validateTeacher, teacherClassesController.classes)
 router.post("/saveClass", validateTeacher, teacherClassesController.saveClass)
 router.get("/listClasses", validateTeacher, teacherClassesController.listClasses);
@@ -28,8 +28,9 @@ router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTes
 router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
 
-// Email
-router.get("/email", validateTeacher, teacherEmailController.email)
+// Manage Retake Requests
+router.get("/requests", validateTeacher, teacherRequestController.requests)
+
 
 // --------------------------------------------------
 // Student Routes
@@ -41,8 +42,10 @@ router.get("/tracker", validateStudent, (req, res) => {
 })
 
 // --------------------------------------------------
-// Send dash to student or teacher
+// Both Student and teacher
 // --------------------------------------------------
+
+// Render dashboard for both student and teacher diffrently
 router.get("/", async (req, res) => {
     const userData = getUsersTokenData(req);
     if (!userData) {
@@ -69,5 +72,9 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Notifictions
+router.get("/notifications", (req, res) => {
+    return res.status(200).render("dash/notifications");
+});
 
 module.exports = router;

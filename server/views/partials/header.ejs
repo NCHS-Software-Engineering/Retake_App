@@ -12,5 +12,11 @@
         <a href="/about">About</a>
         <a href="/account">Account</a>
     </nav>
-    <a href="/auth" class="login-button">Login/Sign In</a>
+
+    <% if (loggedIn) { %>
+        <a href="/dash/notifications" class="notifications">Notifications</a>
+    <% } else { %>
+        <a href="/auth" class="login-button">Login/Sign In</a>
+    <% } %>
+
 </header>
