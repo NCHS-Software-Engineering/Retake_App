@@ -7,6 +7,8 @@ const teacherRequestController = require("../controllers/teacherRequestControlle
 
 const studentDashController = require("../controllers/studentDashController");
 
+const dashNotificationsController = require("../controllers/dashNotificationsController");
+
 const { validateStudent, validateTeacher } = require("../middleware/roleValidation");
 const { getUsersTokenData } = require("../middleware/jwt");
 const pool = require("../config/database");
