@@ -1,17 +1,16 @@
 const express = require("express");
 const router = express();
+const pool = require("../config/database");
+
+// Middleware
+const { getUsersTokenData } = require("../middleware/jwt");
+const { validateStudent, validateTeacher } = require("../middleware/roleValidation");
 
 // Controllers
 const teacherClassesController = require("../controllers/teacherClassesController");
 const teacherRequestController = require("../controllers/teacherRequestController");
-
 const studentDashController = require("../controllers/studentDashController");
-
 const dashNotificationsController = require("../controllers/dashNotificationsController");
-
-const { validateStudent, validateTeacher } = require("../middleware/roleValidation");
-const { getUsersTokenData } = require("../middleware/jwt");
-const pool = require("../config/database");
 
 // --------------------------------------------------
 // Teacher Routes

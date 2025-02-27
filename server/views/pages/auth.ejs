@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="325867374050-58t8688kosk35pieu0unrho7br57pbrg.apps.googleusercontent.com">
     <title>Authenticate</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/auth.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -29,48 +31,10 @@
             <div class="error-message"><%= err %></div>
         <% } %>
 
-        <!-- Toggle Buttons -->
-        <div class="toggle-header">
-            <button id="signin-btn" class="toggle-btn active">Sign Up</button>
-            <button id="login-btn" class="toggle-btn">Login</button>
+        <div class="form">
+
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         </div>
-
-        <!-- Sign Up Form -->
-        <form id="signin-form" class="form" action="/auth/signin" method="POST">
-            <div class="form-group">
-                <label for="signup-email">Email</label>
-                <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="signup-username">Username</label>
-                <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
-            </div>
-            <div class="form-group">
-                <label for="signup-password">Password</label>
-                <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
-                <div class="strength-indicator" id="password-strength">Strength: <span>Weak</span></div>
-            </div>
-
-            <div class="form-group">
-                <label for="signup-password-confirm">Verify Password</label>
-                <input type="password" id="signup-password-confirm" placeholder="Verify your password" required>
-            </div>
-            <button type="submit" class="submit-btn">Create Account</button>
-        </form>
-
-        <!-- Login Form -->
-        <form id="login-form" class="form hidden" action="/auth/login" method="POST">
-            <div class="form-group">
-                <label for="login-email">Email</label>
-                <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="login-password">Password</label>
-                <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="submit-btn">Log In</button>
-        </form>
-    </div>
 
     <%- include("../partials/footer") %>
 
