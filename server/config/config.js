@@ -10,4 +10,11 @@ module.exports = {
     },
     passHashToken: process.env.PASS_HASH_TOKEN,
     jwtToken: process.env.JWT_TOKEN,
+    clientId: process.env,
+    redirectURIs: ["http://localhost:8000/auth/google/callback",
+    "javascript_origins",
+    "http://localhost",
+    "http://localhost:8081",
+    "https://localhost",
+    "http://localhost:8000"],
 }
