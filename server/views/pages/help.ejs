@@ -8,49 +8,79 @@
 
     <!-- Google Font: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/help.css" />
     <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
     <%- include("../partials/header") %>
 
-
-    <!-- MAIN CONTENT -->
     <main class="main-content">
-        <h2 alt = "FAQ" style="text-align:center;">Frequently Asked Questions</h2>
+    <div class="container">
+      <h2 class="text-center">Frequently Asked Questions</h2>
+      <div class="panel-group" id="accordion">
 
-        <br><br><br>
-        <!-- for future questions just copy and paste a previous one -->
-        <button class="collapsible" style="border-radius: 5px 5px 0px 0px;">Question 1</button>
-        <div class="content">
-          <p>Thats actually quite an easy fix, the solution is answer 1</p>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Qustion 1</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse in">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
         </div>
-        <button class="collapsible">Question 2</button>
-        <div class="content">
-          <p>Quite confusingly the solution is answer 2, we are currently working on a fix for that</p>
+
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Question 2</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
         </div>
-        <button class="collapsible">Question 3</button>
-        <div class="content">
-          <p>just simply click dashboard then click on answer 3</p>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Question 3</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
         </div>
-        <button class="collapsible">Question 4</button>
-        <div class="content">
-          <p>I donno</p>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Question 4</a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
         </div>
-        <button class="collapsible">Question 5</button>
-        <div class="content">
-          <p>I donno</p>
-        </div>
-        <button class="collapsible">Question 6</button>
-        <div class="content">
-          <p>I donno</p>
-        </div>
-        <button class="collapsible">Question 7</button>
-        <div class="content">
-          <p>I donno</p>
-        </div>
+
+        <p hidden="true">if you have any issues blame Jack Holzhauer</p>
+
+      </div> 
+    </div>
     </main>
 
     <%- include("../partials/footer") %>
