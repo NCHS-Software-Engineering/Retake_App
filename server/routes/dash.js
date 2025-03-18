@@ -73,9 +73,4 @@ router.get("/", async (req, res) => {
     }
 });
 
-// Notifictions
-router.get("/notifications", (req, res) => {
-    return res.status(200).render("dash/notifications");
-});
-
 module.exports = router;

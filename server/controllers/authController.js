@@ -7,14 +7,13 @@ const client = new OAuth2Client(
     config.google.clientSecret,
     'http://localhost:8080/auth/google/callback'
 );  
+
 exports.googleCallback = async (req, res) => {
     try {
         const { code } = req.query;
         if (!code) {
             throw new Error("Authorization code is missing");
         }
-
-        console.log("Received code:", code);
 
         const { tokens } = await client.getToken({
             code,
@@ -33,7 +32,6 @@ exports.googleCallback = async (req, res) => {
         });
 
         const payload = ticket.getPayload();
-        console.log("User Info:", payload);
 
         const email = payload.email;
         const username = payload.name;
@@ -49,6 +47,8 @@ exports.googleCallback = async (req, res) => {
                 }
                 const [rows] = await pool.query('SELECT * FROM users WHERE googleToken = ?', [googleToken]);
 
+                role = "teacher"; // delete later
+
                 if (rows.length === 0) {
                     const [result] = await pool.query(
                         'INSERT INTO users (username, googleToken, type) VALUES (?, ?, ?)', [
@@ -63,7 +63,7 @@ exports.googleCallback = async (req, res) => {
 
                 const user = rows[0];
 
-                const tokenData = { token: googleToken, id: user.userId, type: user.type };
+                const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
                 const accessToken = createToken(tokenData);
 
                 res.cookie('access-token', accessToken, {
