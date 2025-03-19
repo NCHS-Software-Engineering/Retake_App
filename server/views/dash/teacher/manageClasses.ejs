@@ -8,13 +8,12 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/classes.css" />
 </head>
-<script>
-    console.log("Checking for .order:", document.querySelector(".order"));
-</script>
+
 <body>
     <%- include("../../partials/header") %>
 
         <main class="main-content">
+            
             <div id="classes-container">
                 <div class="header-buttons">
                     <h3>Classes</h3>
@@ -80,11 +79,8 @@
                 </div>
             </div>
         </div>
-        <div id="order-container">
-            <p id="Order">Order: </p>
-        </div>
 
-
+        <p id="Order"></p>
         <%- include("../../partials/footer") %>
 
         <script src="/js/classes.js"></script>

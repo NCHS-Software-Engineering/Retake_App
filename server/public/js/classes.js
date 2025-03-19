@@ -83,9 +83,7 @@ handles.forEach(handle => {
     thinBar = null;
 
     // Update order display
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(updateOrder, 100);  // ⏳ Waits 100ms to ensure DOM is ready
-    });
+    updateOrder();
   }
 
   // Get element to drop after
@@ -104,30 +102,15 @@ handles.forEach(handle => {
 
   // Update order display
   function updateOrder() {
-    const orderElement = document.querySelector(".order");
-    
-    if (!orderElement) {
-        console.error("Element with class 'order' not found!");
-        return;  // Stops the function if the element doesn't exist
-    }
-
-    const order = [...document.querySelectorAll(".draggable")]
-        .map(item => item.dataset.classId)
-        .join(", ");
-
-    orderElement.innerHTML = `Order: ${order}`;
-}
-
-  // Initial order display
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(updateOrder, 100); 
-});
-function updateOrder() {
     const order = [...container.querySelectorAll('.draggable')]
       .map(item => item.dataset.classId)
       .join(', ');
     document.getElementById('Order').innerHTML = `Order: ${order}`;
   }
+
+  // Initial order display
+  updateOrder();
+
 
 
 
@@ -315,8 +298,8 @@ function createClassItemHTML(classObj, selectedClassId) {
         <button class="btn btn-select">${selectBtnText}</button>
         <button class="btn btn-rename">Rename</button>
         <button class="btn btn-delete">Delete</button>
-        <div class ="handle"></div>
       </div>
+      <div class="handle"></div>
     </div>
     `;
 }
