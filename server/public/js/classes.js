@@ -24,9 +24,112 @@ const addQuestionBtn = document.getElementById("addQuestionBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const saveBtn = document.getElementById("saveBtn");
 
+// Draggables
+const draggables = document.querySelectorAll('.draggable');
+const container = document.querySelector(".scrollable");
+const handles = document.querySelectorAll('.handle');
+
+
 // --------------------------
 // EVENT LISTENERS
 // --------------------------
+
+let thinBar = null;
+let draggedItem = null;
+let lastUpdate = 0;
+const debounceDelay = 16; // ~60fps
+
+// Handle dragging via the handle
+handles.forEach(handle => {
+    handle.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      draggedItem = handle.closest('.draggable');
+      draggedItem.classList.add('dragging');
+
+      // Clone for thin bar (drop indicator)
+      thinBar = document.createElement('div');
+      thinBar.classList.add('thin-bar');
+      container.insertBefore(thinBar, draggedItem);
+
+      // Set up drag simulation
+      document.addEventListener('mousemove', onDrag);
+      document.addEventListener('mouseup', onDrop, { once: true });
+    });
+  });
+
+  // Handle dragging with debounce
+  function onDrag(e) {
+    e.preventDefault();
+    const now = Date.now();
+    if (now - lastUpdate < debounceDelay) return;
+    lastUpdate = now;
+
+    const afterElement = getDragAfterElement(container, e.clientY);
+    if (afterElement == null) {
+      container.appendChild(thinBar);
+    } else {
+      container.insertBefore(thinBar, afterElement);
+    }
+  }
+
+  // Handle drop
+  function onDrop() {
+    document.removeEventListener('mousemove', onDrag);
+    draggedItem.classList.remove('dragging');
+
+    // Replace thin bar with original item
+    container.insertBefore(draggedItem, thinBar);
+    thinBar.remove();
+    thinBar = null;
+
+    // Update order display
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(updateOrder, 100);  // ⏳ Waits 100ms to ensure DOM is ready
+    });
+  }
+
+  // Get element to drop after
+  function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+    return draggableElements.reduce((closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+      if (offset < 0 && offset > closest.offset) {
+        return { offset: offset, element: child };
+      } else {
+        return closest;
+      }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+  }
+
+  // Update order display
+  function updateOrder() {
+    const orderElement = document.querySelector(".order");
+    
+    if (!orderElement) {
+        console.error("Element with class 'order' not found!");
+        return;  // Stops the function if the element doesn't exist
+    }
+
+    const order = [...document.querySelectorAll(".draggable")]
+        .map(item => item.dataset.classId)
+        .join(", ");
+
+    orderElement.innerHTML = `Order: ${order}`;
+}
+
+  // Initial order display
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(updateOrder, 100); 
+});
+function updateOrder() {
+    const order = [...container.querySelectorAll('.draggable')]
+      .map(item => item.dataset.classId)
+      .join(', ');
+    document.getElementById('Order').innerHTML = `Order: ${order}`;
+  }
+
+
 
 // Close popup event
 addItemPopupClose.addEventListener("click", closePopup);
@@ -212,6 +315,7 @@ function createClassItemHTML(classObj, selectedClassId) {
         <button class="btn btn-select">${selectBtnText}</button>
         <button class="btn btn-rename">Rename</button>
         <button class="btn btn-delete">Delete</button>
+        <div class ="handle"></div>
       </div>
     </div>
     `;
@@ -234,6 +338,18 @@ function createTestItemHTML(testName, testId) {
 // --------------------------
 // HELPER / UTILITY FUNCTIONS
 // --------------------------
+
+function getOrder() {
+    const pTag = document.getElementById('Order');
+    pTag.innerHTML = "";
+    let word = "";
+    const data = document.querySelectorAll('.draggable');
+    for (let i = 0; i < data.length; i++) {
+        word = word+", "+data[i].dataset.classId;
+    }
+    console.log(word);
+    pTag.innerHTML = word;
+}
 
 // Add event listeners to each class item
 function addListenersForClassItems() {

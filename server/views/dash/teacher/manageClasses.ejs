@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/classes.css" />
 </head>
-
+<script>
+    console.log("Checking for .order:", document.querySelector(".order"));
+</script>
 <body>
     <%- include("../../partials/header") %>
 
@@ -21,18 +23,21 @@
                 <div class="scrollable" id="classes-list">
                     <% if (!err && classes && classes.length> 0) { %>
                         <% classes.forEach((classObj)=> { %>
-                            <div class="item" data-class-id="<%= classObj.classId %>">
+                            <div class="item draggable" data-class-id="<%= classObj.classId %>" >
                                 <p>
                                     <%= classObj.className %>
                                 </p>
+                                
                                 <div class="item-buttons">
                                     <button class="btn btn-select">Select</button>
                                     <button class="btn btn-rename">Rename</button>
                                     <button class="btn btn-delete">Delete</button>
                                 </div>
+
+                                <div class="handle"></div>
                             </div>
-                            <% }); %>
-                                <% } %>
+                        <% }); %>
+                    <% } %>
 
                 </div>
             </div>
@@ -75,11 +80,14 @@
                 </div>
             </div>
         </div>
+        <div id="order-container">
+            <p id="Order">Order: </p>
+        </div>
 
 
         <%- include("../../partials/footer") %>
 
-            <script src="/js/classes.js"></script>
+        <script src="/js/classes.js"></script>
 </body>
 
 </html>
