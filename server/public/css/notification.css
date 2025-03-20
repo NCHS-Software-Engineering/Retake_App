@@ -1,0 +1,64 @@
+.notification-popup {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 25%;
+    height: 80%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+    min-width: 20%;
+    min-height: 50%;
+}
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+.popup-content {
+    overflow-y: auto;
+    padding: 10px;
+    height: calc(100% - 40px);
+}
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.notification-item:hover {
+    background-color: #f9f9f9;
+}
+.notification-title {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.notification-message {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.delete-notification {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+.resize-handle {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: nwse-resize;
+}
