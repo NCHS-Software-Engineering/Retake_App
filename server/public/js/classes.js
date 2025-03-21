@@ -138,6 +138,9 @@ handles.forEach(handle => {
 
     // Update order display
     updateOrder();
+
+    //reorder in db
+    sendClassOrder();
   }
 
   // Get element to drop after
