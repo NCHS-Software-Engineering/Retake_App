@@ -33,6 +33,39 @@ const handles = document.querySelectorAll('.handle');
 // --------------------------
 // EVENT LISTENERS
 // --------------------------
+/////////////////////////////////////////////////////////
+async function sendClassOrder(url = "/teacherClassController/updateOrder") {
+    const classContainer = document.getElementById("class-container");
+
+    if (!classContainer) {
+        console.error("Class container not found.");
+        return;
+    }
+
+    const classIds = Array.from(classContainer.querySelectorAll(".draggable")).map(el => el.dataset.classId);  // Collect classIds
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ classIds })  // Send the classIds array
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.msg);  // Success message
+        } else {
+            alert(`Error: ${data.err}`);
+        }
+    } catch (error) {
+        console.error("Failed to save order:", error);
+    }
+}
+//////////////////////////////////////////////////////////////
+
 
 let thinBar = null;
 let draggedItem = null;
@@ -45,6 +78,7 @@ container.addEventListener("mousedown", (e) => {
 
     e.preventDefault();
     draggedItem = handle.closest(".draggable");
+    console.log(draggedItem);
     draggedItem.classList.add("dragging");
 
     // Clone for thin bar (drop indicator)
@@ -312,7 +346,7 @@ function createClassItemHTML(classObj, selectedClassId) {
     const selectedClass = isSelected ? "selected" : "";
 
     return `
-    <div class="item ${selectedClass}" data-class-id="${classObj.classId}">
+    <div class="item ${selectedClass} draggable" data-class-id="${classObj.classId}">
       <p>${classObj.className}</p>
       <div class="item-buttons">
         <button class="btn btn-select">${selectBtnText}</button>
