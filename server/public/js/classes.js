@@ -33,15 +33,69 @@ const handles = document.querySelectorAll('.handle');
 // --------------------------
 // EVENT LISTENERS
 // --------------------------
+/////////////////////////////////////////////////////////
+async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
+    const classContainer = [...container.querySelectorAll('.draggable')];
+
+    if (!classContainer) {
+        console.error("Class container not found.");
+        return;
+    }
+
+    const classIds = classContainer.map(el => el.dataset.classId);
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ classIds })  // Send the classIds array
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.msg);  // Success message
+        } else {
+            alert(`Error: ${data.err}`);
+        }
+    } catch (error) {
+        console.error("Failed to save order:", error);
+    }
+}
+//////////////////////////////////////////////////////////////
+
 
 let thinBar = null;
 let draggedItem = null;
 let lastUpdate = 0;
 const debounceDelay = 16; // ~60fps
 
+container.addEventListener("mousedown", (e) => {
+    const handle = e.target.closest(".handle"); // Ensure we're clicking the handle
+    if (!handle) return; // Ignore clicks elsewhere
+
+    e.preventDefault();
+    draggedItem = handle.closest(".draggable");
+    console.log(draggedItem);
+    draggedItem.classList.add("dragging");
+
+    // Clone for thin bar (drop indicator)
+    thinBar = document.createElement("div");
+    thinBar.classList.add("thin-bar");
+    container.insertBefore(thinBar, draggedItem);
+
+    // Set up drag simulation
+    document.addEventListener("mousemove", onDrag);
+    document.addEventListener("mouseup", onDrop, { once: true });
+});
+
 // Handle dragging via the handle
 handles.forEach(handle => {
     handle.addEventListener('mousedown', (e) => {
+        console.log("pressed");
+      if (e.target.closest('.item-buttons')) return; // Ignore if clicking a button
       e.preventDefault();
       draggedItem = handle.closest('.draggable');
       draggedItem.classList.add('dragging');
@@ -84,6 +138,9 @@ handles.forEach(handle => {
 
     // Update order display
     updateOrder();
+
+    //reorder in db
+    sendClassOrder();
   }
 
   // Get element to drop after
@@ -292,7 +349,7 @@ function createClassItemHTML(classObj, selectedClassId) {
     const selectedClass = isSelected ? "selected" : "";
 
     return `
-    <div class="item ${selectedClass}" data-class-id="${classObj.classId}">
+    <div class="item ${selectedClass} draggable" data-class-id="${classObj.classId}">
       <p>${classObj.className}</p>
       <div class="item-buttons">
         <button class="btn btn-select">${selectBtnText}</button>
@@ -347,17 +404,20 @@ function addListenersForClassItems() {
         testContainer.classList.add("disabled");
         testList.innerHTML = "";
 
-        selectBtn.addEventListener("click", () => {
+        selectBtn.addEventListener("click", (e) => {
+            e.stopPropagation();  // Prevent interference with dragging
             handleSelectedClass(classId, item, selectBtn);
         });
 
-        renameBtn.addEventListener("click", () => {
+        renameBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             openAddItemPopup("Rename Class", item.querySelector("p").textContent, async (newName) => {
                 await renameClass(classId, newName);
             });
         });
 
-        deleteBtn.addEventListener("click", () => {
+        deleteBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
             deleteClass(classId);
         });
     });
