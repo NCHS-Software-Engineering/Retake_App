@@ -73,4 +73,6 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/manageClasses", teacherClassesController.updateOrder);
+
 module.exports = router;

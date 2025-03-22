@@ -131,7 +131,7 @@ exports.deleteClass = async (req, res) => {
 /////////////////////////////////////////////////////////////////////////////////
     exports.updateOrder = async (req, res) => {
         const { classIds } = req.body.classId;  // Array of classIds in the desired order
-    
+        console.log("db");
         try {
             const teacherData = getUsersTokenData(req);
             if (!teacherData) {

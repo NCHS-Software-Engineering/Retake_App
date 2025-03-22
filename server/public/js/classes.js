@@ -34,15 +34,15 @@ const handles = document.querySelectorAll('.handle');
 // EVENT LISTENERS
 // --------------------------
 /////////////////////////////////////////////////////////
-async function sendClassOrder(url = "/teacherClassController/updateOrder") {
-    const classContainer = document.getElementById("class-container");
+async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
+    const classContainer = [...container.querySelectorAll('.draggable')];
 
     if (!classContainer) {
         console.error("Class container not found.");
         return;
     }
 
-    const classIds = Array.from(classContainer.querySelectorAll(".draggable")).map(el => el.dataset.classId);  // Collect classIds
+    const classIds = classContainer.map(el => el.dataset.classId);
 
     try {
         const response = await fetch(url, {
