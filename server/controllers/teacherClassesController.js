@@ -47,7 +47,7 @@ exports.saveClass = async (req, res) => {
 exports.listClasses = async (req, res) => {
     try {
         const userData = getUsersTokenData(req);
-        const [results] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY className ASC", [userData.id]);
+        const [results] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY orderId ASC", [userData.id]);
         return res.status(200).json({ err: false, classes: results });
     } catch (err) {
         return res.status(200).json({ err: "Something went wrong with getting the classes" });
@@ -130,7 +130,7 @@ exports.deleteClass = async (req, res) => {
 
 /////////////////////////////////////////////////////////////////////////////////
     exports.updateOrder = async (req, res) => {
-        const { classIds } = req.body.classId;  // Array of classIds in the desired order
+        const { classIds } = req.body;  // Array of classIds in the desired order
         console.log("db");
         try {
             const teacherData = getUsersTokenData(req);
