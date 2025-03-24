@@ -55,9 +55,7 @@ async function sendClassOrder() {
 
         const data = await response.json();
         console.log(response);
-        if (response.ok) {
-            alert(data.msg);  // Success message
-        } else {
+        if (!response.ok) {
             alert(`Error: ${data.err}`);
         }
     } catch (error) {
