@@ -27,6 +27,7 @@ router.post("/renameTest", validateTeacher, teacherClassesController.renameTest)
 router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTest);
 router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
+router.post("/updateOrder", validateTeacher, teacherClassesController.updateOrder);
 
 // Manage Retake Requests
 router.get("/requests", validateTeacher, teacherRequestController.requests)
@@ -72,6 +73,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/manageClasses", teacherClassesController.updateOrder);
+
 
 module.exports = router;
