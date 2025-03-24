@@ -6,7 +6,7 @@ const client = new OAuth2Client(
     config.google.clientId,
     config.google.clientSecret,
     'http://localhost:8080/auth/google/callback'
-);  
+);
 
 exports.googleCallback = async (req, res) => {
     try {

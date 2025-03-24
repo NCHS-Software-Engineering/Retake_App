@@ -10,7 +10,6 @@ const { validateStudent, validateTeacher } = require("../middleware/roleValidati
 const teacherClassesController = require("../controllers/teacherClassesController");
 const teacherRequestController = require("../controllers/teacherRequestController");
 const studentDashController = require("../controllers/studentDashController");
-const dashNotificationsController = require("../controllers/dashNotificationsController");
 
 // --------------------------------------------------
 // Teacher Routes

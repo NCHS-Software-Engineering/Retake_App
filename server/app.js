@@ -40,6 +40,7 @@ app.use("/", require("./routes/pages"));
 app.use("/auth", require("./routes/auth"));
 app.use("/dash", require("./routes/dash"));
 app.use("/account", require("./routes/account"));
+app.use("/notification", require("./routes/notifications"));
 
 // Add in 404 page
 app.use((req, res, next) => {

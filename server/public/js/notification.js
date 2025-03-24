@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     notificationBtn.addEventListener('click', function() {
         notificationPopup.style.display = 'block';
+
+        // relist notifications
+        listNotifications();
     });
 
     closePopup.addEventListener('click', function() {
@@ -52,5 +55,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    async function listNotifications() {
+        document.getElementById("popup-content").innerHTML = '';
+        try {
+            const response = await fetch('/notification/list');
+            const data = await response.json();
+
+            if (data.err) {
+                document.getElementById("popup-content").innerHTML = `<p>${data.err}</p>`;
+                return;
+            }
+
+            // check if there is no notifications
+            if (data.rows.length === 0) {
+                document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
+                return;
+            }
+
+            // Render them in for loop
+            data.rows.forEach(row => {
+                const notificationItem = document.createElement('div');
+                notificationItem.classList.add('notification-item');
+                notificationItem.setAttribute('data-url', row.url);
+                notificationItem.innerHTML = `
+                <span class="notification-title">Retake Request</span>
+                <span class="notification-message">${row.username} requested to retake ${row.testName}.</span>
+                <button class="delete-notification">&times;</button>`;                
+                document.getElementById("popup-content").appendChild(notificationItem);
+            });
+
+        } catch (error) {
+            console.error('Error fetching notifications:', error);
+        }
+    }
 
 });
