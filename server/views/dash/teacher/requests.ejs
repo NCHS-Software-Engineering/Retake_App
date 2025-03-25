@@ -122,9 +122,19 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('addStudentPopup')">X</button>
             <h3>Add Student</h3>
-            <input type="email" placeholder="Student Email" />
+            <input type="email" placeholder="Student name" />
             <select id="classDropdown"></select>
             <select id="testDropdown"></select>
+
+            <% if(!err && questions && questions.length > 0) { %>
+                <% questions.forEach((question) => { %>
+                    <li><input type="checkbox" /> <%= question.className %> 1</li>
+                    <% }) %>
+            <% } %>
+            <li><input type="checkbox" /> Question 1</li>
+            <li><input type="checkbox" /> Question 2</li>
+            <li><input type="checkbox" /> Question 3</li>
+
         </div>
     </div>
     

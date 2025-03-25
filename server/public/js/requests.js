@@ -1,5 +1,43 @@
 const questionsContainer = document.getElementById("questionsContainer");
 
+async function renderQuestions(selectedQuestionId = null) {
+    try {
+        const response = await fetch("/dash/listQuestiones");
+        const data = await response.json();
+
+        if (data.err) {
+            alertStatus(true, data.err);
+            return;
+        }
+
+        QuestionList.innerHTML = "";
+
+        data.questions.forEach((Question) => {
+            QuestionList.innerHTML += createquestionItemHTML(Suestion, selectedQuestionId);
+        });
+
+        addListenersForQuestionItems();
+
+        // If a Question is already selected, enable tests and render them
+        if (selectedQuestionId !== null) {
+            testContainer.QuestionList.remove("disabled");
+            await renderTests(selectedQuestionId);
+        }
+    } catch (err) {
+        console.error("Error fetching questions:", err);
+    }
+}
+
+function createQuestionItemHTML(QuestionObj, selectedQuestionId) {
+    const isSelected = selectedQuestionId === QuestionObj.QuestionId;
+    const selectBtnText = isSelected ? "Deselect" : "Select";
+    const selectedQuestion = isSelected ? "selected" : "";
+
+    return `
+    <li><input type="checkbox" /> ${ question.QuestionName }</li>
+    `;
+}
+
 function showTestForm(testName, questions) {
     questionsContainer.innerHTML = "";
 
@@ -13,16 +51,16 @@ function showTestForm(testName, questions) {
 }
 function addQuestionToForm(initialText = "") {
     const questionRow = document.createElement("div");
-    questionRow.className = "test-question-row";
+    questionRow.QuestionName = "test-question-row";
 
     const questionHeader = document.createElement("div");
-    questionHeader.className = "test-question-header";
+    questionHeader.QuestionName = "test-question-header";
 
     const label = document.createElement("label");
     label.textContent = "";
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.className = "btn-delete-question";
+    deleteBtn.QuestionName = "btn-delete-question";
     deleteBtn.textContent = "✕";
     deleteBtn.addEventListener("click", () => {
         questionsContainer.removeChild(questionRow);
@@ -33,7 +71,7 @@ function addQuestionToForm(initialText = "") {
     questionHeader.appendChild(deleteBtn);
 
     const textarea = document.createElement("textarea");
-    textarea.className = "test-question-textarea";
+    textarea.QuestionName = "test-question-textarea";
     textarea.value = initialText; // prefill if provided
     questionRow.appendChild(questionHeader);
     questionRow.appendChild(textarea);
