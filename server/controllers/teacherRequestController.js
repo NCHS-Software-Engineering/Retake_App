@@ -7,7 +7,7 @@ exports.requests = async (req, res) => {
         const userData = getUsersTokenData(req);
         const [results] = await pool.query(
             `SELECT 
-                r.userId, u.email, 
+                r.userId, u.googleToken, 
                 r.testId, t.testName, 
                 t.classId, c.className
              FROM retakeRequests r
