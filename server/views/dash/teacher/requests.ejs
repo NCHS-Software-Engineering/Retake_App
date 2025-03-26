@@ -122,21 +122,26 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('addStudentPopup')">X</button>
             <h3>Add Student</h3>
-            <input type="email" placeholder="Student name" />
+            
+            <input type="email" placeholder="Student email" />
             <select id="classDropdown"></select>
             <select id="testDropdown"></select>
-
-            <% if(!err && questions && questions.length > 0) { %>
-                <% questions.forEach((question) => { %>
-                    <li><input type="checkbox" /> <%= question.className %> 1</li>
+    
+            <ul>
+                <% if (questions && questions.length > 0) { %>
+                    <% questions.forEach((question) => { %>
+                        <li>
+                            <input type="checkbox" name="questions" value="<%= question.id %>" />
+                            <%= question.text %> 
+                        </li>
                     <% }) %>
-            <% } %>
-            <li><input type="checkbox" /> Question 1</li>
-            <li><input type="checkbox" /> Question 2</li>
-            <li><input type="checkbox" /> Question 3</li>
-
+                <% } else { %>
+                    <li>No questions available</li>
+                <% } %>
+            </ul>
         </div>
     </div>
+    
     
     <div id="viewStudentPopup" class="popup">
         <div class="popup-content">

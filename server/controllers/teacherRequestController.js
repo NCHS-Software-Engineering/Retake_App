@@ -5,7 +5,9 @@ const { getUsersTokenData } = require("../middleware/jwt");
 exports.requests = async (req, res) => {
     try {
         const userData = getUsersTokenData(req);
-        const [results] = await pool.query(
+
+        // Fetching retake requests
+        const [requests] = await pool.query(
             `SELECT 
                 r.userId, u.googleToken, 
                 r.testId, t.testName, 
@@ -18,11 +20,28 @@ exports.requests = async (req, res) => {
             [userData.id]
         );
 
-        console.log(results);
-        
-        return res.status(200).render("dash/teacher/requests", {err: false, requests: results});
+        // Fetching questions
+        const [questions] = await pool.query(
+            `SELECT q.questionId, q.text, q.classId
+             FROM questions q
+             JOIN classes c ON q.classId = c.classId
+             WHERE c.teacherId = ?`,
+            [userData.id]
+        );
+
+        console.log({ requests, questions });
+
+        return res.status(200).render("dash/teacher/requests", { 
+            err: false, 
+            requests, 
+            questions 
+        });
     } catch (err) {
-        console.log(err);
-        return res.status(400).render("dash/teacher/requests", {err: "Something went wrong"})
+        console.error(err);
+        return res.status(400).render("dash/teacher/requests", { 
+            err: "Something went wrong", 
+            requests: [], 
+            questions: [] 
+        });
     }
-}
+};

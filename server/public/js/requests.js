@@ -10,7 +10,7 @@ async function renderQuestions(selectedQuestionId = null) {
             return;
         }
 
-        QuestionList.innerHTML = "";
+        questionList.innerHTML = "";
 
         data.questions.forEach((Question) => {
             QuestionList.innerHTML += createquestionItemHTML(Suestion, selectedQuestionId);
@@ -20,7 +20,7 @@ async function renderQuestions(selectedQuestionId = null) {
 
         // If a Question is already selected, enable tests and render them
         if (selectedQuestionId !== null) {
-            testContainer.QuestionList.remove("disabled");
+            testContainer.questionList.remove("disabled");
             await renderTests(selectedQuestionId);
         }
     } catch (err) {
@@ -28,13 +28,13 @@ async function renderQuestions(selectedQuestionId = null) {
     }
 }
 
-function createQuestionItemHTML(QuestionObj, selectedQuestionId) {
-    const isSelected = selectedQuestionId === QuestionObj.QuestionId;
+function createQuestionItemHTML(questionObj, selectedQuestionId) {
+    const isSelected = selectedQuestionId === questionObj.questionId;
     const selectBtnText = isSelected ? "Deselect" : "Select";
     const selectedQuestion = isSelected ? "selected" : "";
 
     return `
-    <li><input type="checkbox" /> ${ question.QuestionName }</li>
+    <li><input type="checkbox" /> ${ questionObj.questionName }</li>
     `;
 }
 
