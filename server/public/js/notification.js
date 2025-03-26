@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (url) {
                 window.open(url, '_blank');
             } else {
-                window.open('/', '_blank');
+                window.open('/dash/requests', '_blank');
             }
         });
     });

@@ -5,6 +5,16 @@ const { getUsersTokenData } = require("../middleware/jwt");
 exports.requests = async (req, res) => {
     try {
         const userData = getUsersTokenData(req);
+        const requestss = [
+            { "email": "test", "className": "sigma", "testId": "12221" }
+        ]
+        
+        return res.status(200).render("dash/teacher/requests", { 
+            err: false, 
+            requestss,
+            questions: []
+        });
+
 
         // Fetching retake requests
         const [requests] = await pool.query(
@@ -22,7 +32,7 @@ exports.requests = async (req, res) => {
 
         // Fetching questions
         const [questions] = await pool.query(
-            `SELECT q.questionId, q.text, q.classId
+            `SELECT q.questionId, q.question, q.classId
              FROM questions q
              JOIN classes c ON q.classId = c.classId
              WHERE c.teacherId = ?`,
