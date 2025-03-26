@@ -30,7 +30,7 @@ exports.requests = async (req, res) => {
             [userData.id]
         );
 
-        // Fetching questions
+        // needs rewritng
         const [questions] = await pool.query(
             `SELECT q.questionId, q.question, q.classId
              FROM questions q
