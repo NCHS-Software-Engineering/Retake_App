@@ -68,12 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // check if there is no notifications
-            if (data.rows.length === 0) {
-                document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
-                return;
-            }
+            // if (data.rows.length === 0) {
+            //     document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
+            //     return;
+            // }
 
             // Render them in for loop
+            // Commented out dynamic rendering of notifications
+            /*
             data.rows.forEach(row => {
                 const notificationItem = document.createElement('div');
                 notificationItem.classList.add('notification-item');
@@ -82,6 +84,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="notification-title">Retake Request</span>
                 <span class="notification-message">${row.username} requested to retake ${row.testName}.</span>
                 <button class="delete-notification">&times;</button>`;                
+                document.getElementById("popup-content").appendChild(notificationItem);
+            });
+            */
+
+            // Static rendering of 3 notification items
+            const staticNotifications = [
+                { title: 'Retake Request', message: 'Mitch requested to retake Math Test.', url: '/math-test' },
+                { title: 'Retake Request', message: 'Mitch requested to retake Science Test.', url: '/science-test' },
+                { title: 'Retake Request', message: 'Mitch requested to retake History Test.', url: '/history-test' }
+            ];
+
+            staticNotifications.forEach(notification => {
+                const notificationItem = document.createElement('div');
+                notificationItem.classList.add('notification-item');
+                notificationItem.setAttribute('data-url', notification.url);
+                notificationItem.innerHTML = `
+                <span class="notification-title">${notification.title}</span>
+                <span class="notification-message">${notification.message}</span>
+                <button class="delete-notification">&times;</button>`;
                 document.getElementById("popup-content").appendChild(notificationItem);
             });
 
