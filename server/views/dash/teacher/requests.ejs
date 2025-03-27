@@ -127,18 +127,7 @@
             <select id="classDropdown"></select>
             <select id="testDropdown"></select>
     
-            <ul>
-                <% if (questions && questions.length > 0) { %>
-                    <% questions.forEach((question) => { %>
-                        <li>
-                            <input type="checkbox" name="questions" value="<%= question.id %>" />
-                            <%= question.text %> 
-                        </li>
-                    <% }) %>
-                <% } else { %>
-                    <li>No questions available</li>
-                <% } %>
-            </ul>
+
         </div>
     </div>
     
