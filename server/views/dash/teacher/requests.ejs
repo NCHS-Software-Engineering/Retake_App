@@ -132,11 +132,40 @@
             <button class="close-btn" onclick="closePopup('addStudentPopup')">X</button>
             <h3>Add Student</h3>
             
-            <input type="email" placeholder="Student email" />
-            <select id="classDropdown"></select>
-            <select id="testDropdown"></select>
-    
-
+            <input type="email" placeholder="Student name" />
+            <br><br>
+            <select id="classDropdown">
+                <option value="" disabled selected>Select a class</option>
+                <% if (!err && classes && classes.length> 0) {  %>
+                    <% classes.forEach((class)=> { %>
+                        <option data-class-id="<%= class.classId %>"><%= class.className %></option>
+                    <% }); %>
+                <% } %>
+            </select>
+            <br><br>
+            <select id="testDropdown">
+                <option value="" disabled selected>Select a test</option>
+                <% if (!err && tests && tests.length> 0) {  %>
+                    <% tests.forEach((test)=> { %>
+                        <option data-class-id="<%= test.testId %>"><%= test.testName %></option>
+                    <% }); %>
+                <% } %>
+                
+                <option data-class-id="<%= test.testId %>">Unit2</option>
+                
+            </select>
+            <br><br>
+            <div class="request-list-add">
+                <ol>
+                    <% if (!err && questions && questions.length> 0) {  %>
+                        <% questions.forEach((question)=> { %>
+                            <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.text %></li>
+                        <% }); %>
+                    <% } %>
+                </ol>
+            </div>
+            <br>
+            <button class="submit-btn" onclick="closePopup('addStudentPopup')">Submit</button>
         </div>
     </div>
     
