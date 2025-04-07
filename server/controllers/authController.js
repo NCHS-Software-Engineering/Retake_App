@@ -8,6 +8,7 @@ const client = new OAuth2Client(
     'http://localhost:8080/auth/google/callback'
 );
 
+
 exports.googleCallback = async (req, res) => {
     try {
         const { code } = req.query;
@@ -17,8 +18,8 @@ exports.googleCallback = async (req, res) => {
 
         const { tokens } = await client.getToken({
             code,
-            client_id: config.clientId,
-            client_secret: config.clientSecret,
+            client_id: config.google.clientId,
+            client_secret: config.google.clientSecret,
             redirect_uri: 'http://localhost:8080/auth/google/callback',
         });
 
@@ -28,7 +29,7 @@ exports.googleCallback = async (req, res) => {
 
         const ticket = await client.verifyIdToken({
             idToken: tokens.id_token,
-            audience: config.clientId,
+            audience: config.google.clientId,
         });
 
         const payload = ticket.getPayload();
@@ -45,33 +46,42 @@ exports.googleCallback = async (req, res) => {
                 } else if (email.endsWith('@naperville203.org')) {
                     role = "teacher";
                 }
+
                 const [rows] = await pool.query('SELECT * FROM users WHERE googleToken = ?', [googleToken]);
 
-                role = "teacher"; // delete later
+                if (rows.length > 0) {
+                    // User already exists, log them in
+                    const user = rows[0];
+                    const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
+                    const accessToken = createToken(tokenData);
 
-                if (rows.length === 0) {
+                    res.cookie('access-token', accessToken, {
+                        maxAge: 2592000000,
+                        httpOnly: true
+                    });
+
+                    return res.status(200).redirect("/dash");
+                } else {
+                    // Create a new user
                     const [result] = await pool.query(
                         'INSERT INTO users (username, googleToken, type) VALUES (?, ?, ?)', [
                         username,
                         googleToken,
                         role,
-                    ]
-                    );
+                    ]);
 
-                    rows[0] = { userId: result.insertId, type: role };
+                    const user = { userId: result.insertId, type: role };
+
+                    const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
+                    const accessToken = createToken(tokenData);
+
+                    res.cookie('access-token', accessToken, {
+                        maxAge: 2592000000,
+                        httpOnly: true
+                    });
+
+                    return res.status(200).redirect("/dash");
                 }
-
-                const user = rows[0];
-
-                const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
-                const accessToken = createToken(tokenData);
-
-                res.cookie('access-token', accessToken, {
-                    maxAge: 2592000000,
-                    httpOnly: true
-                })
-
-                return res.status(200).redirect("/dash");
             } catch (err) {
                 console.error('Error during login:', err);
                 return res.status(500).render("pages/auth", { err: 'An error occurred, please try again later.' });
