@@ -139,9 +139,11 @@
             <div id="questionsList">
                 <p>Select questions for the test:</p>
                 <ul>
-                    <li><input type="checkbox" /> Question 1</li>
-                    <li><input type="checkbox" /> Question 2</li>
-                    <li><input type="checkbox" /> Question 3</li>
+                    <% if (!err && questions && questions.length> 0) {  %>
+                        <% questions.forEach((question)=> { %>
+                            <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.text %></li>
+                        <% }); %>
+                    <% } %>
                 </ul>
             </div>
         </div>
@@ -155,6 +157,7 @@
             document.getElementById(id).style.display = "none";
         }
     </script>
+    <script src="/js/reqests.js"></script>
     
     <%- include("../../partials/footer") %>
 </body>
