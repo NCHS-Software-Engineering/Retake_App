@@ -47,7 +47,6 @@
             max-height: 300px;
             overflow-y: auto;
             padding-right: 10px;
-            scrollbar-width: none;
         }
         
         .request-item {
@@ -98,6 +97,16 @@
             cursor: pointer;
             float: right;
         }
+
+        .popup .submit-btn {
+            background: rgb(3, 155, 11);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
     </style>
 </head>
 
@@ -138,14 +147,15 @@
             <h3>View Student</h3>
             <div id="questionsList">
                 <p>Select questions for the test:</p>
-                <ul>
+                <ol>
                     <% if (!err && questions && questions.length> 0) {  %>
                         <% questions.forEach((question)=> { %>
                             <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.text %></li>
                         <% }); %>
                     <% } %>
-                </ul>
+                </ol>
             </div>
+            <button class="submit-btn" onclick="closePopup('viewStudentPopup')">Submit</button>
         </div>
     </div>
 
