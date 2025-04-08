@@ -121,7 +121,7 @@
         <div class="request-list" id="request-list">
             <% if(!err && requests && requests.length > 0) { %>
                 <% requests.forEach((request) => { %>
-                    <div class="request-item" onclick="openPopup('viewStudentPopup')"><%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
+                    <div class="request-item" data-set-id="<%=request.testId%>" onclick="openPopup('viewStudentPopup')"><%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
                     <% }) %>
             <% } %>
         </div>
@@ -177,9 +177,12 @@
             <div id="questionsList">
                 <p>Select questions for the test:</p>
                 <ol>
+                    <script>
+                        </script>
                     <% if (!err && questions && questions.length> 0) {  %>
                         <% questions.forEach((question)=> { %>
-                            <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.text %></li>
+                           
+                            <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.question %></li>
                         <% }); %>
                     <% } %>
                 </ol>
