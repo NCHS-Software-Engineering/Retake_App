@@ -37,24 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.removeEventListener('mouseup', stopResize);
     }
 
-    document.querySelectorAll('.delete-notification').forEach(button => {
-        button.addEventListener('click', function() {
-            this.parentElement.remove();
-        });
-    });
-
-
     // Make notification-item clickable
-    document.querySelectorAll('.notification-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const url = this.getAttribute('data-url');
-            if (url) {
-                window.open(url, '_blank');
-            } else {
-                window.open('/', '_blank');
-            }
-        });
-    });
+    // document.querySelectorAll('.notification-item').forEach(item => {
+    //     item.addEventListener('click', function() {
+    //         const url = this.getAttribute('data-url');
+    //         if (url) {
+    //             window.open(url, '_blank');
+    //         } else {
+    //             window.open('/', '_blank');
+    //         }
+    //     });
+    // });
 
     async function listNotifications() {
         document.getElementById("popup-content").innerHTML = '';
@@ -68,43 +61,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // check if there is no notifications
-            // if (data.rows.length === 0) {
-            //     document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
-            //     return;
-            // }
+            if (data.rows.length === 0) {
+                document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
+                return;
+            }
+
 
             // Render them in for loop
-            // Commented out dynamic rendering of notifications
-            /*
             data.rows.forEach(row => {
                 const notificationItem = document.createElement('div');
                 notificationItem.classList.add('notification-item');
                 notificationItem.setAttribute('data-url', row.url);
+                notificationItem.setAttribute('data-request-id', row.requestId); // Add requestId as a data attribute
                 notificationItem.innerHTML = `
                 <span class="notification-title">Retake Request</span>
                 <span class="notification-message">${row.username} requested to retake ${row.testName}.</span>
                 <button class="delete-notification">&times;</button>`;                
                 document.getElementById("popup-content").appendChild(notificationItem);
             });
-            */
+            
 
             // Static rendering of 3 notification items
-            const staticNotifications = [
-                { title: 'Retake Request', message: 'Mitch requested to retake Math Test.', url: '/math-test' },
-                { title: 'Retake Request', message: 'Mitch requested to retake Science Test.', url: '/science-test' },
-                { title: 'Retake Request', message: 'Mitch requested to retake History Test.', url: '/history-test' }
-            ];
+            // const staticNotifications = [
+            //     { title: 'Retake Request', message: 'Mitch requested to retake Math Test.', url: '/math-test' },
+            //     { title: 'Retake Request', message: 'Mitch requested to retake Science Test.', url: '/science-test' },
+            //     { title: 'Retake Request', message: 'Mitch requested to retake History Test.', url: '/history-test' }
+            // ];
 
-            staticNotifications.forEach(notification => {
-                const notificationItem = document.createElement('div');
-                notificationItem.classList.add('notification-item');
-                notificationItem.setAttribute('data-url', notification.url);
-                notificationItem.innerHTML = `
-                <span class="notification-title">${notification.title}</span>
-                <span class="notification-message">${notification.message}</span>
-                <button class="delete-notification">&times;</button>`;
-                document.getElementById("popup-content").appendChild(notificationItem);
-            });
+            // staticNotifications.forEach(notification => {
+            //     const notificationItem = document.createElement('div');
+            //     notificationItem.classList.add('notification-item');
+            //     notificationItem.setAttribute('data-url', notification.url);
+            //     notificationItem.innerHTML = `
+            //     <span class="notification-title">${notification.title}</span>
+            //     <span class="notification-message">${notification.message}</span>
+            //     <button class="delete-notification">&times;</button>`;
+            //     document.getElementById("popup-content").appendChild(notificationItem);
+            // });
+
+
+            deleteNotificationEventListeners();
 
         } catch (error) {
             console.error('Error fetching notifications:', error);
@@ -112,3 +108,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+function deleteNotificationEventListeners() {
+    document.querySelectorAll('.delete-notification').forEach(button => {
+        button.addEventListener('click', function () {
+            // get the requestId from the parent element
+            const requestId = this.parentElement.getAttribute('data-request-id');
+            
+            // send a delete request to the server
+            fetch('/notification/remove', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ retakeId: requestId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.err) {
+                    console.error('Error deleting notification:', data.err);
+                    return;
+                }
+                // Remove the notification item from the DOM
+                this.parentElement.remove();
+            })
+            .catch(error => {
+                console.error('Error deleting notification:', error);
+            });
+        })   
+    });
+}

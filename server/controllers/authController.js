@@ -33,9 +33,11 @@ exports.googleCallback = async (req, res) => {
         });
 
         const payload = ticket.getPayload();
-
         const email = payload.email;
         const username = payload.name;
+        // Use sub (subject) as the unique identifier provided by Google
+        const googleId = payload.sub;
+        // Keeping the latest id_token for other potential uses
         const googleToken = tokens.id_token;
 
         if (email.endsWith('naperville203.org')) {
@@ -47,12 +49,20 @@ exports.googleCallback = async (req, res) => {
                     role = "teacher";
                 }
 
-                const [rows] = await pool.query('SELECT * FROM users WHERE googleToken = ?', [googleToken]);
+                // Using googleId to check for existing users
+                const [rows] = await pool.query(
+                    'SELECT * FROM users WHERE googleId = ?', [googleId]
+                );
 
                 if (rows.length > 0) {
                     // User already exists, log them in
                     const user = rows[0];
-                    const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
+                    // (Optional) Update the googleToken if needed
+                    await pool.query(
+                        'UPDATE users SET googleToken = ? WHERE googleId = ?', [googleToken, googleId]
+                    );
+
+                    const tokenData = { googleToken, id: user.userId, type: user.type };
                     const accessToken = createToken(tokenData);
 
                     res.cookie('access-token', accessToken, {
@@ -62,17 +72,20 @@ exports.googleCallback = async (req, res) => {
 
                     return res.status(200).redirect("/dash");
                 } else {
-                    // Create a new user
+                    // Create a new user with googleId as unique identifier
                     const [result] = await pool.query(
-                        'INSERT INTO users (username, googleToken, type) VALUES (?, ?, ?)', [
+                        'INSERT INTO users (username, email, googleId, googleToken, type) VALUES (?, ?, ?, ?, ?)', [
                         username,
+                        email,
+                        googleId,
                         googleToken,
                         role,
-                    ]);
+                    ]
+                    );
 
                     const user = { userId: result.insertId, type: role };
 
-                    const tokenData = { googleToken: googleToken, id: user.userId, type: user.type };
+                    const tokenData = { googleToken, id: user.userId, type: user.type };
                     const accessToken = createToken(tokenData);
 
                     res.cookie('access-token', accessToken, {
