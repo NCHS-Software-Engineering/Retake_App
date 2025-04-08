@@ -37,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.removeEventListener('mouseup', stopResize);
     }
 
-    // Make notification-item clickable
-    // document.querySelectorAll('.notification-item').forEach(item => {
-    //     item.addEventListener('click', function() {
-    //         const url = this.getAttribute('data-url');
-    //         if (url) {
-    //             window.open(url, '_blank');
-    //         } else {
-    //             window.open('/', '_blank');
-    //         }
-    //     });
-    // });
-
     async function listNotifications() {
         document.getElementById("popup-content").innerHTML = '';
         try {
@@ -101,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
             deleteNotificationEventListeners();
+            notificationClickable();
 
         } catch (error) {
             console.error('Error fetching notifications:', error);
@@ -137,4 +126,18 @@ function deleteNotificationEventListeners() {
             });
         })   
     });
+}
+
+function notificationClickable() {
+        // Make notification-item clickable
+        document.querySelectorAll('.notification-message').forEach(item => {
+            item.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                if (url) {
+                    window.open(url, '_blank');
+                } else {
+                    window.open('/dash/requests', '_blank');
+                }
+            });
+        });
 }
