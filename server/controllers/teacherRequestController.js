@@ -29,6 +29,13 @@ exports.requests = async (req, res) => {
              WHERE t.teacherId = ?`,
             [userData.id]
         );
+        const [classes] = await pool.query(
+            `SELECT c.classId, c.className, c.teacherId
+             FROM classes c
+             JOIN tests t ON t.testId = t.testId
+             WHERE t.teacherId = ?`,
+            [userData.id]
+        );
 
         return res.status(200).render("dash/teacher/requests", { 
             err: false, 
