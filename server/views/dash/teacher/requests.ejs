@@ -145,17 +145,9 @@
             <br><br>
             <select id="testDropdown">
                 <option value="" disabled selected>Select a test</option>
-                <% if (!err && tests && tests.length> 0) {  %>
-                    <% tests.forEach((test)=> { %>
-                        <option data-class-id="<%= test.testId %>"><%= test.testName %></option>
-                    <% }); %>
-                <% } %>
-                
-                <option data-class-id="<%= test.testId %>">Unit2</option>
-                
             </select>
             <br><br>
-            <div class="request-list-add">
+            <div id="questionList" class="request-list-add">
                 <ol>
                     <% if (!err && questions && questions.length> 0) {  %>
                         <% questions.forEach((question)=> { %>
@@ -191,14 +183,6 @@
         </div>
     </div>
 
-    <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-        function closePopup(id) {
-            document.getElementById(id).style.display = "none";
-        }
-    </script>
     <script src="/js/reqests.js"></script>
     
     <%- include("../../partials/footer") %>
