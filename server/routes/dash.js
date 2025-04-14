@@ -30,7 +30,8 @@ router.get("/listQuestions", validateTeacher, teacherClassesController.listQuest
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
 
 // Manage Retake Requests
-router.get("/requests", validateTeacher, teacherRequestController.requests)
+router.get("/requests", validateTeacher, teacherRequestController.requests);
+router.post("/createNewStuRequest", validateTeacher, teacherRequestController.createNewStuRequest);
 
 
 // --------------------------------------------------

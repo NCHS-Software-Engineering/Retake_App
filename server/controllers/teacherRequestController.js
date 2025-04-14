@@ -3,7 +3,8 @@ const { getUsersTokenData } = require("../middleware/jwt");
 
 // Render retake request page
 exports.requests = async (req, res) => {
-    try {const userData = getUsersTokenData(req);
+    try {
+        const userData = getUsersTokenData(req);
 
         
 
@@ -21,21 +22,9 @@ exports.requests = async (req, res) => {
         //     [userData.id]
         // );
 
-        // needs rewritng
-        const [questions] = await pool.query(
-            `SELECT q.questionId, q.question, q.testId
-             FROM questions q
-             JOIN tests t ON t.testId = t.testId
-             WHERE t.teacherId = ?`,
-            [userData.id]
-        );
-        const [classes] = await pool.query(
-            `SELECT c.classId, c.className, c.teacherId
-             FROM classes c
-             JOIN tests t ON t.testId = t.testId
-             WHERE t.teacherId = ?`,
-            [userData.id]
-        );
+        const [classes] = await pool.query(`
+            SELECT classId, className FROM classes WHERE teacherId = ?`,
+            [userData.id]);
 
         return res.status(200).render("dash/teacher/requests", { 
             err: false, 
@@ -103,7 +92,7 @@ exports.requests = async (req, res) => {
                 }
         
             ], 
-            questions 
+            classes,
         });
     } catch (err) {
         console.error(err);
@@ -113,4 +102,26 @@ exports.requests = async (req, res) => {
             questions: [] 
         });
     }
+};
+
+
+exports.createNewStuRequest = async (req, res) => {
+
+    try {
+        const userData = getUsersTokenData(req);
+        const { testId, usersName } = req.body;
+
+        // Insert into retakeRequests table and add in testId and usersName, and make userId 0
+        const [result] = await pool.query(
+            `INSERT INTO retakeRequests (userId, testId, usersName) 
+            VALUES (?, ?, ?)`,
+            [0, testId, usersName]
+        );
+
+        return res.status(200).json({ err: false, msg: "Added student successfully" });
+    } catch (err) {
+        console.error(err);
+        return res.status(400).json({ err: "Something went wrong", requests: [] });
+    }
+
 };

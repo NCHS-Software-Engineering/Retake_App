@@ -45,6 +45,8 @@ async function renderTests(classId){
         const response = await fetch(`/dash/listTests?classId=${classId}`);
         const data = await response.json();
 
+        console.log(data.tests);
+
         if (data.err) {
             return;
         }
@@ -56,6 +58,12 @@ async function renderTests(classId){
         addListenersForTestItems();
     } catch (err) {
     }
+}
+
+function createTestItemHTML(testName, testId) {
+    return `
+    <option value="${testId}" data-class-id="${testId}">${testName}</option>
+    `;
 }
 
 function createClassItemHTML(testName, testId) {
@@ -98,3 +106,51 @@ function createQuestionItemHTML(questionText, questionId) {
     <li value="${questionId}"><input type="checkbox" /> ${questionText}</li>
     `;
 }
+
+/*
+
+         <div id="questionsList">
+                <p>Select questions for the test:</p>
+                <ol>
+                    <script>
+                        </script>
+                    <% if (!err && questions && questions.length> 0) {  %>
+                        <% questions.forEach((question)=> { %>
+                           
+                            <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.question %></li>
+                        <% }); %>
+                    <% } %>
+                </ol>
+            </div>
+*/
+
+document.getElementById("createNewStuRequest").addEventListener("click", (e) => {
+
+    // Get the users name from the form and testId from the testDropdown
+    const usersName = document.getElementById("usersName").value;
+    const testId = testDropdown.value;
+
+    // Make fetch post to /dash/createNewStuRequest with the testId and usersName
+    fetch("/dash/createNewStuRequest", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            testId: testDropdown.value,
+            usersName: usersName
+        }),
+    })
+
+    // fetch("/dash/createNewStuRequest", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //         testId: testDropdown.value,
+    //         questionIds: Array.from(QuestionList.querySelectorAll("input[type='checkbox']:checked")).map((checkbox) => checkbox.parentElement.getAttribute("value"))
+    //     }),
+    // })
+
+})
