@@ -6,33 +6,19 @@ exports.requests = async (req, res) => {
     try {
         const userData = getUsersTokenData(req);
 
-        
-
-        // Fetching retake requests
-        //  const [requests] = await pool.query(
-        //      `SELECT 
-        //          r.userId, 
-        //          r.testId
-        //       FROM retakeRequests r
-        //       JOIN tests t ON r.testId = t.testId
-        //       JOIN users u ON r.userId = u.userId
-        //       JOIN classes c ON t.classId = c.classId
-        //       WHERE t.teacherId = ?`, 
-        //      [userData.id]
-        //  );
-
         const [classes] = await pool.query(`
             SELECT classId, className FROM classes WHERE teacherId = ?`,
             [userData.id]);
 
         const [requests] = await pool.query(`
-            SELECT r.userId, r.testId, u.email, c.className, t.testName
+            SELECT  r.testId, u.email, c.className, t.testName
             FROM retakeRequests r
+            JOIN users u
             JOIN tests t ON r.testId = t.testId
-            JOIN users u ON r.userId = u.userId
             JOIN classes c ON t.classId = c.classId
             WHERE t.teacherId = ?
             `, [userData.id]);
+
         return res.status(200).render("dash/teacher/requests", { 
             err: false, 
             requests,
@@ -40,6 +26,7 @@ exports.requests = async (req, res) => {
 
         });
     } catch (err) {
+        console.log(err)
         return res.status(400).render("dash/teacher/requests", { 
             err: "Something went wrong", 
             requests: [], 
@@ -47,7 +34,6 @@ exports.requests = async (req, res) => {
         });
     }
 };
-
 
 exports.createNewStuRequest = async (req, res) => {
 
