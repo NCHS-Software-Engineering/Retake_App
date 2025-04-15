@@ -21,7 +21,6 @@ exports.requests = async (req, res) => {
         //      [userData.id]
         //  );
 
-<<<<<<< Updated upstream
         const [classes] = await pool.query(`
             SELECT classId, className FROM classes WHERE teacherId = ?`,
             [userData.id]);
@@ -93,17 +92,7 @@ exports.requests = async (req, res) => {
         
             ], 
             classes,
-=======
-        // needs rewritng
-     
-  
-  
-                const [classes] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY classId ASC", [userData.id]);
-        return res.status(200).render("dash/teacher/requests", { 
-            err: false, 
-            requests:[],
-            classes:[]
->>>>>>> Stashed changes
+
         });
     } catch (err) {
         console.error(err);
