@@ -58,7 +58,7 @@ async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
         if (response.ok) {
             alert(data.msg);  // Success message
         } else {
-            alert(`Error: ${data.err}`);
+            //alert(`Error: ${data.err}`);
         }
     } catch (error) {
         console.error("Failed to save order:", error);

@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/classes.css" />
 </head>
-
+    <style>
+        
+    </style>
 <body>
     <%- include("../../partials/header") %>
 
@@ -20,25 +22,23 @@
                     <button id="add-class-btn" class="btn btn-add">Add Class</button>
                 </div>
                 <div class="scrollable" id="classes-list">
-                    <% if (!err && classes && classes.length> 0) { %>
-                        <% classes.forEach((classObj)=> { %>
-                            <div class="item draggable" data-class-id="<%= classObj.classId %>" >
-                                <p>
-                                    <%= classObj.className %>
-                                </p>
-                                
-                                <div class="item-buttons">
-                                    <button class="btn btn-select">Select</button>
-                                    <button class="btn btn-rename">Rename</button>
-                                    <button class="btn btn-delete">Delete</button>
-                                </div>
-
-                                <div class="handle"></div>
+                    <% if (!err && classes && classes.length > 0) { %>
+                      <% classes.forEach((classObj) => { %>
+                        <div class="item draggable" data-class-id="<%= classObj.classId %>">
+                          <div class="item-main">
+                            <p><%= classObj.className %></p>
+                            <div class="item-buttons">
+                              <button class="btn btn-select">Select</button>
+                              <button class="btn btn-rename">Rename</button>
+                              <button class="btn btn-delete">Delete</button>
                             </div>
-                        <% }); %>
+                          </div>
+                          <div class="handle"></div>
+                        </div>
+                      <% }); %>
                     <% } %>
-
-                </div>
+                  </div>
+                  
             </div>
 
 
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <p id="Order"></p>
+        <p id="Order" hidden=true></p>
         <%- include("../../partials/footer") %>
 
         <script src="/js/classes.js"></script>
