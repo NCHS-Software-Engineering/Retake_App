@@ -40,7 +40,6 @@ exports.requests = async (req, res) => {
 
         });
     } catch (err) {
-        console.error(err);
         return res.status(400).render("dash/teacher/requests", { 
             err: "Something went wrong", 
             requests: [], 
