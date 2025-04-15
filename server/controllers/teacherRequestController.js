@@ -9,19 +9,19 @@ exports.requests = async (req, res) => {
         
 
         // Fetching retake requests
-        // const [requests] = await pool.query(
-        //     `SELECT 
-        //         r.userId, u.googleToken, 
-        //         r.testId, t.testName, 
-        //         t.classId, c.className
-        //      FROM retakeRequests r
-        //      JOIN tests t ON r.testId = t.testId
-        //      JOIN users u ON r.userId = u.userId
-        //      JOIN classes c ON t.classId = c.classId
-        //      WHERE t.teacherId = ?`, 
-        //     [userData.id]
-        // );
+        //  const [requests] = await pool.query(
+        //      `SELECT 
+        //          r.userId, 
+        //          r.testId
+        //       FROM retakeRequests r
+        //       JOIN tests t ON r.testId = t.testId
+        //       JOIN users u ON r.userId = u.userId
+        //       JOIN classes c ON t.classId = c.classId
+        //       WHERE t.teacherId = ?`, 
+        //      [userData.id]
+        //  );
 
+<<<<<<< Updated upstream
         const [classes] = await pool.query(`
             SELECT classId, className FROM classes WHERE teacherId = ?`,
             [userData.id]);
@@ -93,13 +93,24 @@ exports.requests = async (req, res) => {
         
             ], 
             classes,
+=======
+        // needs rewritng
+     
+  
+  
+                const [classes] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY classId ASC", [userData.id]);
+        return res.status(200).render("dash/teacher/requests", { 
+            err: false, 
+            requests:[],
+            classes:[]
+>>>>>>> Stashed changes
         });
     } catch (err) {
         console.error(err);
         return res.status(400).render("dash/teacher/requests", { 
             err: "Something went wrong", 
-            requests: [], 
-            questions: [] 
+            requests, 
+            classes 
         });
     }
 };
