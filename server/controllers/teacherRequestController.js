@@ -6,7 +6,7 @@ exports.requests = async (req, res) => {
 
     // <%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %>
 
-    return res.status(200).render("dash/teacher/requests", { err: false, requests: [
+   
 
         
 
