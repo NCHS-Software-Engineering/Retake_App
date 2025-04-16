@@ -13,11 +13,11 @@ exports.requests = async (req, res) => {
         const [requests] = await pool.query(`
             SELECT  r.testId, u.email, c.className, t.testName
             FROM retakeRequests r
-            JOIN users u
+            JOIN users u ON u.userId = ?
             JOIN tests t ON r.testId = t.testId
             JOIN classes c ON t.classId = c.classId
             WHERE t.teacherId = ?
-            `, [userData.id]);
+            `, [userData.id,userData.id]);
 
         return res.status(200).render("dash/teacher/requests", { 
             err: false, 

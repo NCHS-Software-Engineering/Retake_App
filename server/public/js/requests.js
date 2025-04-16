@@ -2,11 +2,14 @@ const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
 
 function openPopup(id) {
-    document.getElementById(id).style.display = "flex";
+    console.log(id);
+ document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
+    
     document.getElementById(id).style.display = "none";
+    
 }
 
 const classDropdown = document.getElementById("classDropdown");
@@ -83,7 +86,7 @@ async function renderQuestions(testId){
     </ol>
     */
     try {
-        questionList.innerHTML = `<ol>`;
+        QuestionList.innerHTML = `<ul id="myList">`;
 
         const response = await fetch(`/dash/listQuestions?testId=${testId}`);
         const data = await response.json();
@@ -93,17 +96,19 @@ async function renderQuestions(testId){
         }
 
         data.questions.forEach((question) => {
-            questionList.innerHTML += createQuestionItemHTML(question.text, question.questionId);
+            QuestionList.innerHTML += createQuestionItemHTML(question.question, question.questionId);
         });
 
-        questionList.innerHTML += `</ol>`;
+        QuestionList.innerHTML += `</ul>`;
     } catch (err) {
     }
 }
 
 function createQuestionItemHTML(questionText, questionId) {
     return `
-    <li value="${questionId}"><input type="checkbox" /> ${questionText}</li>
+    <li data-question-id="${questionId}">
+        <input type="checkbox" /> ${questionText}
+    </li>
     `;
 }
 
