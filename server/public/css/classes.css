@@ -394,3 +394,29 @@ Layout of each item: two lines
     margin: 10px 0;
     pointer-events: none;
   }
+  
+  .item {
+    position: relative;
+  }
+  
+  /* Right-align the handle absolutely inside the item */
+  .handle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 2.5rem;
+    background: radial-gradient(circle, #555 30%, transparent 30%) 0 0 / 7px 7px,
+                radial-gradient(circle, #555 30%, transparent 30%) 7px 7px / 7px 7px;
+    background-repeat: repeat;
+    cursor: grab;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    opacity: 0.6;
+  }
+  
+  .handle:hover {
+    opacity: 1;
+  }
+  

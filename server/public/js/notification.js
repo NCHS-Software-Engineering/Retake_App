@@ -48,10 +48,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // check if there is no notifications
-            if (data.rows.length === 0) {
-                document.getElementById("popup-content").innerHTML = `<p>No notifications</p>`;
-                return;
+
+    // Make notification-item clickable
+    document.querySelectorAll('.notification-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                window.open('/dash/requests', '_blank');
+
             }
 
 

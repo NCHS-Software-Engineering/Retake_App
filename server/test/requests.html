@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Retake Requests</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <style>
+        /* Override styles */
+        .container {
+            width: 60%;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .form-header h2 {
+            color: #dc4c4c;
+        }
+        
+        .add-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .add-btn:hover {
+            background: #0056b3;
+        }
+        
+        .request-list {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+            
+        }
+        
+        .request-list-add {
+            max-height: 300px;
+            overflow-y: auto;
+            padding-right: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .request-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .request-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        .popup-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 50%;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .popup .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .popup .submit-btn {
+            background: rgb(3, 155, 11);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include("../../partials/header") %>
+    
+    <main class="container">
+        <div class="form-header">
+            <h2>Student Retake Requests</h2>
+            <button class="add-btn" onclick="openPopup('addStudentPopup')">+</button>
+        </div>
+        <div class="request-list" id="request-list">
+            <% if(!err && requests && requests.length > 0) { %>
+                <% requests.forEach((request) => { %>
+                    <div class="request-item" onclick="openPopup('viewStudentPopup')"><%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
+                    <% }) %>
+            <% } %>
+        </div>
+    </main>
+
+    <div id="addStudentPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('addStudentPopup')">X</button>
+            <h3>Add Student</h3>
+            
+            <input type="email" placeholder="Student name" />
+            <br><br>
+            <select id="classDropdown">
+                <option value="" disabled selected>Select a class</option>
+                <option data-class-id="<%= class.classId %>">APCS</option>
+                <option data-class-id="<%= class.classId %>">Prog1</option>
+                <option data-class-id="<%= class.classId %>"><%= class.className %></option>
+            </select>
+            <br><br>
+            <select id="testDropdown">
+                <option value="" disabled selected>Select a test</option>
+                <option data-class-id="<%= test.testId %>">Unit1</option>
+                <option data-class-id="<%= test.testId %>">Unit2</option>
+                <option data-class-id="<%= test.testId %>"><%= test.testName %></option>
+            </select>
+            <br><br>
+            <div class="request-list-add">
+                <ol>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a variable in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a function and how is it used?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What are loops in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an if-else statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between == and === in JavaScript?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an array?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a string in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a for loop used for?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What does 'null' mean?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a syntax error?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is debugging?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a comment in code?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a data type?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is recursion?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a while loop?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a Boolean value?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the purpose of a return statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between let, var, and const?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is object-oriented programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a class in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is inheritance in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an algorithm?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a parameter in a function?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between a parameter and an argument?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a loop counter?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What does 'break' do in a loop?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a try-catch block used for?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a switch statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the purpose of indentation?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a library in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an IDE?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between compilation and interpretation?</li>
+
+                </ol>
+            </div>
+            <br>
+            <button class="submit-btn" onclick="closePopup('addStudentPopup')">Submit</button>
+        </div>
+    </div>
+    
+    
+    <div id="viewStudentPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('viewStudentPopup')">X</button>
+            <h3>View Student</h3>
+            <div id="questionsList">
+                <p>Select questions for the test:</p>
+                <div class="request-list">
+                <ol>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a variable in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a function and how is it used?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What are loops in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an if-else statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between == and === in JavaScript?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an array?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a string in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a for loop used for?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What does 'null' mean?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a syntax error?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is debugging?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a comment in code?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a data type?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is recursion?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a while loop?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a Boolean value?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the purpose of a return statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between let, var, and const?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is object-oriented programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a class in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is inheritance in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an algorithm?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a parameter in a function?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between a parameter and an argument?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a loop counter?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What does 'break' do in a loop?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a try-catch block used for?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a switch statement?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the purpose of indentation?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is a library in programming?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is an IDE?</li>
+                    <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> What is the difference between compilation and interpretation?</li>
+
+                </ol>
+            </div>
+            </div>
+            <button class="submit-btn" onclick="closePopup('viewStudentPopup')">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+    <script src="/js/reqests.js"></script>
+    
+    <%- include("../../partials/footer") %>
+</body>
+
+</html>

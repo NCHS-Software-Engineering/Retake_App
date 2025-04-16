@@ -7,98 +7,7 @@
     <title>Student Retake Requests</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
     <link rel="stylesheet" href="/css/base.css" />
-    <style>
-        /* Override styles */
-        .container {
-            width: 60%;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .form-header h2 {
-            color: #dc4c4c;
-        }
-        
-        .add-btn {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .add-btn:hover {
-            background: #0056b3;
-        }
-        
-        .request-list {
-            max-height: 300px;
-            overflow-y: auto;
-            padding-right: 10px;
-            scrollbar-width: none;
-        }
-        
-        .request-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-bottom: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.2s ease-in-out;
-            cursor: pointer;
-        }
-        
-        .request-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none;
-        }
-        
-        .popup-content {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            width: 50%;
-            max-height: 70vh;
-            overflow-y: auto;
-        }
-        
-        .popup .close-btn {
-            background: red;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            float: right;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/requests.css" />
 </head>
 
 <body>
@@ -111,9 +20,9 @@
         </div>
         <div class="request-list" id="request-list">
             <% if(!err && requests && requests.length > 0) { %>
-                <% requests.forEach((request) => { %>
-                    <div class="request-item" onclick="openPopup('viewStudentPopup')"><%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
-                    <% }) %>
+                <% requests.forEach(function(request) { %>
+                    <div class="request-item" data-set-id="<%=request.testId%>" onclick="openPopup('viewStudentPopup')"><%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
+                    <% }); %>
             <% } %>
         </div>
     </main>
@@ -122,35 +31,41 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('addStudentPopup')">X</button>
             <h3>Add Student</h3>
-            <input type="email" placeholder="Student Email" />
-            <select id="classDropdown"></select>
-            <select id="testDropdown"></select>
-        </div>
-    </div>
-    
-    <div id="viewStudentPopup" class="popup">
-        <div class="popup-content">
-            <button class="close-btn" onclick="closePopup('viewStudentPopup')">X</button>
-            <h3>View Student</h3>
-            <div id="questionsList">
-                <p>Select questions for the test:</p>
-                <ul>
-                    <li><input type="checkbox" /> Question 1</li>
-                    <li><input type="checkbox" /> Question 2</li>
-                    <li><input type="checkbox" /> Question 3</li>
-                </ul>
+            
+            <input id="usersName" type="email" placeholder="Student name" />
+            <br><br>
+            <select id="classDropdown">
+                <option value="" disabled selected>Select a class</option>
+                <% if (!err && classes && classes.length> 0) {  %>
+                    <% classes.forEach(function(classItem) { %>
+                        <option data-class-id="<%= classItem.classId %>"><%= classItem.className %></option>
+                    <% }); %>
+                <% } %>
+            </select>
+            <br><br>
+            <select id="testDropdown">
+                <option value="" disabled selected>Select a test</option>
+            </select>
+            <br><br>
+            <div id="questionList" class="request-list-add">
             </div>
+            <br>
+            <button id = "createNewStuRequest" class="submit-btn" onclick="closePopup('addStudentPopup')">Submit</button>
         </div>
     </div>
 
+    
+    
+     <div id="viewStudentPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('viewStudentPopup')">X</button>
+            <h3>View Student</h3>
+            <button class="submit-btn" onclick="closePopup('viewStudentPopup')">Submit</button>
+        </div>
+    </div>
     <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-        function closePopup(id) {
-            document.getElementById(id).style.display = "none";
-        }
-    </script>
+        </script>
+    <script src="/js/requests.js"></script>
     
     <%- include("../../partials/footer") %>
 </body>

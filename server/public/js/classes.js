@@ -54,9 +54,17 @@ async function sendClassOrder() {
         });
 
         const data = await response.json();
+
+
+        if (response.ok) {
+            alert(data.msg);  // Success message
+        } else {
+            //alert(`Error: ${data.err}`);
+
         console.log(response);
         if (!response.ok) {
             alert(`Error: ${data.err}`);
+
         }
     } catch (error) {
         console.error("Failed to save order:", error);
