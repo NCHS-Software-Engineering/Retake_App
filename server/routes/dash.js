@@ -10,7 +10,6 @@ const { validateStudent, validateTeacher } = require("../middleware/roleValidati
 const teacherClassesController = require("../controllers/teacherClassesController");
 const teacherRequestController = require("../controllers/teacherRequestController");
 const studentDashController = require("../controllers/studentDashController");
-const dashNotificationsController = require("../controllers/dashNotificationsController");
 
 // --------------------------------------------------
 // Teacher Routes
@@ -28,6 +27,7 @@ router.post("/renameTest", validateTeacher, teacherClassesController.renameTest)
 router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTest);
 router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
+router.post("/updateOrder", validateTeacher, teacherClassesController.updateOrder);
 
 // Manage Retake Requests
 router.get("/requests", validateTeacher, teacherRequestController.requests);
@@ -74,6 +74,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-router.get("/manageClasses", teacherClassesController.updateOrder);
+
 
 module.exports = router;

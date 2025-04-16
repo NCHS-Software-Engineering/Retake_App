@@ -34,7 +34,7 @@ const handles = document.querySelectorAll('.handle');
 // EVENT LISTENERS
 // --------------------------
 /////////////////////////////////////////////////////////
-async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
+async function sendClassOrder() {
     const classContainer = [...container.querySelectorAll('.draggable')];
 
     if (!classContainer) {
@@ -45,7 +45,7 @@ async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
     const classIds = classContainer.map(el => el.dataset.classId);
 
     try {
-        const response = await fetch(url, {
+        const response = await fetch("/dash/updateOrder", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -55,10 +55,16 @@ async function sendClassOrder(url = "/teacherClassesController/updateOrder") {
 
         const data = await response.json();
 
+
         if (response.ok) {
             alert(data.msg);  // Success message
         } else {
             //alert(`Error: ${data.err}`);
+
+        console.log(response);
+        if (!response.ok) {
+            alert(`Error: ${data.err}`);
+
         }
     } catch (error) {
         console.error("Failed to save order:", error);
