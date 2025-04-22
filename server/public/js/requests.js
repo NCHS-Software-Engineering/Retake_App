@@ -8,8 +8,9 @@ function openPopup(id) {
 
 function closePopup(id) {
     
+    var clist=document.getElementsByClassName("questoin");
+    for (var i = 0; i < clist.length; ++i) { if (clist[i].checked = "checked") {console.log(clist[i].getAttribute("data-question-id"));} }
     document.getElementById(id).style.display = "none";
-    
 }
 
 const classDropdown = document.getElementById("classDropdown");
@@ -106,7 +107,7 @@ async function renderQuestions(testId){
 
 function createQuestionItemHTML(questionText, questionId) {
     return `
-    <li data-question-id="${questionId}">
+    <li class="questoin", data-question-id="${questionId}">
         <input type="checkbox" /> ${questionText}
     </li>
     `;
