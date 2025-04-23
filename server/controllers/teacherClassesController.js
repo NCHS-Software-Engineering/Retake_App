@@ -298,8 +298,9 @@ exports.listQuestions = async (req, res) => {
         const query = `
             SELECT 
                 t.testName,
-                q.questionNum,
+                q.questionId,
                 q.question
+                
             FROM 
                 tests t
             LEFT JOIN 
@@ -309,7 +310,7 @@ exports.listQuestions = async (req, res) => {
             WHERE 
                 t.testId = ? AND t.teacherId = ?
             ORDER BY 
-                q.questionNum ASC
+                q.questionId ASC
         `;
 
         const [results] = await pool.query(query, [testId, teacherId]);
@@ -321,9 +322,9 @@ exports.listQuestions = async (req, res) => {
         // Structure the response
         const response = {
             testName: results[0].testName || null,
-            questions: results[0].questionNum
+            questions: results[0].questionId
                 ? results.map(row => ({
-                    questionNum: row.questionNum,
+                    questionNum: row.questionId,
                     question: row.question
                 }))
                 : []

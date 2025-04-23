@@ -9,7 +9,7 @@ function openPopup(id) {
 function closePopup(id) {
     
     var clist=document.getElementsByClassName("questoin");
-    for (var i = 0; i < clist.length; ++i) { if (clist[i].checked = "checked") {console.log(clist[i].getAttribute("data-question-id"));} }
+    for (var i = 0; i < clist.length; ++i) { if (clist[i].checked = "checked") {console.log(clist[i].getAttribute("id"));} }
     document.getElementById(id).style.display = "none";
 }
 
@@ -97,7 +97,8 @@ async function renderQuestions(testId){
         }
 
         data.questions.forEach((question) => {
-            QuestionList.innerHTML += createQuestionItemHTML(question.question, question.questionId);
+            console.log(question.question)
+            QuestionList.innerHTML += createQuestionItemHTML(question.question, question.questionNum);
         });
 
         QuestionList.innerHTML += `</ul>`;
@@ -105,10 +106,10 @@ async function renderQuestions(testId){
     }
 }
 
-function createQuestionItemHTML(questionText, questionId) {
+function createQuestionItemHTML(questionText, questionNum) {
     return `
-    <li class="questoin", data-question-id="${questionId}">
-        <input type="checkbox" /> ${questionText}
+    <li class="questoin", id="${questionNum}">
+        <input type="checkbox" /> ${questionNum}
     </li>
     `;
 }
