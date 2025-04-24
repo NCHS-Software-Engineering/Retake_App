@@ -2,14 +2,13 @@ const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
 
 function openPopup(id) {
-    console.log(id);
  document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
     
-    var clist=document.getElementsByClassName("questoin");
-    for (var i = 0; i < clist.length; ++i) { if (clist[i].checked = "checked") {console.log(clist[i].getAttribute("id"));} }
+   
+
     document.getElementById(id).style.display = "none";
 }
 
@@ -48,8 +47,6 @@ async function renderTests(classId){
 
         const response = await fetch(`/dash/listTests?classId=${classId}`);
         const data = await response.json();
-
-        console.log(data.tests);
 
         if (data.err) {
             return;
@@ -97,7 +94,6 @@ async function renderQuestions(testId){
         }
 
         data.questions.forEach((question) => {
-            console.log(question.question)
             QuestionList.innerHTML += createQuestionItemHTML(question.question, question.questionNum);
         });
 
@@ -109,7 +105,7 @@ async function renderQuestions(testId){
 function createQuestionItemHTML(questionText, questionNum) {
     return `
     <li class="questoin", id="${questionNum}">
-        <input type="checkbox" /> ${questionNum}
+        <input type="checkbox" /> ${questionText}
     </li>
     `;
 }
@@ -136,8 +132,17 @@ document.getElementById("createNewStuRequest").addEventListener("click", (e) => 
     // Get the users name from the form and testId from the testDropdown
     const usersName = document.getElementById("usersName").value;
     const testId = testDropdown.value;
+    let selectedQuestionIds = "";
 
-    // Make fetch post to /dash/createNewStuRequest with the testId and usersName
+const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
+checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+        if (selectedQuestionIds !== "") {
+            selectedQuestionIds += ",";
+        }
+        selectedQuestionIds += checkbox.parentElement.id;
+    }
+});
     fetch("/dash/createNewStuRequest", {
         method: "POST",
         headers: {
@@ -145,7 +150,8 @@ document.getElementById("createNewStuRequest").addEventListener("click", (e) => 
         },
         body: JSON.stringify({
             testId: testDropdown.value,
-            usersName: usersName
+            usersName: usersName,
+            questionString: selectedQuestionIds
         }),
     })
 

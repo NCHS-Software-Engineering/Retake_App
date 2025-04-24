@@ -43,16 +43,16 @@ exports.requests = async (req, res) => {
 };
 
 exports.createNewStuRequest = async (req, res) => {
-
+    
     try {
         const userData = getUsersTokenData(req);
-        const { testId, usersName } = req.body;
-
+        const { testId, usersName, questionString } = req.body;
+        
         // Insert into retakeRequests table and add in testId and usersName, and make userId 0
         const [result] = await pool.query(
-            `INSERT INTO retakeRequests (userId, testId, usersName) 
-            VALUES (?, ?, ?)`,
-            [0, testId, usersName]
+            `INSERT INTO retakeRequests (userId, testId, usersName, questionString) 
+            VALUES (?, ?, ?, ?)`,
+            [0, testId, usersName, questionString]
         );
 
         return res.status(200).json({ err: false, msg: "Added student successfully" });
