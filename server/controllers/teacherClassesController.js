@@ -54,6 +54,16 @@ exports.listClasses = async (req, res) => {
     }
 }
 
+exports.getClasses = async (req, res) => {
+    try {
+        const teacherId = req.query.teacherId;
+        const [results] = await pool.query("SELECT classId, className FROM classes WHERE teacherId = ? ORDER BY orderId ASC", [teacherId]);
+        return res.status(200).json({ err: false, classes: results });
+    } catch (err) {
+        return res.status(200).json({ err: "Something went wrong with getting the classes" });
+    }
+}
+
 // Rename class 
 exports.renameClass = async (req, res) => {
     const className = req.body.className;
@@ -207,6 +217,18 @@ exports.listTests = async (req, res) => {
         if (!classId) throw new Error;
         const userData = getUsersTokenData(req);
         const [results] = await pool.query("SELECT testId, testName FROM tests WHERE teacherId = ? AND classId = ? ORDER BY testName ASC", [userData.id, classId]);
+        return res.status(200).json({ err: false, tests: results });
+    } catch (err) {
+        return res.status(200).json({ err: "Something went wrong with getting the tests" });
+    }
+}
+
+exports.getTests = async (req, res) => {
+    try {
+        const classId = req.query.classId;
+        if (!classId) throw new Error;
+        const userData = getUsersTokenData(req);
+        const [results] = await pool.query("SELECT testId, testName FROM tests WHERE classId = ? ORDER BY testName ASC", [classId]);
         return res.status(200).json({ err: false, tests: results });
     } catch (err) {
         return res.status(200).json({ err: "Something went wrong with getting the tests" });

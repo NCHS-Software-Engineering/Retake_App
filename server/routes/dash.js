@@ -38,9 +38,16 @@ router.post("/createNewStuRequest", validateTeacher, teacherRequestController.cr
 // Student Routes
 // --------------------------------------------------
 
+router.get("/request", studentDashController.request);
+router.get("/fillout", validateStudent, studentDashController.fillout);
+
+router.post("/studentRegisterForRetake", studentDashController.studentRegisterForRetake);
+router.get("/getClasses", teacherClassesController.getClasses)
+router.get("/getTests", teacherClassesController.getTests)
+
 // Track retakes (past/current)
-router.get("/tracker", validateStudent, (req, res) => {
-    return res.status(200).render("/dash/student/tracker");
+router.get("/tracker", (req, res) => {
+    return res.status(200).render("dash/student/dash");
 })
 
 // --------------------------------------------------

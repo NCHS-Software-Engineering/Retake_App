@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Retake</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .progress-step {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Request Retake</h1>
+        <div id="step1" class="progress-step">
+            <label for="teacherSelect" class="form-label">Select a Teacher:</label>
+            <select id="teacherSelect" class="form-select">
+                <option value="" disabled selected>Select a teacher</option>
+                <% teachers.forEach(teacher=> { %>
+                    <option value="<%= teacher.userId %>" data-id="<%= teacher.userId %>">
+                        <%= teacher.username %>
+                    </option>
+                    <% }); %>
+            </select>
+        </div>
+
+        <div id="step2" class="progress-step hidden">
+            <label for="classSelect" class="form-label">Select a Class:</label>
+            <select id="classSelect" class="form-select">
+                <option value="" disabled selected>Select a class</option>
+                <option value="101" data-id="101">Math 101</option>
+                <option value="102" data-id="102">Science 102</option>
+                <option value="103" data-id="103">History 103</option>
+            </select>
+        </div>
+
+        <div id="step3" class="progress-step hidden">
+            <label for="testSelect" class="form-label">Select a Test:</label>
+            <select id="testSelect" class="form-select">
+                <option value="" disabled selected>Select a test</option>
+                <option value="201" data-id="201">Midterm Exam</option>
+                <option value="202" data-id="202">Final Exam</option>
+                <option value="203" data-id="203">Quiz 1</option>
+            </select>
+        </div>
+
+        <button id="submitButton" class="btn btn-primary hidden">Submit</button>
+    </div>
+
+    <script>
+        const teacherSelect = document.getElementById('teacherSelect');
+        const classSelect = document.getElementById('classSelect');
+        const testSelect = document.getElementById('testSelect');
+        const step2 = document.getElementById('step2');
+        const step3 = document.getElementById('step3');
+        const submitButton = document.getElementById('submitButton');
+
+        teacherSelect.addEventListener('change', () => {
+            step2.classList.remove('hidden');
+            // Get the teacherId
+            const teacherId = teacherSelect.value;
+            // Fetch the classes for the selected teacher
+            fetch(`/dash/getClasses?teacherId=${teacherId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.err) {
+                alert(data.err);
+                return;
+                } else {
+                // Clear the class select options
+                classSelect.innerHTML = '<option value="" disabled selected>Select a class</option>';
+                // Populate the class select with the classes from the server
+                data.classes.forEach(classItem => {
+                    const option = document.createElement('option');
+                    option.value = classItem.classId;
+                    option.textContent = classItem.className;
+                    classSelect.appendChild(option);
+                });
+                }
+            })
+            .catch(error => alert('Error fetching classes: ' + error));
+        });
+
+        classSelect.addEventListener('change', () => {
+            step3.classList.remove('hidden');
+            // Get the classId
+            const classId = classSelect.value;
+            // Fetch the tests for the selected class
+            fetch(`/dash/getTests?classId=${classId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.err) {
+                alert(data.err);
+                return;
+                } else {
+                // Clear the test select options
+                testSelect.innerHTML = '<option value="" disabled selected>Select a test</option>';
+                // Populate the test select with the tests from the server
+                data.tests.forEach(testItem => {
+                    const option = document.createElement('option');
+                    option.value = testItem.testId;
+                    option.textContent = testItem.testName;
+                    testSelect.appendChild(option);
+                });
+                }
+            })
+            .catch(error => alert('Error fetching tests: ' + error));
+        });
+
+        testSelect.addEventListener('change', () => {
+            submitButton.classList.remove('hidden');
+        });
+
+        submitButton.addEventListener("click", () => {
+            // Get all the data from the form
+            const teacherId = teacherSelect.value;
+            const classId = classSelect.value;
+            const testId = testSelect.value;
+            // Send the data to the server and get the response and see if .err is true or not
+            fetch('/dash/studentRegisterForRetake', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ teacherId, classId, testId })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.err) {
+                        alert(data.err);
+                    } else {
+                        alert('Retake request submitted successfully!');
+                        // Optionally, redirect or reset the form
+                        teacherSelect.value = '';
+                        classSelect.value = '';
+                        testSelect.value = '';
+                        step2.classList.add('hidden');
+                        step3.classList.add('hidden');
+                        submitButton.classList.add('hidden');
+                    }
+                })
+
+        })
+    </script>
+</body>
+
+</html>
