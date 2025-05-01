@@ -39,7 +39,7 @@ router.post("/createNewStuRequest", validateTeacher, teacherRequestController.cr
 // --------------------------------------------------
 
 router.get("/request", studentDashController.request);
-router.get("/fillout", validateStudent, studentDashController.fillout);
+router.get("/fillout", studentDashController.fillout);
 
 router.post("/studentRegisterForRetake", studentDashController.studentRegisterForRetake);
 router.get("/getClasses", teacherClassesController.getClasses)

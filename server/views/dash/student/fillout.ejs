@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fillout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .item-container {
+            flex: 1;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .item {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item:hover, .item.selected {
+            background-color: #f0f0f0;
+        }
+        .details-container {
+            flex: 1;
+            padding: 10px;
+            display: none;
+        }
+        textarea {
+            width: 100%;
+            height: 100%;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-container">
+            <% requests.forEach(request => { %>
+                <div class="item" 
+                     data-request='<%= JSON.stringify(request) %>' 
+                     data-id="<%= request.requestId %>">
+                    <strong><%= request.testName %></strong>
+                </div>
+            <% }); %>
+        </div>
+        <div class="details-container">
+            <textarea readonly></textarea>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.item');
+        const detailsContainer = document.querySelector('.details-container');
+        const textarea = detailsContainer.querySelector('textarea');
+
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove 'selected' class from all items
+                items.forEach(i => i.classList.remove('selected'));
+                // Add 'selected' class to the clicked item
+                item.classList.add('selected');
+
+                // Show details container
+                detailsContainer.style.display = 'block';
+
+                // Render the data in the textarea
+                const requestData = JSON.parse(item.getAttribute('data-request'));
+                textarea.value = JSON.stringify(requestData, null, 2);
+            });
+        });
+    </script>
+</body>
+</html>

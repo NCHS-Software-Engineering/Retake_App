@@ -17,7 +17,30 @@ exports.request = async (req, res) => {
 }
 
 exports.fillout = async (req, res) => {
+    try {
+        // Select the retake requests from the database
+        const userData = getUsersTokenData(req);
+        if (!userData) {
+            return res.status(400).render("pages/auth", { err: "You need to be signed in to view this page" });
+        }
+        const userId = userData.id;
 
+        // AND questionString != '' | this filters out the requests that are not filled out yet
+        const [results] = await pool.query(`
+            SELECT r.*, t.testName 
+            FROM retakeRequests r 
+            JOIN tests t ON r.testId = t.testId 
+            WHERE r.userId = ?
+        `, [userId]);
+
+        console.log(results);
+
+        return res.status(200).render("dash/student/fillout", { err: null, requests: results });
+        
+    } catch (err) {
+        console.log(err);
+        return res.status(500).render("dash/student/fillout", { err: "An error occurred while processing your request", requests: [] });
+    }
 }
 
 exports.studentRegisterForRetake = async (req, res) => {
@@ -33,12 +56,12 @@ exports.studentRegisterForRetake = async (req, res) => {
         // Add a new retake request to the database
         await pool.query("INSERT INTO retakeRequests (userId, testId, usersName, questionString) VALUES (?, ?, ?, ?)", [userId, testId, "", ""]);
 
-        return res.status(200).json({err: false, msg: "Successfully registered for retake"});
+        return res.status(200).json({ err: false, msg: "Successfully registered for retake" });
 
-    } catch(err) {
-        if(err) {
+    } catch (err) {
+        if (err) {
             console.log(err);
-            return res.status(500).json({err: "An error occurred while processing your request"});
+            return res.status(500).json({ err: "An error occurred while processing your request" });
         }
     }
 }
