@@ -2,12 +2,12 @@ const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
 
 function openPopup(id) {
- document.getElementById(id).style.display = "flex";
+    document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
-    
-   
+
+
 
     document.getElementById(id).style.display = "none";
 }
@@ -34,7 +34,7 @@ testDropdown.addEventListener("change", (e) => {
     }
 });
 
-async function renderTests(classId){
+async function renderTests(classId) {
     /*
     <% if (!err && tests && tests.length> 0) {  %>
         <% tests.forEach((test)=> { %>
@@ -73,7 +73,7 @@ function createClassItemHTML(testName, testId) {
     `;
 }
 
-async function renderQuestions(testId){
+async function renderQuestions(testId) {
     /*
     <ol>
         <% if (!err && questions && questions.length> 0) {  %>
@@ -134,15 +134,15 @@ document.getElementById("createNewStuRequest").addEventListener("click", (e) => 
     const testId = testDropdown.value;
     let selectedQuestionIds = "";
 
-const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
-checkboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-        if (selectedQuestionIds !== "") {
-            selectedQuestionIds += ",";
+    const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
+    checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+            if (selectedQuestionIds !== "") {
+                selectedQuestionIds += "<<,>>";
+            }
+            selectedQuestionIds += checkbox.parentElement.textContent.trim();
         }
-        selectedQuestionIds += checkbox.parentElement.id;
-    }
-});
+    });
     fetch("/dash/createNewStuRequest", {
         method: "POST",
         headers: {
