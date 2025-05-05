@@ -33,8 +33,6 @@ exports.fillout = async (req, res) => {
             WHERE r.userId = ?
         `, [userId]);
 
-        console.log(results);
-
         return res.status(200).render("dash/student/fillout", { err: null, requests: results });
         
     } catch (err) {
@@ -52,7 +50,6 @@ exports.studentRegisterForRetake = async (req, res) => {
         }
         const userId = userData.id;
 
-        console.log(teacherId, classId, testId, userId);
         // Add a new retake request to the database
         await pool.query("INSERT INTO retakeRequests (userId, testId, usersName, questionString) VALUES (?, ?, ?, ?)", [userId, testId, "", ""]);
 
@@ -64,4 +61,45 @@ exports.studentRegisterForRetake = async (req, res) => {
             return res.status(500).json({ err: "An error occurred while processing your request" });
         }
     }
+}
+
+exports.getQuestionString = async (req, res) => {
+    try {
+        const { requestId } = req.query;
+        const userData = getUsersTokenData(req);
+        if (!userData) {
+            return res.status(400).render("pages/auth", { err: "You need to be signed in to view this page" });
+        }
+        const userId = userData.id;
+
+        // Get the question string for the test
+        const [results] = await pool.query("SELECT questionString FROM retakeRequests WHERE userId = ? AND requestId = ?", [userId, requestId]);
+        
+        return res.status(200).json({ err: false, questionString: results[0].questionString });
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ err: "An error occurred while processing your request" });
+    }
+}
+
+exports.submitLink = async (req, res) => { 
+
+    try {
+        const { requestId, link } = req.body;
+        const userData = getUsersTokenData(req);
+        if (!userData) {
+            return res.status(400).render("pages/auth", { err: "You need to be signed in to view this page" });
+        }
+        const userId = userData.id;
+
+        // Edit the retakeRequest link with the link provided
+        await pool.query("UPDATE retakeRequests SET questionString = ? WHERE userId = ? AND requestId = ?", [link, userId, requestId]);
+        return res.status(200).json({ err: false, msg: "Successfully submitted link" });
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json({ err: "An error occurred while processing your request" });
+    }
+
+
 }

@@ -44,6 +44,8 @@ router.get("/fillout", studentDashController.fillout);
 router.post("/studentRegisterForRetake", studentDashController.studentRegisterForRetake);
 router.get("/getClasses", teacherClassesController.getClasses)
 router.get("/getTests", teacherClassesController.getTests)
+router.get("/getQuestionString", studentDashController.getQuestionString)
+router.post("/submitLink", studentDashController.submitLink)
 
 // Track retakes (past/current)
 router.get("/tracker", (req, res) => {
