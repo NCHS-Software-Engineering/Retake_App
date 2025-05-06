@@ -100,6 +100,4 @@ exports.submitLink = async (req, res) => {
         console.log(err);
         return res.status(500).json({ err: "An error occurred while processing your request" });
     }
-
-
 }
