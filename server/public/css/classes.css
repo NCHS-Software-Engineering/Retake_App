@@ -375,16 +375,7 @@ Layout of each item: two lines
     color: #fff !important;
 }
 
-.handle {
-    width: 1.25rem;
-    height: 2.5rem;
-    background: radial-gradient(circle, #555 30%, transparent 30%) 0 0 / 7px 7px,
-                radial-gradient(circle, #555 30%, transparent 30%) 7px 7px / 7px 7px;
-    background-repeat: repeat;
-    cursor: grab;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-  }
+
 
   .thin-bar {
     height: 5px;
@@ -396,6 +387,9 @@ Layout of each item: two lines
   }
   
   .item {
+    position: relative;
+  }
+  .test-item {
     position: relative;
   }
   

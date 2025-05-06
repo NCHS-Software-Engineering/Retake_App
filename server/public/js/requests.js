@@ -1,13 +1,15 @@
 const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
+const input = document.getElementById("studentEmail");
+const suggestions = document.getElementById("suggestions");
 
 function openPopup(id) {
-    document.getElementById(id).style.display = "flex";
+ document.getElementById(id).style.display = "flex";
 }
 
 function closePopup(id) {
-
-
+    
+   
 
     document.getElementById(id).style.display = "none";
 }
@@ -34,7 +36,78 @@ testDropdown.addEventListener("change", (e) => {
     }
 });
 
-async function renderTests(classId) {
+async function getStudents(query) {
+    try {
+      // Make a GET request to the backend, sending the query as a parameter
+      const response = await fetch(`/dash/getStudentEmailsByLetters?letters=${encodeURIComponent(query)}`);
+      // Check if the response is okay (status 200)
+      if (!response.ok) {
+        throw new Error("Failed to fetch data from server");
+      }
+
+      // Parse the JSON response
+      const students = await response.json();
+      return students;  // Assume the response is an array of student emails
+    } catch (error) {
+      console.error("Error fetching students:", error);
+      return [];  // Return an empty array if there's an error
+    }
+  }
+
+
+
+
+  ////////////////////////////////////////////////////////////// getStudents function works just fine, issue in here
+let debounceTimeout;
+
+  input.addEventListener("input", () => {
+    clearTimeout(debounceTimeout);
+    const query = input.value.trim();
+
+    suggestions.innerHTML = "";
+
+    if (query.length > 0) {
+      // Show spinner immediately
+      const spinner = document.createElement("div");
+      spinner.className = "spinner";
+      suggestions.appendChild(spinner);
+
+      debounceTimeout = setTimeout(() => {
+        getStudents(query).then((results) => {
+          console.log("Results:", results.students); // Log the results for debugging
+          suggestions.innerHTML = "";
+
+          results.students.forEach(student => {
+            const div = document.createElement("div");
+            div.innerHTML = `<p>${student.username}</p> <p>${student.email}</p>`;
+            div.classList.add("studentChoice");
+            div.classList.add("request-item");
+            div.setAttribute("data-student-id", student.userId);
+            div.onclick = () => {
+              input.value = student.email;
+              suggestions.innerHTML = "";
+              input.datauserId = student.userId; // Store the userId in the input field
+            };
+            suggestions.appendChild(div);
+          });
+
+          if (results.length === 0) {
+            const noResults = document.createElement("div");
+            noResults.textContent = "No matches found.";
+            noResults.classList.add("suggestion");
+            suggestions.appendChild(noResults);
+          }
+        }).catch((error) => {
+          console.error("Error fetching students:", error);
+        });
+      }, 2000);
+    }
+  });
+//////////////////////////////////////////////////////////////////
+
+
+
+async function renderTests(classId){
     /*
     <% if (!err && tests && tests.length> 0) {  %>
         <% tests.forEach((test)=> { %>
@@ -73,7 +146,7 @@ function createClassItemHTML(testName, testId) {
     `;
 }
 
-async function renderQuestions(testId) {
+async function renderQuestions(testId){
     /*
     <ol>
         <% if (!err && questions && questions.length> 0) {  %>
@@ -130,19 +203,19 @@ function createQuestionItemHTML(questionText, questionNum) {
 document.getElementById("createNewStuRequest").addEventListener("click", (e) => {
 
     // Get the users name from the form and testId from the testDropdown
-    const usersName = document.getElementById("usersName").value;
+    const usersId = input.datauserId;
     const testId = testDropdown.value;
     let selectedQuestionIds = "";
 
-    const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
-    checkboxes.forEach((checkbox) => {
-        if (checkbox.checked) {
-            if (selectedQuestionIds !== "") {
-                selectedQuestionIds += "<<,>>";
-            }
-            selectedQuestionIds += checkbox.parentElement.textContent.trim();
+const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
+checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+        if (selectedQuestionIds !== "") {
+            selectedQuestionIds += ",";
         }
-    });
+        selectedQuestionIds += checkbox.parentElement.id;
+    }
+});
     fetch("/dash/createNewStuRequest", {
         method: "POST",
         headers: {
@@ -150,7 +223,7 @@ document.getElementById("createNewStuRequest").addEventListener("click", (e) => 
         },
         body: JSON.stringify({
             testId: testDropdown.value,
-            usersName: usersName,
+            usersId: usersId,
             questionString: selectedQuestionIds
         }),
     })

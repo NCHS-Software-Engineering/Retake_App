@@ -34,8 +34,8 @@ const handles = document.querySelectorAll('.handle');
 // EVENT LISTENERS
 // --------------------------
 /////////////////////////////////////////////////////////
-async function sendClassOrder() {
-    const classContainer = [...container.querySelectorAll('.draggable')];
+async function sendClassOrder(url = "/dash/updateClassOrder") {
+    const classContainer = [...container.querySelectorAll('.class')];
 
     if (!classContainer) {
         console.error("Class container not found.");
@@ -45,26 +45,20 @@ async function sendClassOrder() {
     const classIds = classContainer.map(el => el.dataset.classId);
 
     try {
-        const response = await fetch("/dash/updateOrder", {
+        const response = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ classIds })  // Send the classIds array
+            body: JSON.stringify( {classIds} )  // Send the classIds array
         });
 
         const data = await response.json();
 
-
         if (response.ok) {
-            alert(data.msg);  // Success message
+            // alert(data.msg);  // Success message
         } else {
-            //alert(`Error: ${data.err}`);
-
-        console.log(response);
-        if (!response.ok) {
-            alert(`Error: ${data.err}`);
-
+            alert(`Error: ${data.msg}`);
         }
     } catch (error) {
         console.error("Failed to save order:", error);
@@ -77,6 +71,7 @@ let thinBar = null;
 let draggedItem = null;
 let lastUpdate = 0;
 const debounceDelay = 16; // ~60fps
+
 
 container.addEventListener("mousedown", (e) => {
     const handle = e.target.closest(".handle"); // Ensure we're clicking the handle
@@ -137,16 +132,21 @@ handles.forEach(handle => {
     document.removeEventListener('mousemove', onDrag);
     draggedItem.classList.remove('dragging');
 
-    // Replace thin bar with original item
-    container.insertBefore(draggedItem, thinBar);
-    thinBar.remove();
-    thinBar = null;
-
-    // Update order display
-    updateOrder();
-
-    //reorder in db
-    sendClassOrder();
+    // Check if dragged Item has class for class
+    if (draggedItem.classList.contains("class")) {
+       // Replace thin bar with original item
+       container.insertBefore(draggedItem, thinBar);
+       thinBar.remove();
+       thinBar = null;
+   
+       // Update order display
+       updateClassOrder();
+   
+       //reorder in db
+       sendClassOrder();
+    } else if(draggedItem.classList.contains("test-item")) {
+        alert("Dragging TesTSTSTS");
+    }
   }
 
   // Get element to drop after
@@ -164,15 +164,15 @@ handles.forEach(handle => {
   }
 
   // Update order display
-  function updateOrder() {
-    const order = [...container.querySelectorAll('.draggable')]
+  function updateClassOrder() {
+    const order = [...container.querySelectorAll('.draggable .class')]
       .map(item => item.dataset.classId)
       .join(', ');
     document.getElementById('Order').innerHTML = `Order: ${order}`;
   }
 
   // Initial order display
-  updateOrder();
+  updateClassOrder();
 
 
 
@@ -355,7 +355,7 @@ function createClassItemHTML(classObj, selectedClassId) {
     const selectedClass = isSelected ? "selected" : "";
 
     return `
-    <div class="item ${selectedClass} draggable" data-class-id="${classObj.classId}">
+    <div class="item ${selectedClass} draggable class" data-class-id="${classObj.classId}">
       <p>${classObj.className}</p>
       <div class="item-buttons">
         <button class="btn btn-select">${selectBtnText}</button>
@@ -370,13 +370,14 @@ function createClassItemHTML(classObj, selectedClassId) {
 // Create the HTML for a test item
 function createTestItemHTML(testName, testId) {
     return `
-    <div class="test-item" data-test-id="${testId}">
+    <div class="test-item draggable" data-test-id="${testId}">
       <p>${testName}</p>
       <div class="item-buttons">
         <button class="btn btn-edit">Edit</button>
         <button class="btn btn-rename">Rename</button>
         <button class="btn btn-delete">Delete</button>
       </div>
+      <div class="handle"></div>
     </div>
     `;
 }
@@ -384,18 +385,6 @@ function createTestItemHTML(testName, testId) {
 // --------------------------
 // HELPER / UTILITY FUNCTIONS
 // --------------------------
-
-function getOrder() {
-    const pTag = document.getElementById('Order');
-    pTag.innerHTML = "";
-    let word = "";
-    const data = document.querySelectorAll('.draggable');
-    for (let i = 0; i < data.length; i++) {
-        word = word+", "+data[i].dataset.classId;
-    }
-    console.log(word);
-    pTag.innerHTML = word;
-}
 
 // Add event listeners to each class item
 function addListenersForClassItems() {
@@ -487,6 +476,9 @@ async function handleSelectedClass(classId, item, selectBtn) {
         selectBtn.textContent = "Deselect";
         testContainer.classList.remove("disabled");
 
+        // Send a custom event so I can listen for when a class is selected and send the element of item.classList
+        const event = new CustomEvent("classSelected", { detail: { classId } });
+        document.dispatchEvent(event);
         await renderTests(classId);
     }
 }
@@ -649,8 +641,6 @@ function showTestForm(testName, questions) {
 
     testFormOverlay.classList.remove("hidden");
 }
-
-
 
 // Hide the modal form 
 function hideTestForm() {

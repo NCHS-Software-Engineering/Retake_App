@@ -139,44 +139,53 @@ exports.deleteClass = async (req, res) => {
 };
 
 /////////////////////////////////////////////////////////////////////////////////
-    exports.updateOrder = async (req, res) => {
-        const { classIds } = req.body;  // Array of classIds in the desired order
-        console.log("db");
-        try {
-            const teacherData = getUsersTokenData(req);
-            if (!teacherData) {
-                return res.status(400).json({ err: "Could not load data correctly" });
-            }
-    
-            if (!Array.isArray(classIds) || classIds.length === 0) {
-                return res.status(400).json({ err: "Invalid class order data" });
-            }
-    
-            let query = `
-                UPDATE classes
-                SET orderId = CASE
-            `;
-    
-            const values = [];
-    
-            // Dynamically build the query with incrementing orderId values
-            classIds.forEach((classId, index) => {
-                query += ` WHEN classId = ? THEN ?`;
-                values.push(classId, index + 1);  // Incrementing orderId
-            });
-    
-            query += ` END WHERE teacherId = ?`;
-            values.push(teacherData.id);
-    
-            await pool.query(query, values);
-    
-            res.status(200).json({ err: false, msg: 'Successfully reordered' });
-    
-        } catch (err) {
-            console.error(err);
-            return res.status(500).json({ err: "Error with reordering classes. Try again later." });
+exports.updateClassOrder = async (req, res) => {
+    let { classIds } = req.body;
+    console.log("Received classIds:", classIds);
+
+    classIds = classIds.map(id => parseInt(id, 10));
+
+    try {
+        const teacherData = getUsersTokenData(req);
+        if (!teacherData) {
+            return res.status(400).json({ err: "Could not load data correctly" });
         }
-    };
+
+        if (!Array.isArray(classIds) || classIds.length === 0) {
+            return res.status(400).json({ err: "Invalid class order data" });
+        }
+
+        let query = `
+            UPDATE classes
+            SET orderId = CASE
+        `;
+
+        const values = [];
+
+        classIds.forEach((classId, index) => {
+            query += ` WHEN classId = ? THEN ?`;
+            values.push(classId, index + 1);
+        });
+
+        query += ` END WHERE teacherId = ? AND classId IN (${classIds.map(() => '?').join(', ')})`;
+        values.push(teacherData.id, ...classIds);
+
+        console.log("Final SQL Query:", query);
+        console.log("Values:", values);
+
+        await pool.query(query, values);
+
+        res.status(200).json({ err: false, msg: 'Successfully reordered' });
+
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ err: "Error with reordering classes. Try again later." });
+    }
+};
+
+exports.updateTestOrder = async (req, res) => {
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
 // Save teacher test to DB

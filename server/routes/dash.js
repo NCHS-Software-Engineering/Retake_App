@@ -27,17 +27,18 @@ router.post("/renameTest", validateTeacher, teacherClassesController.renameTest)
 router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTest);
 router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
-router.post("/updateOrder", validateTeacher, teacherClassesController.updateOrder);
+router.post("/updateClassOrder", validateTeacher, teacherClassesController.updateClassOrder);
+router.post("/updateTestOrder", validateTeacher, teacherClassesController.updateTestOrder);
 
 // Manage Retake Requests
 router.get("/requests", validateTeacher, teacherRequestController.requests);
 router.post("/createNewStuRequest", validateTeacher, teacherRequestController.createNewStuRequest);
+router.get("/getStudentEmailsByLetters", validateTeacher, teacherRequestController.getStudentEmailsByLetters);
 
 
 // --------------------------------------------------
 // Student Routes
 // --------------------------------------------------
-
 router.get("/request", studentDashController.request);
 router.get("/fillout", studentDashController.fillout);
 
@@ -47,7 +48,7 @@ router.get("/getTests", teacherClassesController.getTests)
 router.get("/getQuestionString", studentDashController.getQuestionString)
 router.post("/submitLink", studentDashController.submitLink)
 
-// Track retakes (past/current)
+// Student dashboard
 router.get("/tracker", (req, res) => {
     return res.status(200).render("dash/student/dash");
 })
