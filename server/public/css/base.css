@@ -5,7 +5,11 @@
     box-sizing: border-box;
 }
 
-/* Use Montserrat font */
+html {
+    scrollbar-gutter: stable;
+}
+
+/* Base styles (light mode by default) */
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
@@ -13,7 +17,6 @@ body {
     background-color: #fffdfd;
 }
 
-/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
@@ -87,17 +90,16 @@ body {
 }
 
 footer {
-    background-color: #d14b4b;
+    background-color: #c44242;
     color: white;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
     bottom: 0;
-    left: 0; /* Ensures it starts from the far left */
+    left: 0;
     width: 100%;
 }
 
-/* Main content styles */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -110,7 +112,7 @@ footer {
 .main-content h1 {
     font-size: 3rem;
     font-weight: 700;
-    color: #dc4c4c;
+    color: #c44242;
     margin-bottom: 2rem;
 }
 
@@ -119,4 +121,57 @@ footer {
     max-width: 600px;
     margin-bottom: 3rem;
     line-height: 1.6;
+}
+
+/* ----------------------- Dark Mode Overrides ----------------------- */
+.dark-mode {
+    color: #e0e0e0;
+    background-color: #121212;
+}
+
+.dark-mode .header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.dark-mode .header .logo-container h1 {
+    color: #ff6b6b;
+}
+
+.dark-mode .header .nav-links a {
+    color: #e0e0e0;
+}
+
+.dark-mode .header .nav-links a:hover {
+    color: #1e90ff;
+}
+
+.dark-mode .header .login-button {
+    background-color: #1e90ff;
+    color: #ffffff;
+}
+
+.dark-mode .header .login-button:hover {
+    background-color: #0066cc;
+}
+
+.dark-mode .header .notifications {
+    background-color: #34c759;
+    color: #ffffff;
+}
+
+.dark-mode .header .notifications:hover {
+    background-color: #28a745;
+}
+
+.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .main-content h1 {
+    color: #ff6b6b;
+}
+
+.dark-mode .main-content p {
+    color: #cccccc;
 }
