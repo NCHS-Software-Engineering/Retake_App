@@ -1,0 +1,3958 @@
+- A U T O - C U R S E S -
+- C U R S E D -
+- H E L L O -
+- H E L L O - A G A I N -
+- I - D O N T - F E E L - S O - W E L L -
+- S E R I O U S L Y - L E A V E -
+- Y O U - G O T - C U R S E D -
+:)
+'Which is why, yes, I will eat a hat if Clyde gets added to LBR'. Hello, Clyde!
+[name] charge/s
+[name] charge/s%
+[name] XP%
+[Reach Pyramid floor %s to teleport here]
+@gold
+#leaf-counter. Every %s counts increases leaf blower damage by %s, every %s by %s, every %s by %s, every %s by %s.
+%s
+%s (%s frames)
+%s %s %s been compensated for %s.
+%s %s %s each second.
+%s %s %s salvaged for %s.
+%s %s collected.
+%s %s harvested.
+%s %s opened.
+%s %s Pack
+%s %s reclaimed.
+%s %s rerolled.
+%s %s restored.
+%s %s salvaged.
+%s %s transcended. Received %s.
+%s addition failed.
+%s ago
+%s auto progress
+%s auto roll
+%s auto save
+%s bonus: %s
+%s can be crafted manually.
+%s can be earned offline. You also need to buy the %s upgrade in the %s to get %s offline. Time to sleep!
+%s can be used for science research.
+%s chests opened.
+%s chests opened. Next chest(s) available in %s.
+%s collected.
+%s Combo
+%s critical chance
+%s critical multiplier
+%s curses: %s
+%s damage
+%s damage to bosses.
+%s drop chance
+%s drop chance: %s
+%s experience
+%s Fertilizer
+%s floors! Back in the day, we only had 100 floors.
+%s floors! Never skip leg day.
+%s floors! Where are you heading to?
+%s floors! Who approved of this?
+%s frames
+%s Generator
+%s has dropped.
+%s has expired.
+%s has grown.
+%s has leveled up
+%s higher chance to spawn multiple fruits per level. After level %s, an additional fruit will spawn every %s levels.
+%s Hugger
+%s inventory size
+%s is a large erupting volcano in the Fire Fields region. It is the largest volcano in the Fire Fields and is a popular destination for hikers. Heat resistance gear is recommended.
+%s is home to the magical chimera named %s. Long after it was captured by %s, the chimera fused itself with the Green Flame - an everlasting flame since the birth of the universe - in order to prevent its demise. This mindblowing, mystical union worked, and %s was brought back to life.
+%s item craft cost
+%s item upgrade count
+%s leaf fused.
+%s leaf was automatically salvaged.
+%s less chance to recruit this Borb.
+%s level: %s
+%s lies inside a large volcano. A powerful chimera guards its entrance. Its flame is the source of the temple's power.
+%s Marketing
+%s Materials auto collected.
+%s max item count
+%s may drop in the %s.
+%s more rolls needed.
+%s Multiplier
+%s of all
+%s Printer
+%s progression
+%s rarity
+%s receives %s more damage after each defeat of %s.
+%s refresh duration
+%s Resistance
+%s reward
+%s reward multiplier
+%s roll timeout
+%s rolled: %s
+%s saved: %s
+%s Seeds
+%s seeds harvested.
+%s start resources
+%s Stone
+%s success chance
+%s time
+%s timeout reduction
+%s Upgrade Bot
+%s Vulnerability
+%s vulnerability level was reset.
+%s Warning: you lose %s HP per second %s
+%s was defeated for %s.
+%s was salvaged for %s
+%s will always be active.
+%s xp added for %s Borbs.
+%s: %s (%s/%s)
++100% Basic Leaf rewards.
++100% Bismuth Leaf rewards.
++100% Celestial Leaf rewards.
++100% Cosmic Leaf rewards.
++100% Exotic Leaf rewards.
++100% Gold Leaf rewards.
++100% Platinum Leaf rewards.
++100% Void Leaf rewards.
++200% BLC Coins rewards per level. THANKS, EXOTIC LEAVES.
++300% BLC Coins rewards per level. THANKS, SCIENCE.
+| max storage: %s
+01000111 01010000 01010101 00100000 01000001 01100010 01111001 01110011 01110011 00100000 00110001 01101101 00100000 01000101 01111000 01101111 01110100 01101001 01100011
+1% higher chance to spawn Super Leaves per level.
+1k floors! Don't fall down!
+1v1 de_aztec no awp?
+3-Leaf Clover
+3-Leaf Clovers
+4-Leaf Clover
+4-Leaf Clovers
+400% enemy rewards. You used the Ace of Spades in the Volcano while having 100m Lava leaves.
+69,420
+A black sphere where leaves travel as fast as light near its event horizon. Sounds scary. [Reach Pyramid floor %s to teleport here]
+A BLOWfish... Hahah... Do you get it?
+A bright but dangerous and scary dungeon. It's a great place to explore, though.
+A calm place where diverse leaves spawn.
+A challenge is currently in progress. Do you want to start a new challenge? You will lose your current challenge progress.
+A dark and dismal area where a fearsome boss resides. This place is strictly off limits to anyone but the most determined blowers. Adventurers who came here were never to be seen again...
+A dark, narrow cavern below a huge fire river.
+A famous tavern located in Leafsink Harbor.
+A far away place around 420 light years away from %s
+A giant centaur protects this place.
+A graveyard filled with ancient tombs, as well as strange, twisted trees, gnarled roots, and thick vines. A magic book floats here.
+A group of owls is called a parliament. Increases merged leaves count by %s.
+A Leaf Blower powered with Leaves. Full Circle.
+A literal rainbow bridge that leads to a protected place. Shards might drop.
+A macro automatically counts the Leaf Counter Machine in the Cheese Pub for you. Counts %sx per minute each level.
+A magical barrier is protecting a floating key which is surrounded by souls.
+A magical place with a mystical vibe. Its walls are lined with ancient runes and symbols.
+A magical sphere protects the Black Leaf Hole.
+a moment
+A mysterious area; no one knew exactly what it was or what went on behind its walls. Rumors swirled of souls being forged and remade - and the occasional screams echoing in the night only added to the mystery.
+A mysterious presence awaits.
+A mystical forest playground where rolling takes on a new meaning.
+A peculiar place with a shrine that used to emit vast amounts of energy.
+A physical device may help you to reach the sky.
+A portal leading to the %s.
+A rake can be used as a cane in the mountains.
+A silent place with an everlasting tree, guarded by a mysterious presence.
+A small historical town built on top of a hill with a pleasant atmosphere. The residents love to exchange materials.
+A small, dark place in an eternal forest with a mysterious red glade.
+A small, dark place in an eternal forest with a mysterious red glade. All spawnable materials can be found here but their spawn chances are decreased.
+A stalwart warden protects this place. They keep a vigilant eye on all that takes place within this little-known part of the universe and make sure that the balance of leaves is maintained, that everything remains as it should.
+A vast sea that has been hidden for eons.
+A wise person once stepped into the Mythical Garden but they were never the same...
+Absolute damage resistance
+Account
+Account Gateway
+Accounts are currently disabled on iOS. This will be available in future updates. Thank you for your patience. :)
+Ace of Spades
+Achievements
+Acquire all Leaf Stones to activate the Energy Shrine. The planet guardians hold all these stones but beware, they are enchanted with special leaf properties!
+Action
+Activate
+Activate all
+Activates %s when the game window lost focus.
+Activates a dark screen overlay to reduce screen burning and improve battery life. Frame rate will be reduced drastically. This does not affect gameplay frames.
+Active
+active
+Active challenge: %s
+Active team (%s/%s)
+Active: %s/%s
+Add
+Add a random item to your Borb inventory.
+Add nuclear fuel into your tools for more blowing power.
+Add or remove resources to the favorites resource panel.
+Add Shard
+Add to favorites
+Add unsafe
+Add XP for all Borbventurers.
+Additional [name_plural]
+Additional active Unique Leaf.
+Additional damage to type: %s
+Additional enemy damage (all tiers): %s
+Additional enemy damage (this tier): %s
+Additional Leaves
+Additional merge range
+Additional merged leaves
+Adds %s %s randomly.
+Adds %s blowing damage permanently.
+Adds %s instantly.
+Adds %s more %s storage space.
+Adds +5 to your daily reward gems. You used your hands at your neighbor's garden while having 1c Platinum leaves.
+Adds a hint to the prison riddle.
+Adds a pity counter to the slot machine. You are guaranteed to win after %s plays.
+Adds a pity counter to this enemy. Every time this enemy was not soul boosted, the pity counter increases by %s. If the pity counter is full, the next spawn will be soul boosted. Scales with %s.
+Adds more transistors to converters so they work at double the speed. Hooray for transistors!
+Adds some Critical Cheddar to the cauldron. Increases critical brews by %s.
+Advanced %s Generator
+Advanced %s Multiplier
+Advanced Cauldron
+Advanced Clover Quest
+Advanced Completion Reward
+Advanced Completion Reward Multiplier
+Advanced Leaf Blower
+Advanced Soul Forge Compressor
+Advanced Trading Education
+AFK mode
+AFK Mode
+AFK Mode Lost Focus
+Afro
+After defeating the Spark Bubble, the emitted energy formed an electrifying portal.
+Ahh, yes, the famous Hematite Leaves.
+AHHH - YOU - FOUND - THE - HOLY - GRAIL\n\nMAKE - A - SACRIFICE - TO - ENTER - THE - CURSED - PYRAMID
+Aight
+Air Elemental
+Airplane Turbine
+ALB
+ALB <3 Artifacts
+ALB <3 Fruits
+ALB Battery Capacity
+ALB battery capacity
+ALB battery charge
+ALB Battery Charge Rate
+ALB Blowing Power
+ALB blowing power
+ALB Borb
+ALB Bumper
+ALB damage
+ALB Enemy Bumper
+ALB enemy damage increased by 800%. You used the Lazer in THE VOID while having 1C Void leaves.
+ALB Fidget Spinner
+ALB Flail
+ALB Flying Flokco
+ALB Hit Damage
+ALB Outsourcing
+ALB Pathing
+ALB Red Nose
+ALB Speed
+ALB speed
+ALB Spider
+ALB Tools
+ALB Troll
+ALBs <3 Equipment Items
+ALBs <3 Scrolls
+ALBs are powered by leaves so they don't need to be charged anymore. They have to be charged at startup, though.
+ALBs can collect Artifacts for you now. Should they also do your laundry?
+ALBs can collect equipment items for you now. Should they also clean your house?
+ALBs can collect fruits for you now. Should they also do your tax report?
+ALBs can collect scrolls for you now. Should they also do your homework?
+ALBs can equip your tools. Wow.
+ALBs enabled
+ALBs Love Seeds
+Alchemy
+Alchemy Leaf
+Alchemyritical
+Alien Turbine
+All
+All ALBs can bump into enemies to damage them. Ouch.
+All ALBs can bump into enemies to damage them. Ouch. Requires an upgrade in the %s shop.
+All autobuyers disabled.
+All autobuyers enabled.
+All autobuyers reset.
+All bonuses unlocked.
+All dropped gem leaves will be auto-looted after a tower boss was defeated.
+All Leaves+
+All Leaves++
+All Manual
+All transform properties unlocked. Good job!
+All upgrades and bonuses are applied at this interval. Reducing this timer may reduce performance but upgrades and bonuses are applied faster.
+All your dice are belong to me!
+All-time high: %s
+Alpha
+Already claimed.
+Already claiming reward, please wait...
+Alternate Robot
+Alternative
+Alternative Rendering
+Always follow the light!
+Amber
+Amber Leaf
+Amber Leaves
+Amethyst
+Amethyst Leaf
+Amethyst Leaves
+An abandoned cemetery. There's something else buried here... Shards might drop.
+An area with almost infinite reflections, where every droplet of cosmic water mirrors the grandeur of the universe, creating an awe-inspiring sight. The sight gets disturbed occassionally, though.
+An automatic leaf blower also known as ALB.
+An electric shield protects the Spark Portal.
+An everlasting flame lights up the %s since the birth of the Fire Universe. The Green Flame heats up all atoms to near lightspeed. Just a single second being near the Green Flame could be enough to set an entire universe on fire.
+An infinitely small point in the space-time fabric which contains more than 99.99% of energy in the universe. A strong entity guards this place.
+An old shipwreck glows blue by day and green by night.
+An overclocked drill that you borrowed from your neighbor a few years ago.
+An overclocked graphics card with a large fan.
+Ancient
+ancient
+Ancient Leaf
+Ancient Leaves
+Ancient Shop
+Ancient Shop ***
+Angel Female
+Angel Male
+Angry Leaf
+Anti-Crumble
+Anti-Drain
+any tool
+Applies to dice bag and battlefield.
+Applies to dice bag.
+Apply upgrades interval
+Arachnophobia
+Area Teleport Bot
+Area Time
+Areas
+Areas persist after Mega Leaf Crunch.
+Artifact
+Artifact expire duration
+Artifact expire duration multiplier
+Artifact fruit seconds reduction
+Artifact spawn time reduction
+Artifacts
+As well as the following:\n%s
+ASAP
+Ascend
+Ascend Level
+Ascend locked cards
+Ascend The Leaf Tower as there is someone waiting for you at its peak... Enemy rewards are applied at a reduced rate.
+Ascend this card to the next higher tier. The count will be decreased by %s.
+Ascend to The Celestial Plane to acquire Celestial Leaves.
+Ascending
+Ascension
+Ascension available after a leaf was upgraded to max level.
+Ascension Shard
+Ascension Shards
+Ascension Shards are used to ascend Sacred Crafted Leaves or better. Receive %s %s upon purchase.
+Ash
+Aster
+Astral Oasis
+Atomic Arbiter
+Attaches a flail to your ALBs. Increases ALB damage by 2% per level.
+ATTENTION: Coin Upgrade Bot is active! Your coins might be spent immediately after prestige.
+Auroraflit
+Authority
+Auto %s
+Auto add %s
+Auto ascend
+Auto Buy ALBs
+Auto collect [name]
+Auto collect materials: %s/minute
+Auto count: %s
+Auto craft
+Auto Crunch Bot
+Auto crunch in %s
+Auto Crunch Settings
+Auto Crunch Timer
+Auto curse: %s
+Auto Dig Bot
+Auto finish
+Auto finish %s
+Auto Leaf Blower
+Auto leaf counter
+Auto leafscend
+Auto Leafscend
+Auto play
+Auto progress
+Auto Quarkstige
+Auto refresh
+Auto refresh disabled.
+Auto reset %s
+Auto roll
+Auto salvage
+Auto save
+Auto save value
+Auto Slap Bot
+Auto start
+Auto start %s
+Auto teleport
+Auto transcend
+Auto Unlock Flasks
+Auto Unlock Leaves
+Auto Unlock Pyramid Floors
+Auto Upgrade Leaf Fertilizer
+Auto Upgrade Leaf Marketing
+Auto Upgrade Nuclear Fuel
+Auto Upgrade Trees
+Auto use
+Auto water amount: %s
+Auto-brew: %s
+Auto-collect trades
+Auto-start all
+Auto-start all L%s
+Auto-start none
+Auto-start none L%s
+Auto-start trades
+Autoblower Black
+Autoblower Blue
+Autoblower Cookie
+Autoblower Default
+Autoblower Gold
+Autoblower Green
+Autoblower Ladybug
+Autoblower Leaf
+Autoblower Minime
+Autoblower Mushroom
+Autoblower Pink
+Autoblower Player
+Autoblower Rainbow
+Autoblower red
+Autoblower White
+Autoblowo
+Autobrew
+Autobuy
+Autobuy Accelerator
+Autobuy enabled
+Autobuy max count
+Autobuy Priorities
+Autobuy priorities
+Autobuy priorities #%s loaded.
+Autobuy priorities #%s saved.
+Autobuy priority
+Autobuy Priority Device
+Autobuy Resource Threshold
+Autocraft
+Autocraft notifications
+Autocrunch timer reduction
+Autofacts
+Autoflower
+Autofuse Crafted Leaves
+Autofuse enabled
+Autofuse type
+Autoloot Gem Leaves
+Automatically load the main game file without showing the menu. If you play on Steam, the main menu will always show if the local and cloud save files are different.
+Automatically transports you back to %s when you get blown away or cleared a floor at the cost of %s.
+Automatically transports you back to the Inner Pyramid when you get blown away or cleared a floor at the cost of %s Borbs.
+Automatically transports you back to the Leaf Tower when you get blown away at the cost of 100 Borbs.
+Automatically transports you back to the Leaf Tower when you have reached the current tower peak.
+Automatically upload the save game to your Google Play account.
+Automatically upload the save game to your Humble North account. This option also needs to be enabled for multiplayer/cloud services. More info: humblenorth.de/privacy-police
+Automation is for the lazy! Perform a Big Leaf Crunch with no autobuyers to complete this challenge.
+Autosave interval
+Autosave is disabled while doing this action
+Autoupgrade Bots
+Autoupgrade Count
+Available
+Average current/high: %s/%s
+Avocados are a fruit, not a vegetable.
+Azurite
+Azurite Leaf
+Azurite Leaves
+Back
+Backpack
+Backup save found: %s
+Bad Skull
+Bartender
+base
+Base damage
+Base spawn chance: %s
+Basic
+Basic Leaves
+Basketball
+Bat
+Bat Wing
+Bat Wings
+Batteries
+Battery
+Battle
+Battlefield
+Battlefield die
+Bearo
+Bearo <3 Boosts
+Bearo <3 Gems
+Bearo can automatically boost trades now.
+Bearo can start and accept gem trades now.
+Beat floor %s%s
+Bed
+Bee
+Bee Player
+Beeo
+Beer
+Beer Delivery
+Beer Supplies
+Beer Supplies Level 2
+Beers
+Bees have 5 eyes, 6 legs, 7 cute and 8 important for harvesting crops.
+Bellows
+Below the craters you will find some kind of magic.
+Benitoite
+benitoite
+Benitoite Leaf
+Benitoite Leaves
+Benitoite Shop
+Benitoite Shop **
+Bentiote... Bentitote... Benitotite... THE LEAVES AFTER SILICON.
+Best streak: %s
+Best: %s | %s
+Bet
+Bet failed!
+Bet succeeded!
+Better Counting
+Better Pets
+Better Printer Ink
+Better Unique Leaves
+Better Vial
+Better, but it still feels wrong.
+Big Leaf Crunch
+Big Leaf Crunch %sx
+Big Leaf Crunches
+Bigger Bag
+Bigger Crafting Backpack
+Bigger Crafting Inventory
+Bigger Dice Bag
+Bigger Printer Room
+Bigger Reactor
+Bigger Vial
+Bingo
+Bingo Challenges
+Bingo++
+Biological high-tech equipment is useful in forests.
+Biotite
+Biotite Forest
+Biotite Leaf
+Biotite Leaves
+Biotite Shop
+Biotite Shop ***
+Bird
+Bird Player
+Birds of a feather flock together, and this Flocko works for you! Reduces Artifact spawn time by 20% (applies after the next Artifact spawn).
+Bismuth
+bismuth
+Bismuth Leaf
+Bismuth Leaves
+Bismuth leaves? HAVE YOU EVER SEEN ANY BISMUTH LEAVES?!
+Bismuth Marketing
+Bismuth Shop
+Black
+Black Flask
+Black Flasks
+Black Leaf Hole
+Black Planet Edge
+Black Science
+Black Tile
+Blazing Skull
+Blazing Tower Skull
+BLC
+BLC Coin
+BLC Coins
+BLC coins
+BLC Coins Multiplier T1
+BLC Coins Multiplier T2
+BLC Coins persist after the Mega Leaf Crunch. Each level doubles the BLC coin rewards. Bigger Bags level will persist, too.
+BLC Coins x3
+BLC coins%
+BLC gems upgrade
+BLC Ring
+BLC Science
+BLC Shop
+BLC Shop **
+BLC value increased by 500%. You used the Blowfish in Space while having 1d Cosmic leaves.
+BLC++
+BLCs
+Blessed by The Leaf God.
+Blossomhaze
+Blow Leaves
+Blow leaves away quickly to get more leaf rewards!
+Blow leaves on your PC!
+Blow leaves on your phone!
+Blow Off!
+Blow Power Controller
+Blow power: %s
+Blow the bellows, blow the leaves!
+Blower
+Blower enemy damage
+Blower enemy damage%
+Blowers
+Blowfish
+Blown away
+Blown leaves are added to BLC points. Super neat.
+Blown leaves respawn instantly.
+Blue
+Blue Flask
+Blue Flasks
+Blue Leaf Stone
+Blue Planet Edge
+Blue Science
+Blue Tile
+Blush Borb
+Bob
+Bone
+Bone Leaf
+Bones
+Bonus (%s/%s): %s
+Bonus damage
+Bonus reward chance for level %s: %s
+Bonus Reward Finder
+Bonus Reward Multiplier
+Bonus: %s
+Bonus: %s/%s
+Bonuses
+Bookshelf
+Boost
+Boost all
+Boost to max level
+Boost your stats with Cards! Cards can be obtained by defeating enemies (requires an upgrade in the MLC shop). Each enemy has a chance to drop a card of its own type.
+Borb
+Borb Ascension Juice
+Borb Ascension Rune
+Borb Ascension Runes
+Borb Ascension Token
+Borb Ascension Tokens
+Borb borb
+Borb borb borb borb, borb borb borb borb. Borb borb. BORB!
+Borb Cannon
+Borb Claw Machine
+Borb Claw Machine | Won: %s | Played: %s | Win%: %s%
+Borb Claw Machine Pro
+Borb Crypt Taxi
+Borb Juice
+Borb Leaf
+Borb O'Chance
+Borb O'Count
+Borb O'Digs
+Borb O'Lantern
+Borb o'Lantern
+Borb O'Lanterns
+Borb Party
+Borb Pyramid Taxi
+Borb Rune
+Borb Runes
+Borb Slapper
+Borb spawn chance
+Borb Taxi End of Party
+Borb Taxi Observer
+Borb Token
+Borb Tokens
+Borb Tower Taxi
+Borbcipherer
+Borbiana Jones
+Borbo
+Borbs
+Borbs Borb
+Borbs Borborbory
+Borbs don't feel any pain by slapping them. It's more like a nice massage due to their half-solid-half-fluid consistence.
+Borbs slapped: %s
+Borbventure
+Borbventure Borb
+Borbventure Items
+Borbventure level %s %s.
+Borbventure Pack
+Borbventure Packs
+Borbventure refresh timer decreased by %s.
+Borbventure settings
+Borbventures
+Borbventures can be refreshed in %s
+Borbventures refreshed.
+Borbventures will be filled with available Borbs and started automatically if the success chance is higher than the min chance setting. Also enables auto refresh.
+Borbventures will be finished automatically.
+Boss
+boss
+Boss %s drop chance: %s
+Boss Anti-Regeneration
+Boss Cards
+Boss Cards Detector
+Boss Cards spawn chance
+Boss Offline Timer
+Boss spawned
+Boss spawns in: %s
+Boss Timer
+Boss Timers
+Boss Transcension
+Boss: %s
+Bot Control Panel
+bottom
+Bought
+Bouncing Borb
+Brain
+Bred
+Breed
+Breed all
+Breed duration: %s
+Breeding
+Brew
+Brew crit chance
+Brew finished.
+Brew multi-crit chance
+Brew Multiplier
+Brew multiplier
+Brew multiplier: %s
+Brew notifications
+Brew time
+Brew time remaining: %s
+Brews
+Brews: %s
+Brings the Gold Suitcase to trade meetings to instantly finish a random available trade and keep the input resources.
+Bug
+Buggo
+Buggo uses debugging.
+Build
+Builder
+Bunnyo
+Burning
+Butterflies
+Butterflies increase plant field bonuses.
+Butterflies provide useful bonuses to plants.
+Butterfly
+Butterfly Cuddler
+Butterfly Field
+Butterfly Hugger
+Butterfly Synergy
+Butterfly XP multiplier
+Butterfly XP multiplier also affects butterflies.
+Butterflyo
+Buy
+Buy %s
+Buy Borb Taxi Ltd.
+Buy Crafting Certificate
+Buy Farming Certificate
+Buy max
+Buy multiplier
+Buy Trading Certificate
+C
+C U R S E S
+C++
+Calculate damage output
+Camelo
+Camels can completely shut their nostrils during sandstorms. Camelo increases chest spawn chance by %s and increases Ancient Leaf reward by %s.
+Camomile
+Can dig %s.
+Can't finish: %s
+Can't force-upload season save yet. Please wait a few minutes.
+Can't fuse next tier yet.
+Can't load set as backpack/inventory size is too small.
+Can't transform to this property.
+Cancel
+cancel
+Cancel trade for %s
+Cape
+Card
+Card notifications
+Card Odds
+Card Packs
+Card packs drop rates
+Card Part
+Card Parts
+Card Parts Detector
+Cards
+Cards can be collected by defeating enemies and bosses.
+Cards Detector
+Cards Magnet
+Cards Pack
+Cards spawn chance
+Cards: %s
+Carpenter's Cup
+Carpets #1
+Carrot
+CAT
+Cataclysmic
+Catto
+Celestial
+celestial
+Celestial Apples
+Celestial Combo
+Celestial Essence
+Celestial Essences
+Celestial Leaf
+Celestial Leaves
+Celestial Leaves can be earned by defeating enemies.
+Celestial Leaves can't be blown away, they have to be earned.
+Celestial leaves? These leaves are so celestial they earned a bunch of negative reviews.
+Celestial Seed
+Celestial Shop
+Celestial Shop **
+Centaur
+Chair
+Challenge %s was completed successfully in %s. Well done!\n\nYou can continue playing this challenge or start another one.\n\nYour rewards:
+Challenge completed
+Challenge completed in %s
+Challenge Point
+Challenge Points
+Challenge seed
+Challenge time: %s
+Challenges
+Champion
+Chance to spawn soul-boosted bosses. These bosses are stronger but drop %s.
+Chance: %s
+Change properties of Crafted Leaves. Receive %s %s upon purchase.
+Change Resource Filter
+Charging Port Quality++
+Cheaper Enhancing
+Cheaper Transformation
+Check
+Check your daily rewards here.
+Checking season character...
+Checking...
+Cheese
+Cheese Boots
+Cheese Delivery
+Cheese Supplies
+Cheese Supplies Level 2
+Cheesetor
+Chest spawn chance
+Chests
+Chests contain valuable resources, artifacts, equipment items and more. Open multiple chests by holding down ctrl, alt or shift.
+Chirp, chirp.
+Choose curse
+Christmas Borb
+Christmas Tree
+Christmas Wreath
+Citrineshine
+Claim
+Claim all
+Claim daily reward
+Claim rewards
+Claimable rewards
+Claimable Rewards
+Claimed reward %s
+Claiming daily rewards...
+Claiming...
+Claw %s count
+Claw curse count
+Claw curse spawn chance
+Claw%
+Cleansed Cheese
+Clear all curses in the Curse Machine.
+Clear filter
+Clear hotkey
+Clear Pyramid floor %s
+Clear seed
+Clear selection
+Clear shard selection
+Clear Soul Crypt level %s to unlock this area.
+Clear the first %s curses in the Curse Machine.
+Clearing Google Play Games cache might help, too.
+click
+Climb %s tower floors per minute while you're offline. This only works if your highest tower floor is greater than 101.
+Climb up or down and get some milestone rewards!
+Cloud
+Cloud delete slot failed, please try again later.
+Cloud load failed, please try again later.
+Cloud Saves
+Cloud upload available in %s.
+Cloud upload available now.
+Clouds
+Clover Quest
+Coal
+Coal Leaf
+Coal Leaves
+Coal Shop
+Coal Shop ***
+Code
+Coin
+Coins persist after the Big Leaf Crunch. Each level doubles the coin rewards.
+Coins Shop
+Coins Shop *
+Cold
+Collect
+Collect %s %s per %s spawn cycles.
+Collect %s Artifacts
+Collect %s fruits
+Collect %s seeds
+Collect all
+Collect Artifacts
+Collect Resources
+Collect Trades
+Collected
+Collected %s card.
+Color
+Combno
+Combo affects %s rewards.
+Combo affects %s.
+Combo affects Celestial Leaves
+Combo Duration
+Combo High
+Combo Multiplier
+Combo multiplier
+Combo rewards
+Combos are disabled. Collect 100m BLC without any combo multipliers.
+Come join us on discord!
+Common
+Common Chest
+Common Material Chest
+Common Pack
+Community Leaves
+Compact
+Complete
+Completed
+completed
+Completed %s brews, saved %s.
+Completed in %s
+Completed leafscension %s L%s.
+Completed: %s/%s | Total time: %s
+Completion bonus: %s
+Completion Reward
+Completion Reward Multiplier
+Compressed air is made of the same air you breathe in and out, but more compressed.
+Compressor
+Concurrent Scrolls
+Confirm
+Confirm salvage leaves
+Connected to store
+Connecting to the store, please wait...
+Control Panel
+Convert %s crits
+Convert %s loops
+Convert Bismuth++
+Convert Cosmic++
+Convert Gold++
+Convert Platinum++
+Convert redundant Artifacts into Shards.
+Convert Void++
+Converted Loops: %s | Converted Crits: %s | Crit chance: %s | Delay: %s
+Converter
+Converter batch count
+Converter batch enabled
+Converter crit chance
+Converter crit value
+Converter Crits
+Converter global leaf output
+Converter global output multiplier
+Converter input reduction
+Converter Loops
+Converter output multiplier
+Converter per leaf output
+Converter speed
+Converter Start Bot
+Converters
+Converters Output +300%
+Converters Static Output +400%
+Converts %s %s Leafscended Level %s to %s Leafscended %s Level %s.
+Converts %s %s to %s %s.
+Converts %s %s to %s Leafscended %s Level %s.
+Converts %s to %s.
+Cookie
+Cool
+Cool Borb
+Cooldown: %s
+Copper Bar
+Cornflower
+Cos
+cos(t)
+Cosmic
+cosmic
+Cosmic Dragon
+Cosmic Essence
+Cosmic Essences
+Cosmic Leaf
+Cosmic Leaves
+Cosmic leaves? What is this, a space game?
+Cosmic Marketing
+Cosmic Shop
+Cost
+Cost:
+Couch
+Count
+Count %s
+Count value: %s
+Count: %s
+CP Delivery
+Crab
+Crabbo
+Craft
+Craft %s
+Craft %s random items
+Craft ALB
+Craft backpack size
+Craft Beer
+Craft Cheese
+Craft cost
+Craft Fire
+Craft Forge
+Craft Hammer
+Craft individual leaves which can provide huge boosts. Leaves in backpack don't provide any bonuses.
+Craft Leaves
+Craft Level
+Craft level too low (%s/%s)
+Craft Quality changed from %s% to %s% (%s%)
+Craft Quality: %s%
+Craft Quality: %s% | RNG Quality: %s%
+Craft random item
+Craft rarity chance
+Craft RNG Manipulator
+Craft set #%s loaded.
+Craft set #%s saved.
+Craft Sets
+Craft stats for %s crafted leaves
+Craft Time
+Crafted %s
+Crafted %s items.
+Crafted Leaves
+Crafted Leaves Sets
+Crafted leaves: %s | Craft Level: %s | Craft Max Chance: %s%\n
+Crafting
+Crafting is unlocked at the start of the game as well as the Cheesetor pet. You start with 200 Cheese and max Craft Forge and Craft Hammer upgrades in the BLC shop. Clear Leaf Tower Level 100.
+Crafting probabilities
+Crafting rarity increased by [value]% for [duration].
+Crafting Scroll
+Crafting storage exceeded. You've received %s as compensation for %s %s.
+Create
+Create [count] random %s Relic.
+Create %s %s.
+Create %s random artifacts.
+Create %s random equipment items.
+Create %s random materials. The same material can be generated multiple times.
+Create %s random scrolls.
+Create Guild
+Create guild (%s)
+Creates and sends a game report so I can analyse it if something goes wrong.
+Creating account...
+Creating game report...
+Crit chance: %s
+Crit:
+CRITICAL
+CRITICAL BREW!
+Critical chance: %s
+Critical Converters
+Critical multiplier: %s
+Critical Output
+Critical spawns double the seed count.
+Critical Vial
+Crits
+Crits: %s
+Cross the road, please, cross the road, please...
+Crumble Duration
+crunch
+Crunches
+crunches
+Crunchy Areas
+Crunchy BLC
+Crunchy Coins
+Crunchy Pets
+Crunchy Seeds Lite
+Crunchy Tower
+Crunchy Unique Leaves
+Crystal Leaf
+Crystalvale
+Ctrl
+Current average: %s
+Current bonus: %s
+Current count: %s (%s)
+Current craft set: #%s
+Current Guild Bonus
+Current high: %s
+Current hit: %s
+Current HP
+Current pet team: #%s
+Current save slot: %s.
+Current spawn chance: %s
+Current status: %s
+Current streak: %s
+Current time: %s | Real time: %s
+Current version: %s
+Current vulnerability level: %s
+Currently unavailable for %s.
+Curse %s
+Curse %s cleared
+Curse Game Lite%
+Curse Game%
+Curse Machine
+Curse: %s
+CURSED
+Cursed
+cursed
+Cursed Cheese
+Cursed Cheese Curses
+Cursed Dice
+Cursed dice count: %s
+Cursed Die
+Cursed Halloween
+Cursed Kokkaupunki
+Cursed Leafscension Level
+Cursed Leafscension Luck
+Cursed Pub
+Cursed Weakness
+Cursed: %s
+Curses
+Curses aren't that bad actually...
+Curses multiplier
+Curses: %s
+Curses/s
+Curses/s: %s
+Cursor
+Cursors
+Customer Acquisition
+Customize the appearance of your player. Fancy!
+Cute, fuzzy, fluffy. Doubles converter speed and increases converter crits by %s%. Also adds %s player HP.
+Cuvje
+Cyan Tile
+cycle
+D-Pad
+Daffodil
+Daily
+Daily gems
+Daily Material Shipment
+Daily Reward
+Daily rewards
+Daily Rewards
+Damage
+Damage Multiplier
+Damage resistance
+Damage resistance [name]
+Damage Scroll
+Damage type
+Damage type [name]
+Damage Types
+Dame's Rocket
+Dandelion
+Dark Dialog Background
+Dark Essence
+Dark Essences
+Dark Matter
+Darkens the background if a dialog is visible.
+day
+days
+Deactivate
+Deactivate all
+Deactivating this option will not cancel the prestige animation time.
+Death Book
+Debug
+Decrease Crafted Leaves Upgrade Cost
+Decreases battle dice roll timeout by %s.
+Decreases enemy damage by %s% per level.
+Decreases enemy damage by 0.1% per level.
+Decreases enemy damage by 5 per level.
+Decreases global boss cooldown by %s per use.
+Decreases leafscend conversion time by %s.
+Decreases Leafscender input resources by %s. Leafscension to Level 1 is not affected by this upgrade.
+Decreases the number of enemies in The Inner Cursed Pyramid by %s.
+Decreases trade input resources by 50%. This effect is multiplicative.
+Decreases transformation cost of %s by %s. Does not affect shards.
+Deep down in the Desert, these leaves appear to be formed when evil forces are cleansed.
+Deero
+Default
+Default Female
+Default: %s
+Defeat %s %s %s.
+Defeat %s %s in a row.
+Defeat %s to unlock this area.
+Defeat %s to unlock this upgrade.
+Defeat Bob
+Defeat count reset
+Defeat The Witch
+Defeated: %s
+Defeating %s doubles your curses up to %s each reward.
+Defeating The Witch yields %s more %s per level.
+Defeating The Witch yields %s more curses per level.
+Definitely not a man.
+Delay: %s
+Delay: %s | Next autouse: %s
+Delete cloud slot #1
+Delete cloud slot #2
+Delete cloud slot #3
+Delete season character
+Deleting cloud save, please wait...
+Deliver: %s
+Demon Female
+Demon Male
+Descending
+Desk
+Detailed
+Dice
+dice
+Dice Bag
+Dice bag
+Dice Battlefield
+Dice Codex
+Dice Count
+Dice count
+Dice drop value
+Dice enemies have different difficulties. Defeat an enemy for the required number to unlock the next difficulty. These enemies are harder but provide more powerful bonuses.
+Dice inventory slots
+Dice Pack
+Dice Point
+Dice Points
+Dice roll timeout
+Dice sides
+Dice: %s | Sides: %s
+Dicey Dice
+Dicey Meadows
+Did you hear about that cheese factory exploding in France? There was nothing left but de Brie.
+Did you know you can blow away Ghosts in Space with a fish?
+Didn't realize we had a Disney princess for a mod.
+Die
+Different leaf types
+Difficulty
+Difficulty: %s
+Dig
+Dig count
+Dig count: %s
+Dig faster! Decreases dig delay by %s.
+Dig Knowledge
+Dig Muscles
+Dig smarter! Increases item find chance when digging by %s.
+Dig Technique
+Digging Simulator
+Digs
+Dimensional Tapestry
+Dimensions are woven together, creating a cosmic mosaic that captivates with its grandeur.
+Disable all autobuyers
+Disabled
+Disabled because you would take damage here. Ouch!
+Disabled in offline rewards.
+Disastrous
+Discover a variety of materials in different areas. Materials can be used in trades, quests and alchemy.
+Discover areas to find rare leaves. Some leaves only spawn in certain areas.
+Discover secret Unique Leaves that only spawn under certain conditions.
+Discover various dice types of different rarities. Each die provides unique upgrades. Roll a die for better upgrade values. The higher the average roll value is, the higher the bonus value will be (taking the last %s rolls into account).,
+Dismiss
+Display Auto-Collected Materials
+Display Blown-Away dialogs
+Display reward dialogs
+DLC packs are optional, and you don't need these to progress further into the game. However, you can support my work by purchasing the DLC packs so I can continue working on this game. Thanks :)
+Do not use hot oil to fix cramps.
+Do you really want to delete your season character?
+Do you really want to dismiss %s?
+Do you really want to kick member %s from your guild?
+Do you really want to leave the guild?
+Do you really want to log out of your account?
+Do you really want to remove %s from your inventory?
+Do you really want to remove all house items?
+Do you really want to remove this item from the current field?
+Do you really want to scrap %s %s?
+Do you want fashion for your character? You get fashion for your character. The Skins Pack unlocks all available and future skins in the game. Also, I'll throw in 200 gems on top.
+Do you want to %s?
+Do you want to cancel this %s? You will not receive any reward.
+Do you want to delete save #%s from the cloud server?
+Do you want to enter the Mega Leaf Crunch Portal now?
+Do you want to exit the game? (Why?)
+Do you want to load your save data from the cloud server? This will overwrite your current progress.
+Do you want to open all card packs? Note: Opening many card packs at once might lead to inaccuracies. Only the last pack type will be shown.
+Do you want to overwrite your current save?
+Do you want to perform %s Cards Transcension? All %s cards will be reset to %s.
+Do you want to perform %s Cards Transcension? All %s cards will be transcended as many times as you can afford it.
+Do you want to perform Cards Transcension? All %s %s cards will be reset to %s.
+Do you want to reset all autobuy settings? %s Resetting the autobuy settings will start all bots immediately.
+Do you want to respec all items?
+Do you want to salvage %s %s?
+Do you want to salvage %s?
+Do you want to save and quit the game?
+Do you want to stop the current challenge? You will lose your current challenge progress.
+Do you want to upload your save data to the cloud server? This will overwrite slot #%s.
+Do you wish to load this save file?
+Do you wish to return to the main game?
+Do you wish to return to the main game? Your game will only save on your local device.
+Does not spawn
+Doggo
+Don't ask
+Don't rebuild everything! Increases tower start floor by %s per level. This doesn't exceed your highest tower floor.
+Don't waste anything! With this upgrade, energy converters will only convert if the max storage doesn't exceed.
+Double BLC points. Neat.
+Doubles the resource input/output count for all converters.
+Download Live Translation
+Dragon
+Drains
+Draw ALB tool
+Draw ALBs
+Draw basic leaves
+Draw Borbs
+Draw dig items
+Draw enemies
+Draw equipment
+Draw fruits
+Draw HUD
+Draw leaf resource text rewards
+Draw materials
+Draw other leaves
+Draw pet
+Draw player tool
+Draw resource text rewards
+Draw seeds
+Draw shadows
+Draw shop notification
+Draw trees
+Drill
+Drop count: %s
+Dropped Cards will automatically move towards you.
+Dropped Relics will automatically move towards you.
+Drunk usage of high tech equipment should be forbidden in dark areas.
+Ducko
+Ducko doesn't quack around. Quacking is serious business. Thus, material base spawn rate is increased by %s.
+Dumbbell
+Dungeon reward
+Dungeon start floor
+Durable Artifacts
+Durable Scrolls
+Duration: %s
+Duskmoth
+Dust, dust, more dust, and... Leaves? ON THE MOON? [Reach Tower floor 120 to teleport here]
+Dutch is drunk German.
+Dyslexic
+Each %s multiplies %s by %s.
+Each die can be enhanced with more dice and sides. Each die enhancement increases the number of dice that will be rolled for the relevant die, each side enhancement increases sides.
+Each upgrade decreases the auto dig bot's delay by %s.
+Each upgrade decreases the auto slap bot's delay by %s.
+Earth Essence
+Earth Essences
+Eat some %s to get %s instantly.
+Eat some Bismuth Apples to get bismuth leaves instantly.
+Eat some Cosmic Apples to get cosmic leaves instantly.
+Eat some Exotic Apples to get Exotic Leaves instantly.
+Eat some Gold Apples to get Gold Leaves instantly.
+Eat some Platinum Apples to get platinum leaves instantly.
+Eat some Void Apples to get void leaves instantly.
+Efficiency Tutorial
+Efficient Quarks
+Electric
+Electric Shop
+Electric Shop ***
+Electrical Energy
+Electrical Energy Leaf
+Elephanto
+Elephants are the largest land animals on Earth.
+Elite
+Elk
+Email
+Email or username
+Emberglide
+Emerald
+Emerald Leaf
+Emerald Leaves
+Empty
+Empty cloud save data.
+Empty Soul
+Empty Soul Leaf
+Empty Soul Leaves
+Enable %s
+Enable all autobuyers
+Enable Events
+Enable Gem Upgrades
+Enable notifications
+Enable or disable seasonal events which changes visuals or gameplay. Might require game restart to take effect.
+Enable salvage/transcension
+Enable Seasonal Events
+Enable Smooth Graphics
+Enable Supporter Upgrades
+Enable this option if you encounter any fps drops or memory leak issues.
+Enable tooltips
+Enabled
+Enables %s %s.
+Enables a toggle for %s.
+Enables auto reset of %s.
+Enables automatic brewing of recipes.
+Enables automatic fusion of Crafted Leaves. Autofusion doesn't select locked leaves.
+Enables fixed navigation for the top and bottom bar. Comes with 100% improved muscle memory.
+Enables offline brewing. It works at %s of the base rate, and max offline brew count is %s. Recipes must have auto-brew enabled to work offline. Does not work with time skips.
+Enables offline earnings for %s. Gain %s from the highest cleared Pyramid floor reward. A pyramid floor must be cleared for this upgrade to take effect.
+Enables plant synergy. Each plant provides bonuses to certain neighboring plants.
+Enables smooth rendering of graphics. Turn this option off if you like pixel art!
+Enables the auto progress toggle for %s.
+Enables the auto roll toggle for %s.
+Enables the auto save toggle for %s.
+Enables the automatic use of Artifacts.
+Enchanted Fruit
+Enemies
+enemies
+Enemies defeated: %s
+Enemies in The Leaf Tower can drop valuable items.
+Enemies in the Leaf Tower fear your authority. Reduce the number of enemies each floor by 1 per level.
+Enemy card drop rates
+Enemy drop [name]
+Enemy drop chance [name]
+Enemy hit color
+Enemy level in the %s is decreased by %s.
+Enemy resource drop multiplier
+Enemy resource rewards increased by +%s% per level.
+Enemy rewards are applied in The Leaf Tower.
+Enemy rewards will be added to offline earnings by %s per level. Poor enemies.
+Enemy shards count
+Enemy shards multiplier
+Enemy spawn chance
+Energelics
+Energy
+Energy Belt
+Energy charge/s
+Energy charge/s%
+Energy Guard
+Energy Shrine
+Energy Singularity
+Engineering
+Enhance
+Enhance cost reduction
+Enhance field delay
+Enhance level: %s
+Enhanced fields increase harvest XP.
+Enhancements
+Enter %s (%s)
+Enter hotkey...
+Enter Seed (numbers only)
+Enter the Big Leaf Crunch Portal to restart your blowing adventure with some BLC Coin(s).
+Enter the Leaf Portal to restart your blowing adventure with some coins.
+Enter the Leaf Portal to restart your blowing adventure with some coins. 20+ coins recommended at first prestige.
+Enter the Mega Leaf Crunch Portal to restart your blowing adventure with some MLC Coin(s).
+Enter the Pyramid
+environment
+Environmental damage resistance
+Environmental damage: %s (%s of max HP)
+Epic
+Epic Chest
+Epic Chests drop from floor -10 or below.
+Epic Material Chest
+Equip
+Equip tool on ALBs
+Equip tool on player
+Equip yourself with powerful Gems to purchase useful upgrades!
+Equipment
+Equipment collect count
+Equipment drop chance
+Equipment Items
+Equipment Leaf
+Equipped
+Erase
+Error %s: Invalid JSON result. Please try again later.
+Error %s: Invalid result. Please try again later.
+Error %s: Invalid success result. Please try again later.
+Error %s: received status code %s. Please try again later.
+essence
+essences
+Essences
+Eternal
+Event
+Event date
+Event resources
+Event Shop
+Events
+Everyone at the mountain is annoyed by leaves. GET RID OF THEM.
+Everyone in the world bought tools to blow the leaves out of their gardens, so there's no tool available for you anymore. Perform a Big Leaf Crunch with Your Hands only to complete this challenge.
+Everyone needs to know Farah's puzzles need to be folded.
+Evil Bob was finally defeated! A shiny, green portal has appeared. I wonder where it leads to...
+Excited Borb
+Exotic
+exotic
+Exotic Leaf
+Exotic Leaves
+Exotic leaves? These leaves seem to be important.
+Exotic Marketing
+Exotic Shop
+Exp: %s/%s
+Experience
+Experience the ultimate leaf blowing experience filled with exciting rewards! Get 2000 Gems, 100 more Gems per daily reward, 1x 72h Time Travel, 2x 24h Time Travel, 3x 6h Time Travel, 5x 30m Time Travel.
+Experience: %s
+Experimental feature. Some texts may overlap.
+Expires in %s.
+Expires in:
+Exploited a trade for %s.
+Exploits the leafscension process to instantly finish a random available leafscension and keep the input resources. At least %s leafscensions must be activatable. The max leafscension level depends on the number of defeated %s. Max level: %s.
+Export
+Export Save
+Export save data to the clipboard
+Eyeball
+Eyeballs
+F2P
+Fabric Warden
+Face a pretty known enemy in the Halloween event area which drops some nice event loot!
+Factory
+failed
+Failed
+Failed to add a shard due to randomness.
+Fairy
+Fan
+Fan Gift
+FAQ
+Farah will be always my queen.
+Farm Field
+Farming
+Farming Shop
+Faster Artifacts
+Faster Auto Dig Bot
+Faster Auto Slap Bot
+Faster autobuy
+Faster Autocraft
+Faster Autofacts
+Faster Battle Dice
+Faster Dice
+Faster Enhancing
+Faster Reactor
+Faster Vial
+Fastest time: %s%s | Completed: %s
+Fastest: %s | %s
+Favorites
+Feather
+Feathers
+Female Black
+Female Green
+Female Orange
+Female Pink
+Female Purple
+Female Red
+Female Turquoise
+Female White
+Female Yellow
+Fertilizer
+Fertilizer upgrades will be purchased automatically.
+Field %s
+Field quality affects plant/butterfly bonus.
+Fight electrical energy with nuclear energy!
+File is corrupt.
+File may be corrupt.
+Filter: %s
+Find a specific Artifact to lift the seal. You will also need to have access to The Abandoned Research Station before going here.
+Find and collect the community leaves. Each collected community leaf adds +%s% to all leaf rewards. Community leaves spawn rarily but they can be found elsewhere.
+Find new trades faster! Decreases trades refresh cooldown by %s%.
+Find the %s in uncommon Borbventures.
+Find yourself within a transcendent space where quarks and quasars unite, shaping a biome that extends from the subatomic to the cosmic.
+Finish
+Finish %s trades
+Finish all
+Fire
+Fire Essence
+Fire Essences
+Fire Fields
+Fire Fields Portal
+Fire Leaf
+Fireplace
+First, you got rid of leaves. Now, you crafted leaves. ALL THIS DOESN'T MAKE SENSE, DOES IT.
+Fisho
+Fixed Navigation
+Flame Brazier
+Flame vulnerability
+Flamingoo
+Flashback
+Flask Trade Packages
+Flasks are stored in safe packages so flask trades are uncapped.
+Flocko
+Flokc 200k
+Floor
+floor [tower_floor]
+Floor %s cleared!
+Floor %s cleared! Reward: %s
+Floor %s unlocked.
+Focused Equipment
+Focused Pets
+Focused Quarks
+Focused Tools
+Focused Uniques
+Font
+Font size
+For example, a regular die consists of 1 die and 6 sides (1d6), so the min/max roll value is 1-6. After enhancing the die with a dice count upgrade (2d6), the min/max roll value is 2-12. A side enhancement increases the side count (2d7), the min/max roll value is 2-14.
+Force kick in 5 minutes...
+Force Save
+Force save
+Force Season Save
+Forget-Me-Not
+Forgot your password?
+Fortune and glory, kid. Fortune and glory. You may now fuse %s!
+Forwards the time for this field.
+Found a new soul buddy!
+Foxes are extremely playful. That's why BLC rewards are increased by 200%.
+Foxo
+Free
+Free %s
+Free %s Recruit
+Free gems! Weeeee!
+Freebie
+Frequent Scrolls
+Frog
+Frozen Leaves CAN hurt, you know.
+Fruit
+Fruit Fertilizer
+Fruit Leaves
+Fruit Magnet
+Fruit rewards will be added to offline earnings by %s per level. Hello, Fruit Gang!
+Fruit spawn chance
+Fruit Trees
+Fruit value
+Fruit value multiplier
+Fruitifacts
+Fruits
+FRUITS
+Fruits are mega fruity. Increases fruit rewards by %s.
+Fruits contain more fruit. Increases fruit reward by %s.
+Fruits contain much more fruit. Increases fruit rewards by %s.
+Fruits move towards you.
+Fruits regenerate your HP by %s per level.
+Fruity Fruits
+Full
+Fullscreen
+Fuse
+Fusion
+Fusion Shard
+Fusion Shards
+Fusion Shards are used to fuse Crafted Leaves into more powerful ones. Receive %s %s upon purchase.
+Fusion Slots
+Gain %s BLCs of your highest BLC per offline crunch.
+Gain %s MLCs of your highest MLCs per offline MLC.
+Gain %s of your current BLC immediately (%s).
+Gain %s% more MLCs per level.
+Game loaded, offline for %s seconds.
+Game saved.
+Game wiki maintained by awesome fans.
+Gameplay
+Garden Gnome
+Gem
+Gem Card Packs left today: %s/%s
+Gem leaf multiplier
+Gem Leaves
+Gem Leaves Shop
+Gem Leaves Shop ***
+Gem Packs left today: %s/%s
+Gem upgrades are disabled.
+Gems
+Gems Business
+Gems can be collected by completing achievements, claiming the daily reward or by purchasing DLC packs to support my work. Gems are completely optional and they are not needed to progress further into the game.
+Gems Delivery
+Gems Shop
+Gems to Dice
+General
+Get [value]% more leaves for [duration].
+Get %s common materials.
+Get %s curses in the Borb Claw Machine.
+Get %s materials and %s essences.
+Get %s materials.
+Get %s mulch per second for [duration].
+Get %s random %s %s every offline minute.
+Get %s Shards for %s %s.
+Get a daily shipment of materials. The shipment contains 50 of all spawnable materials each level. Collected with the daily reward.
+Get Artifact
+Get cursed! Increases the number of curses when defeating %s by %s.
+Get offline rewards for %s random leaf resources, %s random [beer, borbs, cheese, gems] resources, [silver/gold] tokens, %s random artifacts, %s random equipment, %s random scroll.
+Get offline rewards for %s random leaf resources, %s random [beer, borbs, cheese, gems] resources, %s random equipment.
+Get offline rewards for %s random leaf resources, %s random [beer, borbs, cheese, gems] resources, silver/gold tokens, %s random artifacts, %s random equipment, %s random scrolls.
+Get prestige resources instantly and keep your progress.
+Get random materials
+Get ready to explore a new world of nature and environmental conservation with the Nature Pack! Featuring exciting new elements like Nature Gems, Plants, Butterflies, and more, this purchase offers an immersive experience that will keep you engaged for hours on end.
+Get ready to immerse yourself in a world of greenery as you plant flowers, add water, fertilize, and gain new bonuses. Discover plant synergies to further boost their bonuses. You'll also earn Season XP as you progress through each level, allowing you to unlock new and exciting rewards. But that's not all - you can also breed butterflies to increase your plant XP and progress faster. Don't miss the chance to fight the Doomed Tree and earn exclusive nature season loot.
+Get Save Slots Info
+Get Unique Leaf
+Getting news...
+Getting purchase data from store...
+Getting season information...
+Ghast
+Ghost
+Ghost Leaf
+Glasses
+Glinting Thicket
+Glitter Leaf
+Global
+Global merge input count reduction
+Globe
+Gold
+gold
+Gold Fertilizer
+Gold Leaf
+Gold Leaves
+Gold leaves? They must be worth something.
+Gold Shop
+Gold Suitcase
+Gold Token
+Gold Token Shop
+Gold Token Shop **
+Gold Tokens
+Golden Marketing
+Goo
+Google Play
+Grandma
+Grandpa
+Graphics
+Graphics Card
+Gravity Ball
+Gray
+Greedy Uniques
+Green
+Green Flame
+Green Flask
+Green Flasks
+Green Leaf Stone
+Green Planet Edge
+Green Science
+Green Tile
+Grow duration: %s
+Grow your own plants here. Make sure to water them regularly!
+Growing
+Grown
+Guaranteed
+GUI Resolution
+Guide
+Guild Honor investments today: %s/%s
+Guild ID
+Guild info
+Guild Info
+Guild Log
+Guild members
+Guild name
+Guild name (min %s chars)
+Guild Upgrades
+Guilds
+Guilds Headquarter
+Guitar
+h
+Hagglin' %s
+Half way up...
+Halloween
+Halloween Lantern
+Hands Only
+Hard reset
+Hare
+Harvest
+Harvest all
+Harvest XP: %s
+Harvest XP: %s (%s)
+has
+have
+Have Clovers
+Have Materials
+Have Printers
+Have Resources
+Having trouble defeating the bosses? We can reset their level with magic.
+He is in a magical prison at Mount Moltenfury. We captured a chimera called Spectralseeker a long time ago, but it was able to flee. The prison was locked by a magic lock with a unique code that could only be deciphered with an item crafted by Borbs... The Borbcipherer.
+He must be fun at parties.
+Head
+Healthy Fruits
+Healthy Lifestyle
+Heart Leaf
+Heat
+Heat Shield
+Heats up the cauldron to instantly brew all active recipes.
+Hehehh...
+Heikki
+Hello, /r/LeafBlowerRevolution!
+Hello, communism! Reach Leaf Tower Level 11.
+Hello, nice to meet you!
+Help your neighbor to pick up some platinum leaves.
+Helper Borb
+Hematite
+Hematite Leaf
+Hematite Leaves
+Hematite Shop
+Hematite Shop ***
+Here, have some gems!
+Hey, this is quite fun!
+HEY, YOU! YES, YOU! PLEASE HELP ME! FOLLOW ME THROUGH THE PORTAL! QUICK!!!
+Hey! You! Please help me! My brother was kidnapped but I'm too afraid to leave the cavern!
+Hibiscus
+Hide all
+Hide Maxed Shops
+High
+High-energy area. Feels like you'll get an electric shock each second. Bzzz bzzz. Plasma Leaves can only be blown off the screen at a certain speed.
+Higher chance to spawn fruits (+0.5%).
+Higher chance to spawn gold leaves.
+Higher craft tier unavailable.
+Highest floor: %s
+Highest roll: %s
+Highest saved: %s
+Hint: Cosmic or Ice Damage might be useful.
+Hint: Cosmic or Lava Damage might be useful.
+Hint: Exotic or Lava Damage might be useful.
+Hint: Exotic, Gold or Platinum Damage might be useful.
+Hippo
+Hippo stirs the cauldron for you. Decreases alchemy brew time by %s and increases critical brews by %s.
+Hires an ALB to craft leaves for you but it's %s slower. Autocraft has to be enabled in the crafting menu.
+Hit min/max: %s/%s
+Hitman
+Home Garden
+Home is where your Leaf Blower is.
+Honor
+Hot Cauldron
+Hot, hot, hot! Hey, you! Yes, you! Please decipher the prison!
+Hotkeys
+hour
+hours
+House capacity reached. Please remove some items before placing new ones.
+House Constructor
+How does this even work?
+How To Play
+HP regeneration
+HP: %s/%s
+Hulk
+Hyacinth
+Hyena
+I agree to the terms, conditions and the privacy policy.
+I am an odd number. Take away a letter and I become even. What number am I?
+I am full of holes; I can hold water. What am I?
+I caught the guy who tried to kick down our door last weekend. It was quite a funny conversation. I have rarely been so passive-aggressive.\n\n\n\nBasically, he parked his big Mercedes van in front of our door and someone kicked the van and it did damage.\n\n\n\nHis friend lives a street away and told him it was us (which it obviously wasn't, I dislike violence and damaging people's stuff).\n\n\n\nSo after a bit of a talk, he opens his van, takes out a wet wipe, and starts cleaning our door, and two hours later he came back and gave us two very nice beers.\n\n\n\nSo we invited him over and had a drink with him.\n\n\n\nQuite a nice guy actually, he was very sorry.
+I followed your advice yesterday. A bit too much. I woke up with my head on my desk at 4am.
+I have branches, but no fruit, trunk or leaves. What am I?
+I lost track of the number of stairs...
+I need a malachite notepad to keep track of all these leaves...
+I run because I have to, but otherwise I'd just pick up heavy things and put them back down.
+I was hitting the gym yesterday. I realized I was going too heavy, backed it back down to hit good rep counts and focus on form. Squat day today, doing 225x5x5, 100kg-ish.
+I'm a total fan of this fan.
+I'm stuck in a corner but I can travel all around the world. What am I?
+I'm writing on a thesis called 'Understanding the Riemann Zeta function and its functional equations through elementary complex analysis and calculus'. Could you help me with that?
+Ice
+ice
+Ice Apples
+Ice Leaf
+Ice Leaves
+Ice leaves? So cold right now.
+Ice Shop
+Ice Shop **
+ID: %s
+ID: %s | Name: %s
+ID: %s | Name: %s | Honor invested: %s
+ID: %s | Name: %s | Level: %s | Members: %s | Status: %s
+If the inventory is full, the item reward is salvaged when a Borbventure is finished.
+If this option is enabled, locked crafted leaves can be rerolled.
+If this option is enabled, locked crafted leaves can be salvaged.
+If this option is enabled, the window will be restrained to the current display. If you would like to play on a different monitor or if the window doesn't resize correctly, try toggling this option off. Note that the game window might disappear. Press %s to toggle fullscreen.
+If you are not able to claim DLC packs after purchase, make sure that all DLCs are activated in Steam\n(Leaf Blower Revolution -> Manage DLC)
+If you can't brew recipes even though you unlocked them, then your material storage is full.
+If you like to blow leaves, I tell you I'm your man. Going with the blow, it's all a game to me.
+If you throw a blue stone into the Red Sea, what will it become?
+Import
+Import Save
+Import save data from clipboard
+In order to enter The Cursed Pyramid, you have to pay a fee. When you left the pyramid, you have to pay the fee again.
+Inactive
+Increase all fruit rewards by +800%.
+Increase Converter Count
+Increase Converter Output
+Increase Converter Speed
+Increase the Converter output rewards by +300%.
+Increase the Converter static output rewards by +400%.
+Increase the Printer output rewards by +600%.
+Increase the Printer rewards by +100%.
+Increase your BLC coin rewards by %s.
+Increase your BLC coin rewards by %s%.
+Increase your BLC coin rewards x3.
+Increase your leaf reward by +%s% for all leaves.
+Increase your leaf reward by +20% per level for all leaves.
+Increase your MLC coin rewards by %s.
+Increase your MLC coin rewards x3.
+Increase your offline rewards by +750% for all leaves.
+Increase your prestige coin rewards x3.
+Increased blow range
+Increased max count for capped Artifacts
+Increased vial seed rarity chance
+Increases %s claw count by %s for every %s defeats of %s.
+Increases %s count by %s in %s.
+Increases %s count for this die by %s.
+Increases %s drop count by %s.
+Increases %s multi drop chance by %s.
+Increases %s received by Transcending Cards by %s.
+Increases %s spawn rate by %s per level.
+Increases ALB speed by %s per level.
+Increases all converter output by 10 per level.
+Increases all fruit rewards by 1000%. You used the Leaf Blower at the Garden while having 100e Gold leaves.
+Increases all leaf rewards by 400% per level.
+Increases BLC Coins rewards by +%s per level. Nice.
+Increases BLC Coins rewards by +100 per level. Nice.
+Increases blc points reward by +1 per level.
+Increases blow power by %s% and enemy damage by %s%. You used the Nuclear Leaf Blower in Leafsink Harbor while having 100k Benitoite leaves.
+Increases blower enemy damage by %s.
+Increases bonus reward by %s in %s.
+Increases borb roster size by %s.
+Increases boss card drop chance by %s.
+Increases card parts drop chance by %s.
+Increases chance to spawn %s by %s.
+Increases charging value by %s.
+Increases chest spawn chance in dungeons by %s per level.
+Increases combo duration.
+Increases combo multiplier by %s% per level.
+Increases combo multiplier by 50%.
+Increases combo rewards by 300%. You used any Rake at the Mountain while having 1D Bismuth leaves.
+Increases converted bismuth leaves output by 20 per level.
+Increases converted cosmic leaves output by 20 per level.
+Increases converted gold leaves output by 20 per level.
+Increases converted platinum leaves output by 20 per level.
+Increases converted void leaves output by 20 per level.
+Increases crafting backpack size by %s per level.
+Increases crafting inventory size by %s per level.
+Increases critical chance of converters by %s per level.
+Increases critical value of converters by %s per level.
+Increases curse count per hooked curse by %s. This also applies to the slot machine.
+Increases daily rewards by +2 gems per day.
+Increases damage against %s by %s.
+Increases damage by %s each time you were cursed.
+Increases drop chance of scrolls by %s% per level.
+Increases duration of scrolls by %s% per level.
+Increases enemy card drop chance by %s.
+Increases expire duration of Artifacts by %s seconds per level.
+Increases expire duration of Artifacts by 500%.
+Increases global trade multiplier by [value]% for [duration].
+Increases global trade multiplier by %s%, decreases trade refresh cooldown by %s% and trade delivery time by %s%. You used the Fan in The Hidden Sea while having 1m Obsidian leaves.
+Increases item drop chance by %s% per level.
+Increases item drop count by %s per level.
+Increases leaf hit damage by %s per level.
+Increases leaf hit damage by %s.
+Increases leaf hit damage multiplier by %s% per level.
+Increases leafscended leaves drop chance from %s by %s.
+Increases leafscended leaves drop level from %s by %s.
+Increases material base spawn rate by [value]. You used the [tool] in [area] while having [amount] [resource].
+Increases material storage by %s per level.
+Increases max cards count by %s.
+Increases max combo by 10 per level.
+Increases max concurrent scrolls by %s per level.
+Increases max leaf merge range by %s pixels per level.
+Increases max relic count by %s.
+Increases max resource storage by the power of %s per level. Max leaf storage: %s
+Increases max Shards count per leaf by %s. This doesn't extend the max Shards count per property.
+Increases max trade level by 1 per upgrade level.
+Increases max trades by %s per level.
+Increases max upgrade level of equipment items by %s.
+Increases max upgrade level of pets by %s.
+Increases max upgrade level of Tools by %s.
+Increases max upgrade level of Unique Leaves by %s.
+Increases min and max trade level by 1 per upgrade level.
+Increases nuclear fuel power by 40% per level.
+Increases pet bonuses by [value]% for [duration].
+Increases Pet bonuses by %s% %s
+Increases player damage by [value]% for [duration].
+Increases player damage by %s per Borb slapped.
+Increases player damage by %s per completed trade.\nCurrent bonus: %s (%s trades)
+Increases player damage by %s per dig.\nCurrent bonus: %s (%s digs)
+Increases player damage by %s per Pet pet.
+Increases player damage by 0.5% each 30 Big Leaf Crunches per level. Also increases BLC Coins rewards by +100 per level.\nCurrent bonus: %s% (%s crunches)
+Increases player damage by 0.5% per level.
+Increases player damage by up to %s per level. After each prestige, the bonus value changes randomly.\nCurrent bonus: %s | Single bonus: %s
+Increases Player HP by +%s per level.
+Increases Player HP by +%s% per level.
+Increases Player HP by +0.5 per level.
+Increases Player HP by 0.5% per level.
+Increases Player HP Regeneration by +0.1 per level.
+Increases Player HP Regeneration rate by +%s per level.
+Increases Player HP Regeneration rate by +1 per level.
+Increases prestige coins reward by 200% per level.
+Increases printer output by 5000%. You used the Graphics Card in the Abyss while having 1m Exotic leaves.
+Increases printers output by [value]% for [duration].
+Increases relic base damage by %s.
+Increases relic damage by %s for each %s of energy.
+Increases seed max count by %s per level.
+Increases seed rewards by %s% per level.
+Increases seed rewards by %s% per level. You have to maximize all seeds to level %s (up until Sand Seeds) before being able to purchase this upgrade. Your seed count will be reset each time you purchase this upgrade.
+Increases seed rewards by 50%. You used the Rocket Engine at the Celestial Plane while having 100k Celestial leaves.
+Increases seed spawn chance by [value]% for [duration].
+Increases seed spawn chance by 3%.
+Increases Shardify output by %s.
+Increases the battery capacity of all ALBs.
+Increases the battery charging rate of all ALBs.
+Increases the blowing power of all ALBs.
+Increases the cap on unlocking pyramid floors beyond 100 by +%s per level.
+Increases the chance to craft a rarer item by %s% per level.
+Increases the chance to craft rarer items.
+Increases the chance to get better chests per level.
+Increases the chance to kill a passive soul-boosted boss by %s. This chance is relative to the base soul boost chance.
+Increases the claw pickup range by %s pixels per level.
+Increases the Combo Multiplier by 200% per level.
+Increases the drop rate of relics by %s.
+Increases the hit damage when ALBs bump into enemies by +4. Double ouch!
+Increases the max offline brew count by %s.
+Increases the minimum and maximum number of bonus items in the Borb Claw Machine by %s per level.
+Increases the minimum RNG quality by %s% per level.
+Increases the number of %s by %s.
+Increases the number of craft sets by %s per level.
+Increases the number of loadout sets by %s per level.
+Increases the number of pet teams by %s per level.
+Increases the offline rate of brewing by %s.
+Increases the speed of all ALBs.
+Increases the trade reward cap for some resources by the power of %s per level.
+Increases type damage by %s.
+Increases unique leaves bonuses by [value]% for [duration].
+Increases Unique Leaves bonuses by %s% %s
+Increases upgraded equipment blowing damage by %s.
+Increases upgraded pet blowing damage by %s.
+Increases upgraded tools blowing damage by %s.
+Increases upgraded Unique Leaves blowing damage by %s.
+Increases your craft level by %s. With higher craft levels, you can craft better leaves.
+Increases your forge's max temperature, so you can upgrade your crafted leaves' max level by +1.
+Increases your resistance in HP draining areas by %s.
+Inf
+Infertile Grounds
+Info
+Inga
+Initializing purchase, please wait...
+Insert More Mulch
+Instant Prestige
+Instantly
+Insufficient resources
+Invalid cloud save data.
+Invalid IAP data. Please try again later.
+Invalid import save data.
+Invalid result. Please try again later.
+Invalid save file.
+Invalid season shop items.
+Invalid season. Please try again later.
+Invalid seasons data. Please try again later.
+Invalid transaction. Please try again.
+Inventory
+Invest %s Honor (%s xp)
+Invest Honor in exchange for Guild XP. Honor can be earned by claiming the daily reward or by defeating area bosses.
+Iridescent Essence
+Iridescent Essences
+Iron Bar
+It doesn't seem to be powerful...
+It seems like you can also decipher some lore now.
+It's a bear market! Bearo accepts %s new trades and collects %s finished trades every minute, and reduces trade input resources by %s.
+It's Cursed Halloween!
+It's Halloween. The Cursed Cheese returns! Protip: enable ALB bumping in the options.
+It's kind of hot in here.
+It's mine!
+It's Nature Season. The Doomed Tree returns!
+It's not a ritual but a really fancy and useful machine.
+It's really The Holy Grail! Increases Silver/Gold Token rewards by +500%, enemy damage +500%, ALB damage by +2500%.
+item
+Item Drop Chance
+Item Drop Count
+Item Shelf
+items
+Items
+Items: %s
+Items:\n%s
+Join (%s)
+Join a Guild
+Join Guild
+Join guild
+Join guild (%s)
+Join request
+Just keep digging, just keep digging...
+Keep all of your bought tools permanently.
+Keep climbing, keep climbing...
+Key Finder
+Key Multiplier
+Keyboard
+Kick
+Kicking guild member %s...
+Kill Count
+Kills per cycle: %s
+Kills per hour: %s
+Kills per minute: %s
+Kippis!
+Klackon
+Kokkaupunki
+Kyanite
+Kyanite Leaf
+Kyanite Leaves
+Kyykkyviini, Kyykkyviini, Kyykkyviini!
+Language
+Large Leaf Rake
+Large Paint Roller
+Large Trout
+Last cloud save: %s
+Last cloud upload: %s ago.
+Last Counter
+Last reward
+Last roll: %s
+Last rolls: %s
+Last Rolls: %s
+Last run: %s
+Lava
+lava
+Lava Apples
+Lava Golem
+Lava Leaf
+Lava Leaves
+Lava leaves? So hot right now.
+Lava Shop
+Lava Shop **
+Lawn Mower
+Lazer
+Lazers can be dangerous in voids.
+LBR Cloud Saves
+LEAF
+Leaf
+Leaf + combo upgrades affect fruits now. Join the Fruits Gang!
+Leaf Armor
+Leaf Blower
+Leaf Blower Revolution offers optional DLCs and IAPs. While not necessary to progress, they add exciting extras to enhance your experience. Your support through these purchases goes a long way in helping us continue improving and expanding the game. Thank you for being part of our community and happy blowing!
+Leaf Blower's Journey
+Leaf Blowers
+Leaf Combo
+Leaf Counter
+Leaf counter bet chance
+Leaf counter bet multiplier
+Leaf counter delay
+Leaf Counter Macro
+Leaf counter multiplier
+Leaf counter value
+Leaf Damage
+Leaf Damage Multiplier
+Leaf Damage T1
+Leaf Damage T2
+Leaf Essence
+Leaf Essences
+Leaf Galaxy
+Leaf Helm
+Leaf Marketing
+Leaf Marketing upgrades will be purchased automatically.
+Leaf Merginator
+Leaf Portal
+Leaf Portals
+Leaf powered ALBs
+Leaf Powered Leaf Blower
+Leaf print machines print and collect leaves automatically. Hide it from the tax authorities.
+Leaf Relics
+Leaf Relics are almost as old as the universe. Relics boost your blowing damage by an overwhelming amount, but they require Leafscended Leaves to be effective.
+Leaf Scroll
+Leaf Shield
+Leaf Shop
+Leaf spawn chance
+Leaf Sword
+Leaf Tower | Skip tower floor chance: %s | Floors skipped: %s
+Leaf Trader
+Leaf value adder
+Leaf value multiplier
+leafand
+Leafcape Female
+Leafcape Male
+Leafcheapers
+Leafscend
+Leafscend Accelerator
+Leafscended
+Leafscended %s: %s
+Leafscended Leaves
+Leafscender duration
+Leafscender input cost
+Leafscender input cost%
+Leafscending...
+Leafscension
+Leafscension Bot
+Leafscension Exploit
+Leafscension Leaf
+Leafsink Harbor
+Lease Field
+Leather
+Leave Guild
+Leaves
+Leaves aren't just green – they're Azurite blue and Niobium vibrant!
+Leaves drop 1% faster per level.
+Leaves Matter
+Leaves Shop
+Leaving the guild...
+left click
+Legendary
+Legendary Chest
+Legendary Chests drop from floor -15 or below.
+Legendary Material Chest
+Legendary Pack
+Less Pyramid Enemies
+level
+Level
+Level %s
+Level %s unlocked.
+Level 1
+Level: %s
+Level: %s | Next level: %s
+Level: %s | XP: %s/%s
+Level: %s/%s
+Level: %s/%s | Ascend Level: %s/%s
+Levels: %s-%s
+Lift the magical barrier
+Light Essence
+Light Essences
+Lil' Doggo
+Lily of the Valley
+Literally unlocks your house for you have lost your key since the start of your journey.
+Load %s
+Load craft set #%s
+Load craft set %s
+Load from cloud slot #1
+Load from cloud slot #2
+Load from cloud slot #3
+Load loadout %s
+Load local save
+Load pet team #%s
+Load priorities %s
+Load Steam save
+Loading cloud save, please wait...
+Loading season character...
+Loading...
+Loadout %s loaded.
+Loadout %s saved.
+Loadouts
+Loadouts include the current tool, pets, unique leaves, scrolls, crafted leaves and autobuy priorities. Active scrolls won't be cancelled.
+local
+Local save file: %s
+Located in %s.
+Located in the northern hemisphere, Leafsink Harbor is home to many wealthy leaf blowers due to its valuable resources.
+Lock
+Locked
+Locked %s will not be refreshed.
+Locked cards can't be ascended.
+Locked cards can't be transcended.
+Locked fields can't be harvested/collected.
+Locked items can't be salvaged.
+Locked upgrades
+Log
+Log in
+Log out
+Log out of %s
+log2(abs(sin(t)))
+Log2Sin
+Logged in to Google Play
+Logging in
+Logging in...
+Look at this beautiful butterfly. Pet and Unique Leaves bonuses are beautifully increased by %s%.
+Look at this cute little spider! Increases your hp regeneration by %s and reduces incoming damage by %s.
+Loops: %s
+Lore
+Love Borb
+Low
+Lucky Vial %s
+Lurker
+m
+Magenta
+Magenta Flask
+Magenta Flasks
+Magenta Science
+Magenta Tile
+Magic Leaf
+Magic Mulch
+Magically starts the %s event for %s.
+Magically, the converters create more output resources. Increases converted output resource by 1 for all converters.
+Magically, the converters create more output resources. Increases converted output resource by 1 for the current converter.
+MAKE - A - SACRIFICE - TO - UNLOCK - THE - NEXT - FLOOR
+Make mulch out of leaves.
+Makes delicious juice out of %s. No %s get hurt.
+Malachite
+Malachite Leaf
+Malachite Leaves
+Malachite Shop
+Malachite Shop ***
+Manage account
+Manage your account, play with your season character or redeem a code. Codes can only be redeemed in online seasons. Check the discord server to find new codes!
+Manage your bots in this panel. The highest autobuy priority is %s. Upgrades with a lower priority number will be bought first.
+Manage your guild here.
+Marigold
+Mars
+Mask
+Master of Leaves
+Master of MLC
+Master volume
+material
+Material
+Material base spawn rate increased by [value]% for [duration].
+Material Delivery
+Material Duplicator
+Material Finder
+Material Inspector
+Material Leaf
+Material Magnet
+Material Pack
+Material Pub
+Material Scroll
+Material spawn chance
+Material spawn chance [name_plural]
+Material spawn chance multiplier
+Material Storage
+Material storage
+Material storage [name_plural]
+Materials
+materials
+Materials auto collected: %s
+Materials can spawn all over the world. Some materials can be crafted from certain leaves.
+Materials per hour: %s
+Materials will automatically move towards you.
+Max
+Max -%s
+Max [name] storage
+Max [name] storage%
+Max %s trade value
+Max %s Trades
+Max %s trades per day
+Max active Scrolls
+Max Borbs
+Max Cards
+Max cards (%s): %s
+Max Combo
+Max combo
+Max combo multiplier
+Max energy storage
+Max Energy storage
+Max Energy storage%
+Max Equipment Level
+Max floor: %s
+max gained per second: %s
+Max leaf storage
+Max Leaves Count
+Max level
+Max level reached.
+Max level reached. Ascend this Borb to upgrade it further.
+Max nature fields
+Max Offline Time
+Max Pet Level
+Max pets
+Max printer storage
+Max printers increased by %s per level. Max printers: %s
+Max Relics
+Max resource storage
+Max resource storage%
+Max Shards count
+Max Shards count (single)
+Max storage: %s
+Max Tool Level
+Max unique leaves
+Max Unique Level
+Max Upgrade
+Max vial charges
+Meadowdance
+Medkit
+Meeds
+Mega Crunch
+Mega Crunches
+Mega Fruits
+Mega Leaf Crunch
+Mega Leaf Crunch %sx
+Mega Leaf Crunch Shop ***
+Mega Leaf Crunches
+Member %s has been kicked from the guild.
+Members
+Members: %s/%s
+Menu transparency
+Merch Shop
+Merchandise Shop
+Merge input count reduction
+Merge, merge, merge! Get %s Obsidian Leaves.
+Meteor Rock
+Meteor Rocks
+Milestones
+Min
+Min chance
+Min craft level: %s
+Min: %s | Max: %s
+Mini Shovel
+minute
+minutes
+Misc
+Missing leaves
+MLC
+MLC Coin
+MLC Coins
+MLC coins
+MLC Coins Multiplier T1
+MLC Coins Multiplier T2
+MLC Coins x3
+MLC coins%
+MLC gems upgrade
+MLC Shop
+MLCs
+Mmm, beer.
+Mmm, Cards.
+Mmm, cheese.
+Mmm, essences.
+Mmm, MLC coins.
+Mmm, more Soul Keys.
+Mmm, Soul Keys.
+Mmm, Soul Particles.
+Moar BLC
+Moar Gems
+Model A321.
+Modified Fire Extuingisher
+Monkeyo
+Monkeyo like leaf go poof. Add leaf blow power 1000%.
+Moon Crystal
+Moon Crystals
+Moon Dust
+Moonbloom
+Moonstone
+moonstone
+Moonstone Leaf
+Moonstone Leaves
+Moonstone leaves are created when leaves are blown through Space and then land with their downside on the Moon. Only on Mondays, though. Scientifically 103% accurate.
+Moonstone Shop
+Moonstone Shop ***
+More %s
+More %s Storage
+More Bismuth Leaves
+More Celestial Leaves
+More Cheese! More Cheese! More Cheese! Increases salvage rewards by %s Cheese per level.
+More Converter Transistors
+More Cosmic Leaves
+More Craft Sets
+More damage vs [name]
+More Enemies, Please
+More Exotic Leaves
+More experience required to upgrade this Borb.
+More Gold Leaves
+More Leaves
+More Loadout Sets
+More Pet Teams
+More Platinum Leaves
+More playtime
+More prestige coins
+More Pyramid Floors
+More Seeds
+More Tower Floors
+More tower floors
+More Tower Floors%
+More tower floors%
+More Tower Rewards
+More trees, more leaves. Simple as that.
+More Type Damage
+More Void Leaves
+Mount Moltenfury
+Mountain
+Mouse
+Mouseo
+Move
+Move Player
+Mulch
+Mulch Delivery
+Mulch Scroll
+Mulch Shop
+Mulched Chests
+Mulched Claw
+Mulched Composter
+Mulched Luck
+Mulched Seeds
+Mulched Slots
+Mulched Trade Caps
+Multi add
+Multi Crit chance: %s
+MULTI-CRITICAL BREW: %s
+Multiple fruit spawn chance
+Multiplier: %s
+Multiplies base spawn chance of materials by +%s per level.
+Mushroom
+Mushrooms
+Music volume
+Must. Add. More. Shards.
+Must. Brew. Better.
+Must. Brew. Faster.
+Must. Brew. More.
+Mute
+Mysterious Plant
+Mysterious Plants
+Mythical
+mythical
+Mythical Apples
+Mythical Leaf
+Mythical Leaves
+Mythical leaves? These leaves look so fancy, though.
+Mythical Shop
+Mythical Shop **
+Name: %s
+Nature
+Nature field quality bonus
+Nature field quality increase value
+Nature Gem
+Nature Gems
+Nature global upgrade bonus
+Nature Pack
+Nature Rod
+Nature Season
+Nature Time Sphere
+Nature Time Sphere time multiplier
+Nature Time Spheres
+Nature XP bonus
+Nature's randomness reigns supreme, and every step might just lead you to a fresh roll of luck.
+Navigation
+Neighbors' Garden
+Nestled deep within the glinting forest, this place is the jackpot of foliage fanciness.
+New Cursed dice high: %s -> %s
+New Leaf Blower Revolution Save
+News
+Next available count
+Next bonus apply: %s
+Next bonuses: %s (%s/%s)
+Next chest(s) available in %s. Hint: open multiple chests at once.
+Next difficulty: %s
+Next enemy: %s
+Next offline reward in %s
+Next refresh
+Next reward in: %s
+Ninja
+Niobium
+Niobium Leaf
+Niobium Leaves
+No %s save file found.
+No area to teleport to.
+No Borbs available.
+No claimable rewards available.
+No code.
+No guilds found.
+No inventory space available
+No news.
+No one knows how this works, but leaves can apparently spawn in space.
+No pets, no fun. Collect 100m Benitoite Leaves in total to complete this challenge.
+No plant
+No reward.
+No season data. Please try again later.
+No space in %s.
+No time to explain: perform a Big Leaf Crunch within 20 seconds after a Big Leaf Crunch.
+No trades available.
+None
+Normal
+Not affected by time travel.
+Not calculated yet
+Not connected to store
+not craftable
+Note
+Note that the dice count in the title is different than the dice count from the dice enhancements.
+Note: DLC packs don't transfer between Steam/Android/iOS but daily rewards can be claimed once per platform.
+Note: new logs may take up to 1 hour to appear in this list.
+Note: some materials and essences have a lower daily reward.
+Note: your progress will not be saved automatically while playing mini games. Please double-check your last uploaded save in the settings menu.
+Notification transparency
+Notifications behind menu
+Now look at your health. HP Regeneration is permanent.
+Now would you look at this, another pet slot!
+Nuclear Apocaleaves
+Nuclear Fuel
+Nuclear fuel
+Nuclear Fuel upgrades will be purchased automatically.
+Nuclear Leaf
+Nuclear Leaf Blower
+Nuclear Shovel
+Nuclear Trout
+Number notation
+Obsidian
+obsidian
+Obsidian Leaf
+Obsidian Leaves
+Obsidian leaves only spawn when Lava and Ice leaves collide under high pressure.
+Obsidian leaves? What is this, Leafcraft?
+Obsidian Shop
+Obsidian Shop **
+Obsidian%
+Obtain %s
+Occasionally, a die might drop into your dice bag when an enemy was defeated. Higher enemy levels and difficulties will drop higher dice rarities.
+Oceaniclash
+Odds
+Of course it has to be a skull.
+Off
+Official speedrun challenge: fastest BLC. Offline rewards are disabled, combo is enabled.
+Official speedrun challenge: fastest BLC. Offline rewards are disabled.
+Official speedrun challenge: fastest BLC. Offline rewards are enabled.
+Official speedrun challenge: fastest MLC. Offline rewards are enabled without prestige resources.
+Official speedrun challenge: fastest prestige. Offline rewards are disabled, combo is enabled.
+Official speedrun challenge: fastest prestige. Offline rewards are disabled.
+Official speedrun challenge: fastest prestige. Offline rewards are enabled.
+Offline
+offline
+Offline alchemy
+Offline Ancient Leaves
+Offline Artifacts
+Offline BLC
+Offline Brew Count
+Offline Brew Rate
+Offline Celestials
+Offline chance: %s
+Offline Crunches
+Offline earnings are limited to 1 day. This upgrade extends max offline earnings to 7 days.
+Offline enemies
+Offline Enemies
+Offline Fruits
+Offline MLC
+Offline MLC%
+Offline Profits +750%
+Offline reward
+Offline rewards
+Offline Rewards
+Offline rewards for %s
+Offline Seeds
+Offline Tower
+Offline Tower Floors
+Offlinechemy
+Oh, there are more tower floors? Interesting... Here is some beer and cheese.
+okcolF desu a egral fael ekar ni eht onacloV. tI's repus evitceffe!
+On
+On a borbventure
+Once upon a time, a mighty quack dug something up in a small town with a cursed person.
+Online
+online
+Online Seasons
+Open %s
+Open all
+Open all chests
+Open multiplier
+Open Supporter Shop
+Opens navigation items with a single click if a dialog is visible. This is not recommended on the mobile version.
+Option
+Options
+Orange
+Orange Flask
+Orange Flasks
+Orange Science
+Orb of BLC
+Other
+Other %s
+Ouch!
+Overview
+Overwrite set #%s?
+Owlo
+Owner
+Oyster
+Oysters
+Pack drop rates
+Pack Odds
+Packs
+Padding
+Painting #1
+Painting #2
+Painting #3
+Palm
+Pansy
+Panthero
+Panthers are incredibly quick, they can run up to 80km/h. Panthero gives a %s chance to skip a tower floor though it can't skip bosses.
+Paragon
+Particles Finder
+Particles Multiplier
+Passive Boss Kills
+Passive Boss Multiplier
+Passive kill count
+Passive kill rate
+Passive Soul Boost Chance
+Passive Soul boost chance
+Password
+Pay some %s to enter this place.
+Pearl
+Pearls
+Penguino
+Penguins spend around half their time in water, the other half on land, and the other half doing trades. Decreases trade delivery time by 25% and refresh time by 10%.
+per level
+Perform %s offline %s per minute per level and gain %s BLCs of your highest BLC per offline crunch.
+Perform %s offline %s per minute per level and gain %s MLCs of your highest MLC per offline MLC
+Performing Big Leaf Crunches seems to make it MUCH worse...
+Performing Mega Leaf Crunches seems to make it MULCH worse...
+Perma Damage
+Perma HP Regeneration
+Persist prestige shop [name]
+Persistent
+Persistent bosses do not regenerate HP when you were blown away.
+Pet auto count
+Pet House
+Pet Leaf
+Pet Pet Bot
+Pet Scroll
+Pet team
+Pet team #%s saved.
+Pet team %s loaded.
+Pet Teams
+Pet the Pets
+Petless
+Pets
+Pets also like to watch numbers go up!
+Pets are friends, pets are life. Allows you to equip another pet.
+Pets persist after the Mega Leaf Crunch.
+Pets pet
+Pets pet: %s
+Piggo
+Pigs have powerful noses. They are around 2000 times more sensitive than a human's.
+Pikzel
+Pink
+Pirate Hat
+Pity counter: %s/%s
+Place
+Place house items with left mouse click. Pick up items with right mouse click. Scroll through item sprites with mouse scroll. Place/remove multiple items with shift + click. Left click on a placed item selects the same tile. Each unlocked house item adds +1% to all leaf rewards and some items may add more bonuses.
+Place house items with left mouse click. Pick up items with right mouse click. Scroll through item sprites with mouse scroll. Place/remove multiple items with shift + click. Left click on a placed item selects the same tile. Each unlocked house item adds +25% to all leaf rewards and some items may add more bonuses.
+Placed: %s
+Planck Scope
+Plant
+Plant all
+Plant Cuddler
+Plant grow duration
+Plant harvest butterfly chance
+Plant harvest seed chance
+Plant Hugger
+Plant Stroker
+Plant Synergy
+Plant this item to all available fields
+Plant XP multiplier
+Plants
+Plants grow faster when watered.
+Plants increase your Nature XP and provide useful bonuses.
+Plasma
+Plasma Forest
+Plasma Leaf
+Plasma Leaves
+Plasma Shop
+Plasma Shop ***
+Platinum
+platinum
+Platinum Leaf
+Platinum Leaves
+Platinum leaves? What kind of tree drops platinum leaves?
+Platinum Marketing
+Platinum Shop
+Play
+Play some LBR Bingo! Complete randomized quests on a 5x5 bingo sheet. Win by completing a row, column or diagonal. You start with %s %s, collect %s every %s seconds and all areas cost some %s.
+Play some LBR Bingo++! Complete randomized quests on a 5x5 bingo sheet. Win by completing all quests. You start with %s %s, collect %s every %s seconds and all areas cost some %s.
+Play the Leaf Slot Machine to win some nice prizes!
+Play with your season character and compete with other leaf blowers!
+Play, idle, get achievements.
+Played more recently
+Played: %s
+Player
+Player control
+Player Honor investments today: %s/%s
+Player HP
+Player HP Regeneration
+Player resistance
+playing
+Playing for the high one, dancing with the fire.
+Playtime: %s
+Please find the Borbcipherer and rescue my brother! It can be found in uncommon Borbventures.
+Please note that slot #1 is the default save slot and saving new games may overwrite the progress of this slot.
+Please only use appropriate names. Check the website or discord for naming conventions. Any violation of guild names results in a permanent ban.
+Please wait as your character is being uploaded to the cloud. The game will change to your main game automatically...
+Please wait as your character is being uploaded to the cloud. The game will close automatically...
+Polish the gem leaves!
+Poppy
+Power Dice Point
+Power Dice Points
+Power Roll
+Premium
+Premium Pack
+Presist prestige shop
+Press %s to return
+Press %s to toggle the card lock.
+Press back or restart the game if you are stuck on this screen.
+Prestige
+Prestige %sx
+Prestige Coin
+Prestige Coins
+Prestige Coins persist after the Mega Leaf Crunch. Each level doubles the Prestige coin rewards.
+Prestige Coins x3
+Prestige++
+Prestige+++++
+Prestiges
+Primula
+Print %s %s
+Print %s loops
+Print Leaves
+Printed leaves output
+Printer
+Printer Adder
+Printer Maintenance
+Printer Multiplier
+Printer output
+Printer Printer
+Printer printer
+Printers
+Printers count and Printers Room count persist after Mega Leaf Crunch. Locked by Unlimited Printer Ink.
+Printers Output +600%
+Printers persist after Big Leaf Crunch.
+Printers print leaves every second. Join the printers cult!
+Printers printed/second: %s
+Printers Scroll
+Printers Shop
+Printers Upgrade Bot
+Prints %s printers each second.
+Prints and collects %s %s leaves.
+Priorities
+Prismwing
+Prison Hint
+Private
+Pro tip: Chocolate chip muffins are best served warm!
+Probabilities
+Progress
+Progress quicker with the Cards Pack! Get the following packs per daily reward: 3 Common Packs, 2 Rare Packs, 1 Legendary Pack. Additionally, you'll get 5 Common Packs, 3 Rare Packs, 2 Legendary Packs instantly. There's even more: Get 500 + 75 daily Gems!
+Progress to next coin step: %s
+Progress: %s
+Progress: %s (%s)
+Properties rerolled.
+Properties unlocked: %s/%s (%s)
+Protected by Zyrkiras, the Centaur, this place is older than the actual universe. It happens to be the birthplace of Leaf Relics.
+Public
+Pumice
+Purchase %s to unlock this reward.
+Purchase Borb Taxi Ltd. so your Borb Taxi will be free forever.
+Purchase data not retrieved
+Purchase data not retrieved yet, please wait and refresh the daily reward dialog. You might be missing out your pack bonuses.
+Purchase data not retrieved yet, please wait. You might be missing out your pack bonuses.
+Purchase data retrieved
+Purchase dialog is opening, please wait...
+Purchase is pending, please wait...
+Purchased seeds persist after the Mega Leaf Crunch with level 1.
+Purchased upgrades in the Coins Shop persist after stepping into the Leaf Portal. Neat! All shops marked with * will persist.
+Purple
+Purple Leaf Stone
+Purple Planet Edge
+Pushing away leaves with a rake. Guess you're doing it wrong.
+Pushing away leaves with your bare hands. SO. MUCH. FUN.
+Puts this item to all available fields
+Pyramid
+Pyramid Entrance
+Pyramid Floor
+Quality
+Quality changed from %s% to %s% (%s%)
+Quality Vial
+Quality: %s
+Quantity
+Quantum Aether
+Quantum Artificer
+Quantum Blob
+Quantum Blobs
+Quarantine
+Quark
+Quark add chance
+Quark Ambit
+Quark auto add
+Quark Damage
+Quark damage
+Quark Leaf
+Quark Leaves
+Quark Literacy
+Quark Nexus
+Quark Portal
+Quark Reactor
+Quark reactor add count
+Quark reactor increase value
+Quark reactor size
+Quarks
+Quarks added: %s
+Quarkstige
+Quest
+Quest finished
+Quests
+Raccoono
+Raccoons use up to 20 den sites at a time, from sheds to sewers. Increases seed spawn chance by 1% and seed spawn count by 1.
+Radiantwing
+Radio
+Ragethorn
+Rainbow
+Rainbow Leaf
+random
+Random
+Random Candy
+Random Item
+Random Materials
+Random seed
+Random text dialog. If you can read this, please send me a beer. Thanks!
+Range
+Range: %s
+Rare
+Rare blue barium titanium cyclosilicate leaves. Formed by merging 5 Ice and 10 Silicon leaves.
+Rare Chest
+Rare Chests drop from floor -5 or below.
+Rare leaves spawn in THE VOID.
+Rare Material Chest
+Rare Pack
+Rarity
+Rarity drop level requirements
+Raw Soul Stone
+Raw Soul Stone Drop Count
+Raw Soul Stone drop count
+Raw Soul Stones
+Reach Tower floor %s
+Reach Tower Floor %s to unlock.
+Reactor
+Reactor count: %s
+Read a book? Scrap that. I found this new game called Leaf Blower Revolution. 100/10.
+Read more
+Ready
+Ready to fuse
+Real Civil Engineer
+Receive +%s mulch per level by using advanced marketing techniques.
+Receive +1 %s leaf per level by using advanced marketing techniques.
+Receive +1 leaf per level by using advanced marketing techniques.
+Receive more daily rewards with supporter packs! By purchasing DLC packs, not only will you gain access to a range of exciting in-game perks and bonuses, but you'll also be supporting the ongoing development and improvement of %s.
+Receive more rewarded leaves by using exotic marketing techniques.
+Receive more rewarded leaves by using void marketing techniques.
+Receive offline rewards for the next %s instantly.
+Receive: %s
+Recharges
+Reclaim Shards
+Recruit %s
+Recruit a free Borb.
+Red
+Red dust, red dust, more red dust, and... Leaves? ON MARS? [Reach Tower floor 70247 to teleport here]
+Red Flask
+Red Flasks
+Red Flasks can be used for science research which are created with the Converter.
+Red Leaf Stone
+Red Planet Edge
+Red Science
+Red Tile
+Redeem
+Redeem a code to get resources, chests, cards, or something else! You can find codes on the social channels every once in a while. Follow us to get notified!
+Redeem code
+Reduce Converter Resources
+Reduces alchemy brew time by %s and increases brew crit chance by %s. You used the Shovel on The Moon while having 10e30 Moonstone leaves.
+Reduces input resources for all converters by %s.
+Reduces input resources for all converters by 1%.
+Reduces the Autobuy Bot delay by %s seconds per level.
+Reduces the autocraft delay by %s.
+Reduces the Autofacts timer by %s.
+Reduces the Borbventure refresh timer.
+Reduces the minimum blow off speed of %s by %s.
+Reduces the selection shards cost by %s per level.
+Reduces upgrade prices by 1% for all leaf and science upgrades.
+Refresh
+Refresh challenges
+Refresh Trades/Borbventures
+Refresh Tutorial
+Register
+Register a Humble North account to take part in multiplayer events, (future) cross-play saves and more!
+Register Account
+Registration was successful! Please verify your email address.
+Regular
+regular
+Regular Cards
+Regular Transcension
+Regular: %s
+Relic
+Relic Leaf
+Relics
+Relics BASE DAMAGE!
+Relics damage multiplier
+Relics DAMAGE MULTIPLIER!
+Relics drop chance: %s
+Relics enemy drop chance
+Relics GET!
+Relics increase your blowing damage depending on the current number of Leafscended leaves for the relevant type.
+Relics Magnet
+Relics max count
+Remove
+Remove all items
+Removes %s of all %s to get %s %s.
+Rename
+Rename #%s
+Rename pet team %s
+Rename priorities %s
+Replaces all spider sprites with a cake. A cakephobia option? No, I'm sorry.
+Report sent. ID: %s
+Requests
+Required count for next ascension
+Required kills: %s (%s)
+Requires game restart to apply all text changes. Press %s to restart the game. If you would like to help translate the game, please join the discord server for further information. Thank you!
+Requires game restart.
+Reroll Craft RNG
+Reroll locked leaves
+Reroll property
+Reroll props
+Reroll RNG
+Reroll Shards
+Rerolling Crafted Leaves' quality will always improve. Can be toggled.
+Reset
+Reset %s (%s)
+Reset autobuyers
+Reset Hotkeys
+Reset pet skin
+Reset scroll position after prestige
+Resource Panel
+Resources
+Resources:
+Respec
+Respec cost:
+Restart
+Restart your leaf blowing adventure with valuable BLC Coins. All upgrades will be reset with some exceptions (shops marked with ** will persist).
+Restart your leaf blowing adventure with valuable MLC Coins. All upgrades will be reset with some exceptions (shops marked with *** will persist).
+Restart your leaf blowing adventure with valuable MLC Coins. All upgrades will be reset with some exceptions (shops marked with *** will persist). The amount of MLC coins is based on your highest tower floor as well as your current amount of BLC coins.
+Restore DLC Purchases
+Restores the game window to the last saved position.
+Restoring purchase data...
+Restrain Window Settings
+Resume
+Resume challenge
+Return to main game
+Return to menu
+Reveals material spawn areas and spawn chance in their description.
+Reward
+Reward for level %s
+Reward: %s
+Rhodonite
+Rhodonite Leaf
+Rhodonite Leaves
+Ribbon
+Riddle %s
+Riddle solved!
+Riddles
+right click
+Right click locks player
+Ring
+RNG Quality: %s%
+Robot
+Robot Leaf
+Rocket Engine
+Roll
+Roll %s
+Roll count: %s (%s)
+Roll dice against leafy enemies to gain upgrades. These enemies occasionally drop dice. Defeat the same enemy a couple of times will increase the bonus value and you can progress to the next one. Note that you need to have the respective leaf unlocked to battle it.
+Roll min-max: %s-%s
+Roll the %s as many times as you like, but beware of the %s! Do not roll a %s or your roll score will be reset. It's up to you to take a risk and roll a higher score or save it.
+Rolling a die costs %s. You can acquire more by visiting %s or defeating enemies in the %s.
+Rolls %s dice at once.
+Rose
+Roses
+Rot C
+Rot CC
+Rotate clockwise
+Rotate counter-clockwise
+Ruby
+Ruby Leaf
+Ruby Leaves
+s
+Sacred
+Sacred Leaf
+Sacred Leaves
+Sacred Leaves offline rewards are applied at a reduced rate (%s).
+Sacred Nebula
+Sacred Shop
+Sacred Shop ***
+SACRIFICE
+Safe Energy Converters
+Salvage
+Salvage %s
+Salvage a card for some resources.
+Salvage locked leaves
+Salvage notifications
+Salvage rarity
+Sand
+sand
+Sand Leaf
+Sand Leaves
+Sand leaves go crumble.
+Sand Shop
+Sand Shop ***
+Sand, sand, more sand, scorpions, cacti, pure heat... What a lovely place!
+Santa
+Saturated Shards
+Save
+Save & Quit
+Save & return to main game
+Save %s
+Save and load your progress from the Humble North cloud server.
+Save craft set #%s
+Save current craft set
+Save current pet team
+Save data exported to clipboard.
+Save pet team #%s
+Save priorities %s
+Save Reward
+Save season
+Save to cloud slot #1
+Save to cloud slot #2
+Save to cloud slot #3
+Save upload failed, please wait %s and try again.
+Save uploaded to cloud.
+Save version: %s
+Save Window Settings
+saved
+Saved game to Google cloud.
+Saving game to Google cloud...
+Scale min level
+Scarab
+Scarabs
+Science
+Scientific
+Scorpion
+Scrap %s
+Screw
+Screws
+Scroll team %s loaded.
+Scrolls
+Scrolls duration
+Scrolls provide temporary boosts. Neat.
+Scrolls provide temporary boosts. These are dropped by tower bosses. Alternatively, you can get them in arcade machines in a famous pub.
+Sealo
+Seals are just Sea Doggos. Decreases Leafscender input cost by %s and duration by %s. Sealo can't reduce the initial leafscension cost, though.
+Search
+Search Guild
+Search Guilds
+Search open Guilds
+Search Open Guilds
+Search results
+Season Gem
+Season Gems
+Season Pass
+Season save is uploading...
+Season save uploaded.
+Seasons
+second
+seconds
+Seconds Game time
+Secret used /clear-all-infractions
+Seed
+seed
+Seed rewards
+Seed rewards [name]
+Seed rewards will be added to offline earnings by 0.01% per level. Hello, Farmers Cult!
+Seed Scroll
+Seed spawn chance
+Seed spawn count
+seed value: %s
+seeds
+Seeds
+SEEDS
+Seeds increase the amount of your current leaves by 1% per level.
+Seeds, seeds, seeds! Increases seed spawn count by +%s per level.
+SEEDS!
+Select bosses where %s will teleport you when available.
+Selected
+Selected property: %s
+Selected season: %s
+Self-esteem
+Send Borbs on adventures to find rare resources and items.
+Send game report
+Send report
+Serenewisp
+Set enemy
+Set max tower floor
+Set min tower floor
+Set seed
+Sets
+Settings
+Seven or eleven, snekko eyes watching you. Double up or bridge, double stake or split...
+SFX volume
+Shard
+Shard increased %s by %s
+Shard Leaf
+Shardify
+Shardify++
+Shards
+Shards: %s/%s (%s)
+SHARDS! SHARDS! SHARDS!
+Sharko
+Sharko modifies probabilities to their favor. Increases drop chance of cards by %s.
+Sharp Shards
+Shhh, don't talk about them.
+Shift
+Shop
+Shop Item
+Shop Prices
+Shops
+Shovel
+Shovels
+Shovels can dig up %s and increases dig count by %s per level.
+Show action particles
+Show all
+Show boss spawn timers in the area description. Also adds an overview to show boss timers in the right navigation bar.
+Show challenges
+Show cloud saves
+Show offline rewards
+Show or hide navigation items.
+Show prestige animation
+Show seasons
+Shows the location of artifacts.
+Shows the spawn time of artifacts.
+Side count
+sides
+Sides Count
+Sign in
+Sign in or register a free Humble North account to take part in online events, use cloud saves and more!
+Sign in to %s
+Sign in to Humble North
+Sign in to your Humble North account.
+Sign out of %s
+Signing in to Google Play...
+Signing out...
+Silicon
+silicon
+Silicon is used to make parts of computers and other electronic equipment.
+Silicon Leaf
+Silicon Leaves
+Silicon leaves? Really, nature?
+Silicon Shop
+Silicon Shop **
+Silver Token
+Silver Token Shop
+Silver Token Shop **
+Silver Tokens
+Sin
+sin(t)
+single reward: %s
+Single-Click Navigation
+Sip Borb
+Skins
+Skins Pack
+Skins Shop
+Skip [value] tower floors immediately. Can't skip beyond the highest tower floor.
+Skip to start
+Skip to the highest tower floor - 1 immediately. (%s)
+Skip tower floor chance multiplier
+Skip tower floor chance%
+Skippable Tower Bosses
+Skull
+Slap enemies around with a large trout. %s to slap.
+Slap Force
+Slap multiplier
+SLAP THE ENEMIES! Increases trout slap damage by %s.
+SLAP. SAND.
+Slot %s loaded
+Slot %s saved
+Slots
+Slots Pro
+Small Leaf Rake
+Smol
+Snekko
+Snekko isssss your friend. Increasesssss your max hp by 30%.
+Snowman
+So many floors...
+So many leaves...
+So this year I'm eating very old chocolate.
+Socks
+Solution
+Solved
+Some flamingos live in extreme environments. That's why Flamingoo works as a lightning arrester. It acquires +%s the energy in certain areas for you.
+Some leaf blowers were never seen again after descending into The Abyss.
+Some leaves like it hot, some like it cold. Which one likes it both?
+Some materials to help you on your way down.
+Some more Energy storage for you
+Some more storage space for you!
+Some offline boost for you!
+Some time ago, two people consumed raw eggs here. Legends.
+Someone left a sacred slap tool at a research station.
+Someone mentioned several thousand people at once. He made so many friends!
+Someone said this was more fun than the actual game. Thank you.
+Sometimes, there's a shiny thing in Bob's garden...
+Sort
+Sort by
+Sort direction
+Soul
+Soul Boost Chance
+Soul boost chance
+Soul Boost Pity Counter
+Soul boost pity counter
+Soul Crypt
+Soul Crypt Bonus Reward%
+Soul Crypt Floors
+Soul Crypt Keys
+Soul Crypt Keys%
+Soul Crypt Max Floors
+Soul Crypt Particles%
+Soul Damage Multiplier
+Soul Entities
+Soul Entity
+Soul Flask
+Soul Flasks
+Soul Forge
+Soul Forge Completion Count
+Soul Forge Completion Count%
+Soul Forge Compressor
+Soul Forge Count%
+Soul Forge Fill Requirement
+Soul Key
+Soul Keys
+Soul Leaf
+Soul Leaves
+Soul Mirage
+Soul Monolith
+Soul Mummy
+Soul Particle
+Soul Particles
+Soul Portal
+Soul Puddle
+Soul Realm
+Soul Shop
+Soul Shovel
+Soul Stone
+Soul Stones
+Soul Temple
+Soul Trout
+Soul-boosted bosses drop %s after being defeated.
+Souls
+Souls are howling...
+Soulwing
+Sound
+Space
+Space: start/stop crafting\nCtrl+LClick: quick salvage\nShift+LClick: move leaf between inventory and backpack\nAlt+LClick: reroll RNG quality\nAlt+RClick: reroll leaf properties\nAlt+MClick: reroll shards\nMouse wheel up/down: select property
+Spacebar
+Spark Bubble
+Spark Portal
+Spark Range
+Spawn chance: %s
+Spawn time of Artifacts are reduced by %s%.
+Spawn timer of bosses continue even when offline. Magic.
+Spawned
+Spawned, expires in %s
+Spawns %s additional %s per level.
+Spawns %s enemies at once.
+Spawns %s fruits at once.
+Spawns 3 random available seeds.
+Spawns a gravity ball which attracts leaves.
+Spawns areas: %s
+Spawns in %s
+Spawns in: %s
+Spawns one more leaf per tree.
+Special
+Special %s chance
+Special %s recruit chance
+Special Type Tutorial
+Spectralseeker
+Speedblower BLC%
+Speedblower BLC% Online
+Speedblower BLC% Online Combo
+Speedblower MLC%
+Speedblower Prestige%
+Speedblower Prestige% Online
+Speedblower Prestige% Online Combo
+Speedblower Revolution
+Spider Bro
+Spider Web
+Spider Webs
+Splash Damage
+Squeeze Tutorial
+Squirrelo
+Squirrelo increases Celestial Leaves rewards by %s.
+Standard Delivery
+Starlance
+Start
+Start all
+Start new game
+static
+Stats
+Status
+Stay updated on the latest leaf news.
+Steam offline, please launch the game from Steam to receive pack bonuses.
+Step into a sanctuary nestled within the uncharted territory of the quantum realm, where space-time itself dances with the tiniest building blocks of existence.
+Step into the %s portal
+Step into the Black Leaf Hole
+Step into the Fire Fields portal
+Step into the Portal
+Step into the Spark Portal
+Stepping through Leaf Portals seems to make it even worse...
+Stone
+Stone Golem
+Stop
+Stop all
+Stop current challenge
+Stop the Borb hook with a tap.
+Stop the Borb hook with left mouse click or spacebar. Quick restart with right mouse click or spacebar.
+Strange
+Strange Essence
+Strange Essences
+Strange Flask
+Strange Flasks
+Strange Science
+Strange Seed Bag
+Stroke
+Strong
+Subtle
+succeeded
+Success chance: %s
+Sum
+Sunspark
+Super Combo
+Super Durable Artifacts
+Super Fruits
+Super Leaves
+Super-Terror
+Supercharge your Borbs with the Borbventure Pack! Get the following packs per daily reward: %s Common Packs, %s Rare Packs, %s Legendary Pack. Additionally, you'll get %s Common Packs, %s Rare Packs, %s Legendary Packs instantly. There's even more: Unlock Borbiana Jones + %s Gems instantly + %s daily!
+Superleaf
+SuperStirr
+Supporter Pack
+Supporter Perks
+Supporter Shop
+Supporters only
+Switch field
+Switch the pathing method of ALBs.
+Sword
+Swords
+Synergy
+Synergy bonuses: %s
+Synergy Enhancing
+T Center
+T Edges
+T Player
+Table Deco #1
+Take on several leaf blowing challenges to receive great bonuses. Completed challenge bonuses do not stack.
+Talk
+Tan
+tan(t)
+tap
+Target center every %s seconds
+Target each room edge every %s seconds
+Target player every %s seconds
+Target property
+Tasty and healthy for sure.
+TCP++
+Teacher
+Teal
+Teams
+Tektite
+Tektite Leaf
+Tektite Leaves
+Teleport
+Teleport to spawn area
+Teleports you to a random available boss. If a boss is spawned, this artifact won't be activated.
+Terror Blue
+Terror Graveyard
+Terror Green
+Terror Purple
+Terror Red
+Test
+test 123
+Test Quests
+Thanks so much, DF!
+Thanks so much! I love you!
+THE - CURSED - PYRAMID
+The %s awaits you.
+The %s has been acquired.
+The %s is now available! Clear a level to get %s and %s.
+The Abandoned Research Station
+The Abyss
+The Ancient Sanctum
+The answer was %s
+The Auto Crunch Bot checks if the BLC threshold is fulfilled to automatically crunch.
+The autobuy resource threshold limits how much resources should be spent for all autobuy bots at once. If this option is set to 50%, the autobuy bots will not purchase any upgrade that costs more than 50% of the relevant resource.
+The Autoupgrade Bot's max bought items per cycle. Reduce this value if your game stutters every second. Default: 300.
+The Ban Hammer
+The Bartender lets you use this pet.
+THE BELLOWS DRILL features both high blowing power and a medium range. It's hightech.
+The blades are reversed so the lawn mower blows. Problem solved.
+The Blazing Skull artifact can be used in The Leaf Tower. Come at me, yo!
+The Blue Energy Stone can be found here.
+The Borb Cannon blows away compressed Borbs in a small radius. For each defeated enemy, you will acquire one Borb.
+The Celestial Blower
+The Celestial Plane
+The Cheese Pub
+The Cleansed Cheese
+The Compass
+The craft bar slows down magically by %s% per level.
+The Cursed Cheese
+The Cursed Cheese will cast %s curses on you.
+The Cursed Cheese will haunt your dreams. You get %s curses every minute. Needs %s curses to unlock.
+The Cursed Pyramid
+The Dark Glade
+The Death Book has been unlocked! You can now defeat bosses passively. Check out the Death Book now!
+The developer was too lazy to provide a description. Blame him.
+The developer was too lazy to provide an enemy description. Blame him.
+The developer's game development company.
+The Dice Pack isn't just about luck - it's about enhancing your strategy and taking your skills to the next level!
+The Doomed Forest
+The Doomed Tree
+The Energy Shrine has awakened the Black Planet along with a powerful creature...
+The Evil Bee.
+The Exalted Bridge
+The Fabric of the Leafverse
+The Farmer Gang went on a strike, no seeds for anyone! Reach Leaf Tower Level 15 without the Farming Certificate.
+The Fire Fields Portal opened after defeating the %s.
+The Fire Temple
+The Fire Universe
+The first beer is never nice, you have to learn to appreciate it. At least, that's what the myths say. No clue whether that's true or not.
+The Fisho slaps you around with a large trout. The Fisho increases blower enemy damage by %s, enemy resource awards by %s and slap damage by %s.
+The game will close automatically when the save file was uploaded, please wait...
+The Green Energy Stone can be found here.
+The greenkeeper is not amused.
+The Hidden Sea
+THE HIGHTECH ACE OF SPADES
+THE HIGHTECH BELLOWS
+THE HIGHTECH DRILL
+THE HIGHTECH DRILL features high blowing power but lacks blowing range.
+THE HIGHTECH SHOVEL
+THE HIGHTECH TROUT
+The Hollow
+The Holy Grail
+The Holy Leaf
+The Infernal Desert
+The Inner Cursed Pyramid
+The leaf blower's starter pack. Get 400 Gems, 20 more Gems per daily reward, 1x 6h Time Travel, 2x 30m Time Travel.
+The Leaf Galaxy
+The Leaf Sword makes mulch out of leaves.
+The Leaf Tower
+The letter Z stands for understatement.
+The Lone Tree
+The longer you play, the more achievements you get. Simple.
+The lovely town of Kokkaupunki has been cursed. The curse must be lifted...
+The Moon
+The Moonstone Leaves can only be formed on The Moon.
+The more you saved and the higher your max saved score is, the better bonuses you'll get. Some bonuses might be locked which are displayed with question marks until you have unlocked it in the main game.
+The Mythical Garden
+The perfect place to breed butterflies.
+The Pet Pet Bot automatically pets all of your pets. Each level pets all pets once more, so at level 5, all pets will be pet 5 times simultaneously. This upgrade also affects manual petting.
+The Printer Cult rises
+The prize for counting to 100,000 in #leaf-counter. Congrats, counter gang!
+The prophecy has been fulfilled! You may now fuse Plasma Leaves and transform property selection is now available!
+The Purple Energy Stone can be found here.
+The Red Energy Stone can be found here.
+The second mouse gets the cheese: Mouseo has a %s% chance to steal 1 cheese from a defeated enemy.
+The Shadow Cavern
+The Soul Portal opened after defeating %s.
+The souls are whispering something...
+The souls are whispering... - L E A V E - N O W - ! So cute!
+The Spark Bubble consists of nothing but pure electricity.
+The Spark Range is an electrifying place where lightning strikes every second.
+The true secrets in the Leaf Blower Universe.
+The ultimate leaf blowing experience. Get 2000 Gems, 100 more Gems per daily reward, 1x 72h Time Travel, 2x 24h Time Travel, 3x 6h Time Travel, 5x 30m Time Travel.
+The Vial of Life spreads flower seeds occassionally. Collect them to plant new flowers!
+THE VOID
+The Volcano
+The Witch spawns %s faster per level.
+There is a small hole inside the statue. Seems like it misses an item...
+There is this riddle I have been trying to solve my whole life long.\n\nThe riddle says: 11!!\n\nI have already tried to fold it but to no avail...
+These leaves are around %s degrees Celsius hot.
+These leaves look so biotite!
+These leaves only drop from bosses in the Leaf Tower above floor %s. Each unlocked gem leaf increases all gem leaf rewards by %s.
+These leaves only spawn under certain conditions. Their buffs only apply when active.
+These leaves were created 420 seconds after the Big Leaf Crunch.
+These upgrades are available for supporters only. Supporter Perks are divided into different tiers: %s
+They both have four legs each and they are distant relatives. Usually, they meet in an ancient place exchanging thousands of sacred leaves.
+This area opens on %s.
+This Artifact lifts a seal...
+This book is shut by an enchanted seal. Legend has it that this book is filled with ancient magical knowledge.
+This bot automatically makes sacrifices to unlock the next higher floor in The Inner Cursed Pyramid when a floor was cleared.
+This bot can automatically perform the Big Leaf Crunch for you. Auto Crunch is disabled in certain areas.
+This bot digs automatically for you. Hooray for automation! Also comes with a free dig magnet.
+This bot enables automatic leafscension. Good bot!
+This bot slaps automatically for you. Hooray for autoslaption!
+This controller regulates the power of your current blowing tool.
+This floor is peculiar...
+This gift is for all leaf blowing fans! Get %s instantly and %s per daily reward!
+This high-end futuristic garden device blows out air instead of foam.
+This is an abandoned research station in the Antarctica. Make sure to bring some hot beverages with you!
+This is your home garden. Your partner likes to have the garden CLEAN OF LEAVES AT ALL TIMES.
+This is your neighbors' garden. They wonder why there are so many leaves around recently...
+This leaf blower is not as good as other tools but each Celestial Leaf is worth +50 more.
+This leaf consists of silver and gold. The Legend says the number 42 is engraved at the back of it.
+This neat device automatically teleports you to your target destination after prestige.
+This place seems to be cursed.
+This purchase is tied to your Steam account.
+This upgrade unlocks %s seeds in the farming shop.
+This upgrade will automatically buy ALBs for you.
+This upgrade will automatically unlock flasks once they become available.
+This upgrade will automatically unlock leaves once they become available.
+This useful bot will help to purchase all upgrades in the %s shop. Beep bloop.
+This useful bot will help to purchase all upgrades in the Printers shop. Beep bloop.
+This useful bot will help to upgrade all tools. Beep bloop.
+This useful bot will start all converters after prestige. Beep bloop.
+This will delete both your local and steam save file.
+This will force-try season saving. Only use this if you can't save your season progress regularly.
+Throw a bunch of materials into a large pot, wait, and hopefully, nothing will explode.
+Throw some materials into a pot and call yourself an alchemist. Find recipes to brew useful items.
+time
+Time Candy
+Time Crystal
+Time per kill: %s
+Time Played
+Time remaining: %s
+Time remaining: %s/%s
+Time Travel
+Time Travel %s
+Timeout: %s
+times
+Tire
+To keep my customers supplied with beer, please deliver the following materials.
+To keep my customers supplied with cheese, please deliver the following materials.
+Toggle
+Toggle %s
+Toggle all
+Toggle Auto crunch in the %s
+Toggle Auto crunch with %s
+Toggle notifications
+Toggle Public Status
+Tokens
+Tombstones, tombstones everywhere.
+Tool
+Tool Leaf
+Tool Shop
+Tools
+Tools Upgrade Bot
+top
+Torvald
+Total chance: %s
+Total passive kills: %s
+Total saved: %s
+Total saved: %s -> %s
+Total: %s
+TOTALLY WORTH IT.
+Toucano
+Toucano is trained to 'collect' %s materials each minute for you from other people. Justice can't sue birds, right.
+Tower
+Tower ALBs
+Tower bosses can be skipped when skipping tower floors. Look at those easy boss fights.
+Tower Floor
+Tower Floors
+Tower Scroll
+Tower start floor
+Trade
+Trade Adder [name_plural]
+Trade Blower Revolution
+Trade boosted.
+Trade delivery duration
+Trade finished in %s
+Trade finished.
+Trade global multiplier
+Trade input resources halved
+Trade multiplier [name_plural]
+Trade multiplier single
+Trade notifications
+Trade ready!
+Trade refresh duration reduction
+Trader's Crunch
+Trader's Suitcase
+Trades
+Trades refresh in %s
+Trades: %s | Trade Global Multiplier: %s | Min/Max Trade Levels: %s/%s | Gems traded today: %s | Reduced Gems trade cap: %s
+Trading
+Trading can be a good source of additional resource income. For each completed trade, you will also receive one cheese.
+Trading Education
+Trading is fun, trading is life. You traded your converters for a permanent trading certificate. Trade duration and refresh timer are reduced in this challenge. Collect 1m BLC without any converters.
+Trading Optimization
+Trading Scroll
+Train your dig muscles! Increases dig count per dig by %s.
+Transaction successful. Thank you for your support!
+Transaction was cancelled. Please try again.
+Transcend
+Transcend %s (%s)
+Transcend a card to get %s.
+Transcend all %s
+Transcend cards to get %s. Transcension decreases the required number of all relevant cards. Regular Transcension only requires cards from regular enemies whereas Boss Transcension requires cards from bosses only.
+Transcend leaves to more powerful leaves by Leafscension.
+Transcend Selected Card
+Transcension
+Transcension Card Part
+Transcension Card Parts
+Transcensions until count increase: %s/%s
+Transformation
+Transformation Shard
+Transformation Shards
+Transformation Slot
+Transformed property: %s
+Translation
+Travel to far away places and discover new leaves.
+Tree
+Trees can drop bismuth leaves in certain areas.
+Trees can drop cosmic leaves in certain areas.
+Trees can drop exotic leaves in certain areas.
+Trees can drop gold leaves.
+Trees can drop platinum leaves in certain areas which you have to unlock first.
+Trees can drop void leaves in certain areas.
+Trees upgrades will be purchased automatically.
+Trout
+Trouts
+Trying to cheat?
+Tulip
+Turquoise
+TV
+Twilightglow
+Type
+UA Borb
+Ultra Fruits
+Unable to contact season server after %s tries. Your game will restart in 5 minutes...
+Unable to get seasons info. Please try again later.
+Unable to load language file: %s
+Unable to log in to Google Play, retrying...
+Unable to open file %s
+Unable to retrieve hash, please try again later.
+Unable to save file to cloud. Please check your internet connection and try again.
+Unable to save game.
+Unable to save options.
+Unable to send report, please try again later.
+Unable to sign in to Google Play Services.
+Unable to upload save game to the Google cloud. Please check your internet connection and try again later.
+Unable to write data to file %s
+Unavailable: unlock this resource first
+Uncommon
+Uncommon Chest
+Uncommon Material Chest
+Unique Leaves
+Unique Leaves persist after the Mega Leaf Crunch.
+Unique Leaves Scroll
+Unique Unique Leaf
+Unknown
+Unknown Achievement
+Unknown Area
+Unknown Artifact
+Unknown Challenge
+Unknown Converter
+Unknown Enemy
+Unknown Item
+Unknown Leaf
+Unknown Leaves
+Unknown Lore
+Unknown Pet
+Unknown Relic
+Unleashes the power of butterfly synergy, where each butterfly augments the plant bonus within their respective field location.
+Unlimited Printer Ink
+Unlimited+1 Printer Ink
+Unlock
+Unlock %s
+Unlock %s %s
+Unlock %s Seeds
+Unlock %s to get access to this area.
+Unlock Alchemy
+Unlock and upgrade pet bonuses with the respective materials. Upgraded pets need to be equipped for the bonuses to take effect. Each level improves the pet bonuses by %s. Pet bonuses won't increase after level %s but damage still does, giving a bonus every %s levels.
+Unlock and upgrade tool bonuses with the respective materials. Upgraded tools do not need to be equipped for the bonuses to take effect. Another bonus is unlocked after upgrade level %s and some tools provide a special bonus at this level. Tool bonuses won't increase after level %s but damage still does, giving a bonus every %s levels.
+Unlock Area
+Unlock Areas
+Unlock Artifacts
+Unlock Ascension Shards
+Unlock Bismuth Apples
+Unlock Borbventures
+Unlock Cards
+Unlock Celestial Leaves
+Unlock Converters
+Unlock Cosmic Apples
+Unlock Crafting
+Unlock Electrical Energy
+Unlock Equipment
+Unlock Exotic Apples
+UNLOCK FLOOR %s
+Unlock Fusion Shards
+Unlock Gem Leaves
+Unlock Gold Apples
+Unlock Leaf Portal
+Unlock Leaf Tower floor %s
+Unlock Leafscension
+Unlock level %s
+Unlock Materials
+Unlock Mulch
+Unlock Pet
+Unlock Pets
+Unlock Plasma Electric Converter
+Unlock Platinum Apples
+Unlock Printers
+Unlock properties at The Energy Shrine
+Unlock Pyramid
+Unlock random property
+Unlock Red Flasks
+Unlock Relics
+Unlock Resource %s
+Unlock Scrolls
+Unlock Shardify Artifacts
+Unlock Shards
+Unlock Trading
+Unlock Transformation Shards
+Unlock Unique Leaves
+Unlock Void Apples
+Unlock Warderobe
+Unlocked fruits
+Unlocked property %s
+Unlocks %s
+Unlocks %s more Leaf Tower floors per level.
+Unlocks %s more Leaf Tower floors per level. Gain more MLCs the higher your tower floor peak is.
+Unlocks %s, a new prestige layer.
+Unlocks %s.
+Unlocks %s. It's not recommended to drink these.
+Unlocks after clearing Pyramid Floor level %s.
+Unlocks after defeating %s %s times.
+Unlocks after defeating The Witch %s times.
+Unlocks after unlocking %s
+Unlocks after unlocking %s.
+Unlocks after unlocking Alchemy.
+Unlocks after unlocking Cards.
+Unlocks after unlocking Leafscension.
+Unlocks after unlocking Materials.
+Unlocks at Tower Floor level %s
+Unlocks on event: %s
+Unlocks passive kills for this enemy.
+Unlocks premium rewards for %s.
+Unlocks Shards. Shards can be added to crafted leaves to further improve their stats.
+Unlocks The Holy Grail. Increases Silver/Gold Token rewards by 250%. You used the Carpenter's Cup in The Leaf Tower Floor 42 while having 1k Silver Tokens and 42 Gold Tokens.
+Unlocks the Leaf Portal where you can restart your leaf blowing adventure to gain coins.
+Unlocks Tier %s Supporter Perks.
+Unnamed Skin
+Upgrade
+Upgrade %s
+Upgrade %sx
+Upgrade Discount
+Upgrade multiplier [name]
+Upgrade passive enemy rewards. The %s does not work with time skips.
+Upgrade Tutorial
+Upgrade your leaf-blowing tools with materials! Get 1000 of all materials, 50 of all essences, and 50 more Gems per daily reward. Instantly get 500 of all materials, 25 of all essences, and 400 gems. Material storage is increased by 10000, and you have access to more Kokkaupunki quests.
+Upgrades
+Upgrades the leaf counter button to increase its count by %s.
+Upgrades the SuperStirr device on the cauldron. Decreases alchemy brew time by %s.
+Upgrades: %s
+Upload Save to Cloud
+Upload Save to Google
+Upload saves to cloud is disabled in the options.
+USD
+Use
+Use %s shield
+Use Apple email
+Use Artifact %s
+Use Borb shield
+Use Shards Shield
+Use Sphere
+Use Super Shards Shield
+Username
+Vial %s spawn chance
+Vial of Life
+Vial progress multiplier
+Vial seed spawn count
+Vial seed spawn critical chance
+View Leaderboards
+View terms and privacy policy
+Viking
+Viking Borb
+Vile Creature
+Vilewood Cemetery
+Visible
+Vital Violin
+Vitality++
+Void
+void
+Void Leaf
+Void Leaves
+Void leaves? Yeah, right.
+Void Marketing
+Void Shop
+Vortex
+Vulture
+Waiting
+Warm and cozy!
+Warning
+Warning: You will lose all shards from the selected property.
+was
+Watch some leaf videos.
+Water
+Water Bot
+Water drain
+Water Essence
+Water Essences
+Water Leaf
+Water Quality
+Water Seal
+Water splash value
+Water value
+Waters one field every second for %s of your regular water amount.
+Wayland
+We only serve Cheddar here. Gruyere? Did you get your taste buds removed?
+Weak
+Weakened Soul Enemies
+Weakness Detector
+Weakness Finder
+Welcome
+Welcome to our small town!
+Welcome to the Cheese Pub. We only serve beer and cheddar here.
+Welcome to the event shop! Here, you can purchase upgrades that are available to events exclusively.
+Welcome to the Leaf Tower!
+Welcome to the Pyramid, the land of Ancient Leaves and chests!
+Welcome to the Soul Crypt, THE place to visit if you want an everlasting experience!
+were
+What a lovely pet! Witcho yields %s more Witch curses and %s more essence.
+What building has the most stories?
+What can fill a room but takes up no space?
+What can't talk but will reply when spoken to?
+What goes up but never comes down?
+What has a face and two hands but no arms or legs?
+What has to be broken before you can use it?
+What The Combo
+What's an idle game without stats?
+Wheeeeee!
+When a die drops with the same type and rarity you already have in your dice bag, its count will be increased. A higher count is needed for power rolls which require %s. Power roll a die for double the value to achieve a higher average count.
+When a fruit is collected, the spawn time of a random Artifact is reduced by %s second(s) per level.
+When most deer are born, they have white spots which disappear as they mature. Increases Printer rewards by 1000%.
+When the crunch settings are fulfilled, the bot will start the 5 minute auto crunch timer. Each upgrade reduces the bot's timer by 10 seconds.
+Where did I put my keys again? Increases %s count by %s in %s.
+Where did you get this from?
+Where do you first find %s?
+Where the heck are my particles again? Increases %s count by %s in %s.
+Where the leaf is my reward for all the hard work? Increases bonus reward chance by %s in %s.
+Whether action particles (after digging/slapping) should be shown or not.
+Which word in the dictionary is always spelled incorrectly?
+while [pet] is active
+while having [amount] [resource]
+White
+White Tile
+Who is a good boy? You're a good boy! Increases combo multiplier by 50%.
+Who is a good Doggo? You're a good Doggo!
+Why blow leaves when you can trade leaves?
+Win %sx at the Borb Claw Machine
+Win %sx at the Slots Machine
+Wind
+Witch
+Witch Curse multiplier
+Witch Curses
+Witch Essence multiplier
+Witch Essences
+Witch Reviver
+Witcho
+With a bit of luck, you can also roll a critical die which multiplies the roll value by the critical multiplier bonus value.
+With the Shovel, you can dig up the ground below to collect resources, items and more. Press %s to dig.
+With this certificate, you're an official crafter now.
+With this certificate, you're an official farmer now.
+With this certificate, you're an official trader now.
+With this device, you can change the priority and quantity of all autobuy items.
+Within the %s, time and space dance in an eternal flux, with particles blinking in and out of existence in a breathtaking display of cosmic transience.
+Wizard Hat
+Wobbly Wings
+Won: %s (%s)
+Wood
+Wood Leaf
+Works offline.
+World of Leafcraft
+Worth it.
+Worthy Enemies
+XP Candy
+XP multiplier: %s
+Yellow
+Yellow Tile
+Yep, this is me. I farm %s cheese every %s minutes for you. Triple cheese if we're on the moon. Cheddar > Gruyere.
+Yes, we have Borb cups.
+Yo, kiki!
+You already own this item.
+You are not connected to the App Store. Please check your internet connection, restart the game and try again.
+You are not connected to the Google Play Store. Please log in to your Google account and try again.
+You are not in a guild.
+You are not required to set yourself on fire to keep others warm.
+You are trying to load a save file of a newer version. This may break your save file. It is recommended to update the game to the current version.
+You beat the first tower boss! Congratulations!
+You can bring your ALBs to The Leaf Tower permanently.
+You can bring your ALBs to The Leaf Tower.
+You can choose what boss this artifact will teleport you to in the Control Panel.
+You can equip an additional pet.
+You can't build a sandcastle with Sand Leaves, unfortunately.
+You can't leave your own guild.
+You defeated the Evil Witch, the curse is lifted! Thank you! You are a real Leaf Blower!
+You escaped %s. You lost the following resources:
+You have already claimed this reward.
+You have already claimed your daily reward. Don't be too greedy!
+You have already claimed your season reward.
+You have already redeemed this code.
+You have already salvaged this season character.
+You have claimed the following resources:
+You have claimed this item for %s.
+You have cleared Curse %s in the Curse Machine.
+You have created your guild!
+You have defeated %s! But it gets more powerful with every defeat...
+You have defeated Bob! Mega Leaf Crunch is now available.
+You have discovered a new area!
+You have discovered a new galaxy: %s
+You have discovered a new galaxy: Energy Belt
+You have discovered a new galaxy: Sacred Nebula
+You have finally unlocked The Cheese Pub! Time to drink some be... water!
+You have finally unlocked your house!
+You have left the guild. Bye!
+You have reached the peak of the tower. Have you really...?
+You have to activate Steam Overlay in order to buy these items.
+You have to climb up at least 120 floors to be able to reach this area.
+You have to climb up at least 70247 floors to be able to reach this area.
+You have to defeat at least %s unique enemies before opening a Card pack.
+You have unclaimed packs! Go to the Supporter Shop and claim your items to receive all supporter rewards.
+You have unlocked %s.
+You know I'm born to blow, and gambling's for leaves. But that's the way I like it Borb. I don't wanna blow for ever... And dont forget the cheese!
+You may find claimable rewards here.
+You may serve as their pet. Enemy resource awards increased by +200%.
+You measure my life in hours, and I serve you by expiring. I'm quick when I'm thin and slow when I'm fat. The wind is my enemy.
+You mess with Crabbo, you get a stabbo. Increases global blowing damage by %s%.
+You might need some kind of a seaglide to get this leaf.
+You must construct additional cauldrons.
+You must construct additional energy storage.
+You must construct additional storage.
+You must construct critical cauldrons.
+You need the Death Book to collect %s. It can be unlocked in %s in the %s.
+You need to take care not to blow away your house with this tool.
+You received offline rewards for %s.
+You regenerate %s HP per second.
+You used [thetool] in [area]
+You were away for %s. You shouldn't be rewarded for doing nothing, but this is an idle game so here you go:
+You were blown away on floor %s by %s (%s damage).
+You were kicked from the guild.
+You were logged out of your account. Please remember to log out of your account from your browser on %s
+You were ranked %s.
+You will be logged out. Please wait...
+You will get the following resources:
+You will receive less cards than the number of cards in the pack. However, you will get some %s as compensation though. Do you still want to open this card pack?
+You will receive less items than the number of items in the pack. However, you will get some %s as compensation though. Do you still want to open this card pack?
+You won:
+You won't be able to leave home due to a dangerous leaf virus. Perform a Big Leaf Crunch to complete this challenge.
+You're here
+You're my favorite dairy-product-themed game dev.
+You're totally not addicted.
+You've solved the riddle! Respect, my brother, here are %s gems!
+Your %s protected you from the portal anomalies! You can now enter the %s portal.
+Your ALBs can pick up seeds now. Make sure to maintain them, they've been so good to you.
+Your Borb shield protected you from the portal anomalies! You can now enter the Fire Fields portal.
+Your clipboard is empty.
+Your companion, BFF, and soulmate. Increases ALB enemy damage by 25%.
+Your daily reward:
+Your damage is multiplied based on your highest Leaf Tower floor.
+Your damage is multiplied based on your lowest Pyramid floor.
+Your dice bag is empty. Find some dice in the battlefield!
+Your Hands
+Your House
+Your leaf printers broke down for the third time this week. AGAIN. Reach Leaf Tower Level 21 without any printers to complete this challenge.
+Your personal Borb Taxi Observer transports you back to the Leaf Tower when you're stuck on a single tower level for too long. The observer triggers if the defined number of enemies disappeared. Set to 0 to disable this option.
+Your shield of Shards broke the magical sphere! You can now enter the Black Leaf Hole.
+Your shield of Shards broke the magical sphere! You can now enter the Spark Portal.
+Your slap damage is multiplied based on your highest Leaf Tower floor.
+Your slap damage is multiplied based on your lowest Pyramid floor.
+Zigzag
+Zoo Necklace
+Zoo Ring
