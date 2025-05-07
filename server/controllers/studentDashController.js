@@ -51,7 +51,7 @@ exports.studentRegisterForRetake = async (req, res) => {
         const userId = userData.id;
 
         // Add a new retake request to the database
-        await pool.query("INSERT INTO retakeRequests (userId, testId, usersName, questionString) VALUES (?, ?, ?, ?)", [userId, testId, "", ""]);
+        await pool.query("INSERT INTO retakeRequests (userId, testId) VALUES (?, ?)", [userId, testId]);
 
         return res.status(200).json({ err: false, msg: "Successfully registered for retake" });
 

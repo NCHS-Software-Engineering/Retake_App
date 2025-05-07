@@ -52,10 +52,10 @@ exports.requests = async (req, res) =>
                 [userData.id,userData.email]);
     
             const [requests] = await pool.query(`
-                SELECT  r.testId, u.email, c.className, t.testName
+                SELECT  r.userId, r.testId, u.email, c.className, t.testName
                 FROM retakeRequests r
                 JOIN tests t ON r.testId = t.testId AND t.teacherId = ?
-                JOIN users u ON u.userId = r.userId OR r.userId = 0
+                JOIN users u ON u.userId = r.userId 
                 JOIN classes c ON t.classId = c.classId
                 `, [userData.id]);
     
