@@ -377,7 +377,6 @@ function createTestItemHTML(testName, testId) {
         <button class="btn btn-rename">Rename</button>
         <button class="btn btn-delete">Delete</button>
       </div>
-      <div class="handle"></div>
     </div>
     `;
 }
