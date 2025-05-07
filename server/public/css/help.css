@@ -46,26 +46,47 @@
 
 /* Dark Mode */
 .dark-mode .collapsible {
-  background-color: #333333;
-  color: #e0e0e0;
-  border-bottom: 1px solid #555555;
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  cursor: pointer;
+  padding: 18px;
+  width: 100% !important;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  border-bottom: 1px solid #444;
+  max-width: 1000px;
 }
 
+/* Collapsible Button Hover and Active States */
 .dark-mode .collapsible.active,
 .dark-mode .collapsible:hover {
-  background-color: #444444;
+  background-color: #3a3a3a;
 }
 
+/* Collapsible Button Plus/Minus Icon */
 .dark-mode .collapsible:after {
-  color: #e0e0e0;
+  content: '\002B';
+  color: #ccc;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
 }
 
+/* Active State Icon Change */
 .dark-mode .collapsible.active:after {
   content: "\2212";
 }
 
+/* Collapsible Content */
 .dark-mode .content {
-  background-color: #2c2c2c;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #1e1e1e;
   color: #e0e0e0;
-  border-top: 1px solid #555555;
+  width: 100%;
+  max-width: 1000px;
 }
