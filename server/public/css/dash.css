@@ -104,10 +104,8 @@
 
 .dark-mode .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     width: 100%;
-    max-width: 1200px;
     align-items: center;
     justify-content: center;
 }
