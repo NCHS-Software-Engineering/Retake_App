@@ -138,7 +138,7 @@
     max-height: 300px;
     overflow-y: auto;
     padding-right: 10px;
-}
+} 
 
 .dark-mode .request-item {
     background: #3a3d46; /* Darker background for items */
