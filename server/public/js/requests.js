@@ -175,7 +175,7 @@ async function renderQuestions(testId){
     }
 }
 
-function createQuestionItemHTML(questionText, questionNum) {
+function createQuestionItemHTML(questionText) {
     return `
     <li class="questoin", id="${questionText}">
         <input type="checkbox" /> ${questionText}
@@ -211,7 +211,7 @@ const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']")
 checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
         if (selectedQuestionIds !== "") {
-            selectedQuestionIds += ",";
+            selectedQuestionIds += "/n";
         }
         selectedQuestionIds += checkbox.parentElement.id;
     }
