@@ -34,6 +34,7 @@ exports.getStudentEmailsByLetters = async (req, res) => {
             WHERE email LIKE ? AND type = 'student'`,
             [`${letters}%`]);
 
+            
 
         return res.status(200).json({ err: false, students });
     } catch (err) {
