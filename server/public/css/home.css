@@ -95,7 +95,7 @@
 .dark-mode .link-area a:hover {
     color: #ff4c4c;
 }
-
+ 
 .dark-mode .link-area a:hover::after {
     width: 100%;
 }

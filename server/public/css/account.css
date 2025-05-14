@@ -275,7 +275,7 @@ input:checked + .slider:before {
     transition: background 0.3s;
     font-size: 16px;
     margin-top: 10px;
-}
+} 
 
 .dark-mode button:hover {
     background-color: #9a67ea;
