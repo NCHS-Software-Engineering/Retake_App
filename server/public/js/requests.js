@@ -177,7 +177,7 @@ async function renderQuestions(testId){
 
 function createQuestionItemHTML(questionText, questionNum) {
     return `
-    <li class="questoin", id="${questionNum}">
+    <li class="questoin", id="${questionText}">
         <input type="checkbox" /> ${questionText}
     </li>
     `;
