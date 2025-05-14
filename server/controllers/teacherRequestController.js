@@ -31,7 +31,7 @@ exports.getStudentEmailsByLetters = async (req, res) => {
         // Fetch students based on the letters
         const [students] = await pool.query(`
             SELECT email, userId, username FROM users 
-            WHERE email LIKE ? AND type = 'teacher'`,
+            WHERE email LIKE ? AND type = 'student'`,
             [`${letters}%`]);
 
 
