@@ -100,7 +100,7 @@ let debounceTimeout;
         }).catch((error) => {
           console.error("Error fetching students:", error);
         });
-      }, 2000);
+      }, 1000);
     }
   });
 //////////////////////////////////////////////////////////////////
