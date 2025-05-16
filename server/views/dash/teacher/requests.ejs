@@ -21,7 +21,7 @@
         <div class="request-list" id="request-list">
             <% if(!err && requests && requests.length > 0) { %>
                 <% requests.forEach(function(request) { %>
-                    <div class="request-item" data-set-id="<%=request.testId%>" onclick="openPopup('viewStudentPopup')">Student: <%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
+                    <div class="request-item" data-set-id="<%=request.testId%>" data-request-id="<%=request.requestId%>" onclick="openPopup('viewStudentPopup'); renderQuestionsSelectStudent('<%=request.requestId%>');">Student: <%=request.email%>, Class: <%= request.className %>, Test: <%= request.testName %></div>
                     <% }); %>
             <% } %>
         </div>
@@ -61,6 +61,8 @@
         <div class="popup-content">
             <button class="close-btn" onclick="closePopup('viewStudentPopup')">X</button>
             <h3>View Student</h3>
+            <div id="questions" class="request-list-add">
+            </div>
             <button class="submit-btn" onclick="closePopup('viewStudentPopup')" type="submit">Submit</button>
         </div>
     </div>

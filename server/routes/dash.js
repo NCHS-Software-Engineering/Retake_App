@@ -26,6 +26,7 @@ router.get("/listTests", validateTeacher, teacherClassesController.listTests);
 router.post("/renameTest", validateTeacher, teacherClassesController.renameTest);
 router.delete("/deleteTest", validateTeacher, teacherClassesController.deleteTest);
 router.get("/listQuestions", validateTeacher, teacherClassesController.listQuestions);
+router.get("/getRequestById", validateTeacher, teacherRequestController.getRequestById); 
 router.post("/updateQuestions", validateTeacher, teacherClassesController.updateQuestions);
 router.post("/updateClassOrder", validateTeacher, teacherClassesController.updateClassOrder);
 router.post("/updateTestOrder", validateTeacher, teacherClassesController.updateTestOrder);

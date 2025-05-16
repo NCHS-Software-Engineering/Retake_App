@@ -22,6 +22,25 @@ exports.createNewStuRequest = async (req, res) => {
 
 };
 
+exports.getRequestById = async (req, res) => {
+    try {
+        const userData = getUsersTokenData(req);
+        const { requestId } = req.query.requestId;
+
+        // Fetch the request by ID
+        const [request] = await pool.query(`
+            SELECT r.testId
+            FROM retakeRequests r
+            WHERE r.requestId = ?`, [requestId]);
+
+        return res.status(200).json({ err: false, request });
+    } catch (err) {
+        console.error(err);
+        return res.status(400).json({ err: "Something went wrong", request: null });
+    }
+}
+
+
 exports.getStudentEmailsByLetters = async (req, res) => {
     const { letters } = req.query; // Get the letters from the query string
 
@@ -53,7 +72,7 @@ exports.requests = async (req, res) =>
                 [userData.id,userData.email]);
     
             const [requests] = await pool.query(`
-                SELECT  r.userId, r.testId, u.email, c.className, t.testName
+                SELECT  r.userId, r.testId, u.email, c.className, t.testName, r.requestId
                 FROM retakeRequests r
                 JOIN tests t ON r.testId = t.testId AND t.teacherId = ?
                 JOIN users u ON u.userId = r.userId 

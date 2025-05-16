@@ -1,5 +1,6 @@
 const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
+QuestionListSelectStudent = document.getElementById("questions");
 const input = document.getElementById("studentEmail");
 const suggestions = document.getElementById("suggestions");
 
@@ -13,6 +14,8 @@ function closePopup(id) {
 
     document.getElementById(id).style.display = "none";
 }
+
+
 
 const classDropdown = document.getElementById("classDropdown");
 
@@ -181,6 +184,39 @@ function createQuestionItemHTML(questionText) {
         <input type="checkbox" /> ${questionText}
     </li>
     `;
+}
+
+async function renderQuestionsSelectStudent(requestId){
+    /*
+    <ol>
+        <% if (!err && questions && questions.length> 0) {  %>
+            <% questions.forEach((question)=> { %>
+                <li data-class-id="<%= question.questionId %>"><input type="checkbox" /> <%= question.text %></li>
+            <% }); %>
+        <% } %>
+    </ol>
+    */
+    try {
+        QuestionListSelectStudent.innerHTML = `<ul id="myList">`;
+        const request = await fetch(`/dash/getRequestById?requestId=${requestId}`);
+        const requestData = await request.json();
+        console.log(requestData.testId);
+        
+        const response = await fetch(`/dash/listQuestions?testId=${request.testId}`);
+        const data = await response.json();
+
+        if (data.err) {
+            return;
+        }
+
+        data.questions.forEach((question) => {
+            QuestionListSelectStudent.innerHTML += createQuestionItemHTML(question.question);
+        });
+
+        QuestionListSelectStudent.innerHTML += `</ul>`;
+        console.log("Pa, I made it");
+    } catch (err) {
+    }
 }
 
 /*
