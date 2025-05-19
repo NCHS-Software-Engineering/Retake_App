@@ -247,7 +247,7 @@ const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']")
 checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
         if (selectedQuestionIds !== "") {
-            selectedQuestionIds += "\n";
+            selectedQuestionIds += ",";
         }
         selectedQuestionIds += checkbox.parentElement.id;
     }
