@@ -178,10 +178,10 @@ async function renderQuestions(testId){
     }
 }
 
-function createQuestionItemHTML(questionText) {
+function createQuestionItemHTML(questionText,questionNum) {
     return `
-    <li class="questoin", id="${questionText}">
-        <input type="checkbox" /> ${questionText}
+    <li class="questoin", id="${questionNum}", xid="${questionNum}">
+        <input type="checkbox" /> ${questionNum}
     </li>
     `;
 }
@@ -210,7 +210,7 @@ async function renderQuestionsSelectStudent(requestId){
         }
 
         data.questions.forEach((question) => {
-            QuestionListSelectStudent.innerHTML += createQuestionItemHTML(question.question);
+            QuestionListSelectStudent.innerHTML += createQuestionItemHTML(question.question,question.questionNum);
         });
 
         QuestionListSelectStudent.innerHTML += `</ul>`;
@@ -240,17 +240,26 @@ document.getElementById("createNewStuRequest").addEventListener("click", (e) => 
 
     // Get the users name from the form and testId from the testDropdown
     const usersId = input.datauserId;
-    const testId = testDropdown.value;
     let selectedQuestionIds = "";
-
+    let selectedQuestionIds2 = "";
 const checkboxes = document.querySelectorAll(".questoin input[type='checkbox']");
 checkboxes.forEach((checkbox) => {
     if (checkbox.checked) {
         if (selectedQuestionIds !== "") {
-            selectedQuestionIds += ",";
+            selectedQuestionIds += "\n";
         }
         selectedQuestionIds += checkbox.parentElement.id;
     }
+});
+checkboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+        if (selectedQuestionIds2 !== "") {
+            selectedQuestionIds2 += ",";
+        }
+        console.log(checkbox.parentElement.xid);
+        selectedQuestionIds2 += checkbox.parentElement.xid;
+    }
+    
 });
     fetch("/dash/createNewStuRequest", {
         method: "POST",
