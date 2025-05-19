@@ -1,6 +1,6 @@
 const testList = document.getElementById("testDropdown");
 const QuestionList = document.getElementById("questionList");
-QuestionListSelectStudent = document.getElementById("questions");
+const QuestionListSelectStudent = document.getElementById("questions");
 const input = document.getElementById("studentEmail");
 const suggestions = document.getElementById("suggestions");
 
@@ -178,12 +178,37 @@ async function renderQuestions(testId){
     }
 }
 
-function createQuestionItemHTML(questionText) {
+function createQuestionItemHTML(questionText, questionId, questionIds) {
+    const isChecked = questionIds && questionIds.includes(questionId) ? "checked" : "";
+    if (isChecked) {
+        return `
+        <li class="questoin", id="${questionText}">
+            <input type="checkbox" checked/> ${questionText}
+        </li>
+        `;
+    }
+    else {
     return `
     <li class="questoin", id="${questionText}">
         <input type="checkbox" /> ${questionText}
     </li>
     `;
+    }
+}
+
+async function updateQuestions() {
+    const selectedQuestions = Array.from(document.getElementById("popUpList").querySelectorAll("input[type='checkbox']:checked")).map((checkbox) => checkbox.parentElement.id);
+
+    fetch("/dash/updateQuestions", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            requestId: document.getElementById("popUpList").getAttribute("data-request-id"),
+            questionIds: selectedQuestions
+        }),
+    })
 }
 
 async function renderQuestionsSelectStudent(requestId){
@@ -197,24 +222,26 @@ async function renderQuestionsSelectStudent(requestId){
     </ol>
     */
     try {
-        QuestionListSelectStudent.innerHTML = `<ul id="myList">`;
+        QuestionListSelectStudent.innerHTML = `<br><ul id="popUpList" data-request-id="${requestId}">`;
         const request = await fetch(`/dash/getRequestById?requestId=${requestId}`);
         const requestData = await request.json();
-        console.log(requestData.testId);
+
         
-        const response = await fetch(`/dash/listQuestions?testId=${request.testId}`);
+        const response = await fetch(`/dash/listQuestions?testId=${requestData.request[0].testId}`);
         const data = await response.json();
 
         if (data.err) {
             return;
         }
-
+        if (data.questions.length === 0) {
+            QuestionListSelectStudent.innerHTML = `<br><p>No questions found for this test.</p>`;
+            return;
+        }
         data.questions.forEach((question) => {
-            QuestionListSelectStudent.innerHTML += createQuestionItemHTML(question.question);
+            QuestionListSelectStudent.innerHTML += createQuestionItemHTML(question.question, question.questionString, requestData.request[0].questionIds);
         });
 
         QuestionListSelectStudent.innerHTML += `</ul>`;
-        console.log("Pa, I made it");
     } catch (err) {
     }
 }

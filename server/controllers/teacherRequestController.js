@@ -25,11 +25,11 @@ exports.createNewStuRequest = async (req, res) => {
 exports.getRequestById = async (req, res) => {
     try {
         const userData = getUsersTokenData(req);
-        const { requestId } = req.query.requestId;
+        const  requestId  = req.query.requestId;
 
         // Fetch the request by ID
         const [request] = await pool.query(`
-            SELECT r.testId
+            SELECT r.testId, r.questionString
             FROM retakeRequests r
             WHERE r.requestId = ?`, [requestId]);
 
@@ -40,6 +40,23 @@ exports.getRequestById = async (req, res) => {
     }
 }
 
+exports.updateQuestion = async (req, res) => {
+    try {
+        const userData = getUsersTokenData(req);
+        const { requestId, questionIds } = req.body;
+        const questionString = questionIds.join(","); // Convert the array to a comma-separated string
+        // Update the question string in the retakeRequests table
+        const [result] = await pool.query(`
+            UPDATE retakeRequests 
+            SET questionString = ? 
+            WHERE requestId = ?`, [questionString, requestId]);
+
+        return res.status(200).json({ err: false, msg: "Updated question successfully" });
+    } catch (err) {
+        console.error(err);
+        return res.status(400).json({ err: "Something went wrong", request: null });
+    }
+}
 
 exports.getStudentEmailsByLetters = async (req, res) => {
     const { letters } = req.query; // Get the letters from the query string
