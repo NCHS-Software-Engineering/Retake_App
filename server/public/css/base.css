@@ -122,8 +122,7 @@ footer {
     margin-bottom: 3rem;
     line-height: 1.6;
 }
-
-/* ----------------------- Dark Mode Overrides ----------------------- */
+/*Neon Mode*/
 .dark-mode {
     color: #e0e0e0;
     background-color: #121212;
@@ -174,4 +173,58 @@ footer {
 
 .dark-mode .main-content p {
     color: #cccccc;
+}
+
+
+/* ----------------------- Dark Mode Overrides ----------------------- */
+.Optimized-mode {
+    color: #ff00b3;
+    background-color: #88ff00;
+}
+
+.Optimized-mode .header {
+    background-color: #ff0062;
+    border-bottom: 1px solid #b3ff00;
+}
+
+.Optimized-mode .header .logo-container h1 {
+    color: #867299;
+}
+
+.Optimized-mode .header .nav-links a {
+    color: #3f3434;
+}
+
+.Optimized-mode .header .nav-links a:hover {
+    color: #bbff7c;
+}
+
+.Optimized-mode .header .login-button {
+    background-color: #ffd000;
+    color: #ff00dd;
+}
+
+.Optimized-mode .header .login-button:hover {
+    background-color: #000000;
+}
+
+.Optimized-mode .header .notifications {
+    background-color: #0051ff;
+    color: #b86f9f;
+}
+
+.Optimized-mode .header .notifications:hover {
+    background-color: #ffffff;
+}
+
+.Optimized-mode footer {
+    background-color: #ff00f2;
+}
+
+.Optimized-mode .main-content h1 {
+    color: #ffee00;
+}
+
+.Optimized-mode .main-content p {
+    color: #00ff0d;
 }

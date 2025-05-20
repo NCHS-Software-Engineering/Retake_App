@@ -91,10 +91,10 @@ exports.submitLink = async (req, res) => {
         if (!userData) {
             return res.status(400).render("pages/auth", { err: "You need to be signed in to view this page" });
         }
-        const userId = userData.id;
+        console.log(requestId);
 
         // Edit the retakeRequest link with the link provided
-        await pool.query("UPDATE retakeRequests SET questionString = ? WHERE userId = ? AND requestId = ?", [link, userId, requestId]);
+        await pool.query("UPDATE retakeRequests SET link = ? WHERE requestId = ?", [link, requestId]);
         return res.status(200).json({ err: false, msg: "Successfully submitted link" });
     } catch (err) {
         console.log(err);

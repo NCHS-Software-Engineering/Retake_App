@@ -18,4 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('darkMode', 'disabled');
       }
     });
+    const toggletuah = document.getElementById('Optimized-Mode');
+    const bodytuah = document.body;
+  
+    // Load stored mode
+    if (localStorage.getItem('OptimizedMode') === 'enabled') {
+      bodytuah.classList.add('Optimized-Mode');
+      toggletuah.checked = true;
+    }
+  
+    // Toggle dark mode
+    toggletuah.addEventListener('change', function () {
+      if (toggletuah.checked) {
+        bodytuah.classList.add('Optimized-Mode');
+        localStorage.setItem('OptimizedMode', 'enabled');
+      } else {
+        bodytuah.classList.remove('Optimized-Mode');
+        localStorage.setItem('OptimizedMode', 'disabled');
+      }
+    });
   });

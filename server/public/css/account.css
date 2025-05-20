@@ -351,3 +351,114 @@ input:checked + .slider:before {
 .dark-mode input:checked + .slider:before {
     transform: translateX(20px);
 }
+/*Optimized Mode*/
+/* Ensure styles override base.css where necessary */
+.Optimized-Mode .account-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #51ff00; /* Dark background for the entire container */
+}
+
+/* Sidebar Navigation */
+.Optimized-Mode.sidebar {
+    width: 200px;
+    background-color: #ffffff; /* Darker sidebar */
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.Optimized-Mode .sidebar ul {
+    list-style: none;
+}
+
+.Optimized-Mode .sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.Optimized-Mode .sidebar ul li a {
+    text-decoration: none;
+    color: #ff79b1; /* Light text */
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.Optimized-Mode .sidebar ul li a:hover {
+    background-color: #d400ff; /* Slightly lighter hover background */
+}
+
+/* Main Content */
+.Optimized-Mode.content {
+    margin-left: 220px;
+    padding: 20px;
+    flex-grow: 1;
+    color: #73ff00; /* Light text */
+}
+
+.Optimized-Mode .content section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background: #41754c; /* Darker background */
+    border: 1px solid #000000;
+    border-radius: 8px;
+}
+
+.Optimized-Mode .content h2 {
+    color: #ff00d4; /* Accent color, purple-like for visibility */
+}
+
+/* Smooth Scroll */
+.Optimized-Mode html {
+    scroll-behavior: smooth;
+    background-color: #00ff2a; /* Dark background for the whole page */
+}
+
+
+
+/* Toggle Switch */
+.Optimized-Mode .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+.Optimized-Mode .switch input {
+    opacity: 45;
+    width: 0;
+    height: 0;
+}
+
+.Optimized-Mode .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #500000;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.dark-mode .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.dark-mode input:checked + .slider {
+    background-color: #03dac6; /* Bright accent color for active toggle */
+}
+
+.dark-mode input:checked + .slider:before {
+    transform: translateX(20px);
+}

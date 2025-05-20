@@ -131,13 +131,13 @@
                 alert('Please paste a link before submitting.');
                 return;
             }
-
+            console.log(requestId);
             fetch('/dash/submitLink', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ requestId, link })
+                body: JSON.stringify({link, requestId  })
             })
             .then(response => response.json())
             .then(res => {
