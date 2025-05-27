@@ -95,7 +95,9 @@ exports.submitLink = async (req, res) => {
 
         // Edit the retakeRequest link with the link provided
         await pool.query("UPDATE retakeRequests SET link = ? WHERE requestId = ?", [link, requestId]);
+        await pool.query("UPDATE retakeRequests SET status = 1 WHERE requestId = ?", [ requestId]);
         return res.status(200).json({ err: false, msg: "Successfully submitted link" });
+        
     } catch (err) {
         console.log(err);
         return res.status(500).json({ err: "An error occurred while processing your request" });
