@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #007bff;
+  --color-primary-light: #339af0;
+  --color-primary-dark: #0056b3;
+  --color-success: #28a745;
+  --color-success-light: #51cf66;
+  --color-success-dark: #1e7e34;
+}
+
+@utility bg-primary { background-color: var(--color-primary); }
+@utility bg-primary-light { background-color: var(--color-primary-light); }
+@utility bg-primary-dark { background-color: var(--color-primary-dark); }
+@utility text-primary { color: var(--color-primary); }

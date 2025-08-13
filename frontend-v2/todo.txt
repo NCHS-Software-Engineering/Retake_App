@@ -1,0 +1,6 @@
+3. Make it so you can Upload a File to the current assignment if wanted
+
+- For all the delete queries in the db make it so it deletes anything connected to it that would be an issue. Figure out why onCasscade is not working, for deleting a class delete, all sections connected to class, all assignments connected to any of those sections, delete any retake-requests connected to any of those assignmnets, delete any submissionattempts that are connected to any of the retake-requests, and delete any submissionanswers that are connected to any of the submissionattempts
+- Input verrification in backend
+
+7. Build the app and fix all errors ts compiler has
