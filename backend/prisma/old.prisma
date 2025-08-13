@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model classes {
+  classId   Int     @id @default(autoincrement())
+  className String  @default("Unnamed Class") @db.VarChar(100)
+  teacherId Int?
+  orderId   Int?
+  tests     tests[]
+}
+
+model questions {
+  questionNum Int?
+  question    String? @db.Text
+  testId      Int?
+  questionId  Int     @id @default(autoincrement())
+
+  @@index([testId], map: "idx_questions_testId")
+}
+
+model retakeRequests {
+  requestId      Int     @id @default(autoincrement())
+  testId         Int
+  userId         Int     @default(0)
+  questionString String? @db.Text
+  userEmail      String? @default("BLANK") @db.VarChar(255)
+  link           String? @db.Text
+  status         Int?    @default(0)
+}
+
+model studentResponse {
+  requestId  Int     @id
+  response   String? @db.VarChar(45)
+  questionId Int?
+}
+
+model tests {
+  testId    Int      @id @default(autoincrement())
+  testName  String   @db.VarChar(500)
+  teacherId Int?
+  classId   Int?
+  orderId   Int?     @default(0)
+  classes   classes? @relation(fields: [classId], references: [classId], map: "fk_tests_classes")
+  users     users?   @relation(fields: [teacherId], references: [userId], map: "fk_tests_users")
+
+  @@index([teacherId], map: "fk_tests_users")
+  @@index([classId], map: "idx_tests_classId")
+}
+
+model users {
+  userId      Int     @id @unique(map: "userID_UNIQUE") @default(autoincrement())
+  username    String? @db.VarChar(20)
+  type        String? @default("student") @db.VarChar(45)
+  bio         String? @db.Char(255)
+  googleToken String? @db.Text
+  googleId    String  @unique(map: "googleId") @db.VarChar(255)
+  email       String  @unique(map: "email") @db.VarChar(255)
+  tests       tests[]
+}
