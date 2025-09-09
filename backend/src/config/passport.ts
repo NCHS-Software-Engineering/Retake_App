@@ -34,13 +34,13 @@ passport.deserializeUser(async (id: number, done) => {
     }
 })
 
-// Google OAuth Stategy
+// Google OAuth Strategy
 passport.use(
     new GoogleStrategy(
         {
             clientID: config.googleClientId as string,
             clientSecret: config.googleClientSecret as string,
-            callbackURL: "/api/auth/google/callback"
+            callbackURL: config.googleCallbackUrl,
         },
         async (
             accessToken: string,
