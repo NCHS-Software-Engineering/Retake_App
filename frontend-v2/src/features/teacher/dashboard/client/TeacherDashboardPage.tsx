@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { memo, useState, useEffect } from "react";
 import { API_BASE } from "@/constants/env";
 
@@ -8,12 +8,6 @@ const OVERVIEW_STATS_DEFAULT = [
     { label: "Pending Retake Requests", value: 0 },
     { label: "Resolved Requests (past 30 days)", value: 0 },
 ];
-
-const quickActions = [
-    { label: "Create New Class", onClick: () => {} },
-    { label: "Review Retake Request", onClick: () => {} },
-    { label: "Add Student & Assign Work", onClick: () => {} },
-] as const;
 
 const StatCard = memo(function StatCard({ label, value }: { label: string; value: number }) {
     return (
@@ -28,7 +22,7 @@ const ActionButton = memo(function ActionButton({ label, onClick }: { label: str
     return (
         <button
             onClick={onClick}
-            className="bg-blue-600 text-white rounded-2xl px-6 py-3 w-full text-lg font-medium transform transition-transform duration-150 hover:scale-105 active:scale-95"
+            className="bg-blue-600 text-white rounded-2xl px-6 py-3 w-full text-lg font-medium transform transition-transform duration-150 hover:scale-105 active:scale-95 cursor-pointer"
             aria-label={label}
             type="button"
         >
@@ -38,6 +32,15 @@ const ActionButton = memo(function ActionButton({ label, onClick }: { label: str
 });
 
 export default function TeacherDashboardPage() {
+    const router = useRouter();
+  
+    const quickActions = [
+      { label: "Create New Class", onClick: () => router.push("/dashboard/teacher/classes") },
+      { label: "Review Retake Request", onClick: () => router.push("/dashboard/teacher/requests") },
+      { label: "Add Student & Assign Work", onClick: () => router.push("/dashboard/teacher/requests") },
+    ] as const;
+
+    
     const [stats, setStats] = useState(OVERVIEW_STATS_DEFAULT);
 
     useEffect(() => {
