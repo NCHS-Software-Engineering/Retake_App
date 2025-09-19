@@ -33,7 +33,7 @@ export const searchUsers = async (req: Request, res: Response, next: NextFunctio
             const users = await prisma.user.findMany({
                 where: {
                     role: "student",
-                    email: {
+                    username: {
                         startsWith: emailQuery
                     }
                 },
@@ -56,7 +56,7 @@ export const searchUsers = async (req: Request, res: Response, next: NextFunctio
             const users = await prisma.user.findMany({
                 where: {
                     role: "teacher",
-                    email: {
+                    username: {
                         startsWith: emailQuery
                     }
                 },

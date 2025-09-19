@@ -9,7 +9,7 @@ import app from "./app";
     console.log("Connected to Database.");
 
     app.listen(config.port, () => {
-      console.log(`Backend API running at http://localhost:${config.port}`);
+      console.log(`Backend API running on port ${config.port}`);
     });
   } catch (err) {
     console.error("Failed to start backend: ", err);

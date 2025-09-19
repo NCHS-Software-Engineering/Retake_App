@@ -1,14 +1,14 @@
 import { Request, Response, NextFunction } from "express";
+import config from "../../../config/config";
 import passport from "../../../config/passport";
 
 // Callback after google calls our callback
 export const googleAuthCallback = (req: Request, res: Response, next: NextFunction) => {
     if (!req.user) {
-        res.redirect("http://localhost:3000/auth");
+      return res.redirect(`${config.clientUrl}/auth`);
     }
-
-    res.redirect("http://localhost:3000");
-};
+    return res.redirect(config.clientUrl);
+  };
 
 // Log the user out
 export const logout = (req: Request, res: Response, next: NextFunction) => {

@@ -6,16 +6,38 @@ import routes from "./routes";
 import { sessionMiddleware } from "./common/session/session";
 import passport from "./config/passport";
 
+
+
 const app: Application = express();
+
 
 // Global middleware
 app.use(cors({
-    origin: [/^http:\/\/localhost:3000$/, /\.google\.com$/],
+    origin: [
+        "http://localhost:3000",
+        "https://retake.redhawks.us",
+      ],
     credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(sessionMiddleware);
+app.set("trust proxy", 1); // trust first proxy (Nginx)
+
+
+// Debug middleware to log cookies and session data
+//import cookieParser from "cookie-parser";
+//app.use(cookieParser());
+/* app.use((req, res, next) => {
+    console.log("---- Cookie Debug ----");
+    console.log("Raw cookies:", req.headers.cookie);
+    console.log("Parsed cookies:", req.cookies);
+    console.log("Session ID:", (req as any).sessionID);
+    console.log("Session object:", (req as any).session);
+    console.log("----------------------");
+    next();
+  }); */
+
 app.use(passport.initialize());
 app.use(passport.session());
 

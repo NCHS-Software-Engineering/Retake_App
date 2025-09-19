@@ -16,6 +16,7 @@ const config = {
     googleCallbackUrl: isProd
     ? "https://retake.redhawks.us/api/auth/google/callback"
     : "http://localhost:8080/api/auth/google/callback",
+    clientUrl: process.env.CLIENT_URL || "http://localhost:3000",
 }
 
 // Simple checks

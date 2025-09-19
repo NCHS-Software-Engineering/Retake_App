@@ -38,3 +38,23 @@ FRONTEND:
 - Able to go to a specific section
 - Renders the retake and relearning assignments (basic info)
 - Able to rename and delete a assignment
+
+## Deploy on Software Engineering Server
+
+1. Copy backend folder to server
+2. Copy frontend-v2 folder to server
+3. Alternatively, you can just upload the files that have been changed if there aren't a lot
+4. Make sure the .env.local file in the frontend is pointing to the server and not localhost
+5. Within the backend folder on the server run the following commands:
+```bash
+    rm -rf dist     # Remove the old build
+    npm install     # Install any new modules
+    npm run build   # Create a new build
+```
+6. Within the frontend-v2 folder:
+```bash
+    rm -rf .next    # Remove the old build
+    npm install     # Install any new modules
+    npm run build   # Create a new build
+```
+7. Restart pm2 processes for frontend and backend. If changes were only made to one part, that is the only process that needs restarting.

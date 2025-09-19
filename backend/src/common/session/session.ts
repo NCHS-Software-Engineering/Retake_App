@@ -8,14 +8,6 @@ import FileStoreFactory from 'session-file-store';
 const FileStore = FileStoreFactory(session); // Testing
 
 export const sessionMiddleware = session({
-    // Testing
-    // store: new FileStore({
-    //     path: path.join(__dirname, "sessions"),
-    //     ttl: 3600 // 1 hour
-    // }),
-
-    
-
     secret: config.sessionSecret as string,
     resave: false,
     saveUninitialized: false,
@@ -23,7 +15,7 @@ export const sessionMiddleware = session({
         secure: process.env.NODE_ENV === "production",
         httpOnly: true,
         sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-        domain: process.env.NODE_ENV === "production" ? ".retake.redhawks.us" : undefined,
+        domain: undefined,
         maxAge: 1000 * 60 * 60 * 24 // 1 day
     }
 })

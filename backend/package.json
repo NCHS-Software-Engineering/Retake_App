@@ -17,6 +17,7 @@
     "@types/cors": "^2.8.18",
     "@types/passport": "^1.0.17",
     "@types/passport-google-oauth20": "^2.0.16",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
@@ -29,6 +30,7 @@
     "tsyringe": "^4.10.0"
   },
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.2",
     "@types/express-session": "^1.18.1",
     "@types/node": "^22.15.29",
