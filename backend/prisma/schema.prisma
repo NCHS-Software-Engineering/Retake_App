@@ -1,0 +1,192 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Enums ──────────────────────────────────────────────────────────────────────
+
+enum Role {
+  admin
+  teacher
+  student
+}
+
+enum AssignmentType {
+  relearning
+  test
+}
+
+enum RequestStatus {
+  pending
+  assigned
+  submitted
+  graded
+  resolved
+}
+
+enum AttemptType {
+  work
+  test
+}
+
+// ── User & Profile ────────────────────────────────────────────────────────────
+
+model User {
+  id        Int   @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  googleId  String?  @map("google_id")
+  role      Role
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  profile       UserProfile?
+  classes       Class[]             @relation("TeacherClasses")
+  studentRetakeRequests RetakeRequest[] @relation("StudentRetakeRequests")
+  teacherRetakeRequests RetakeRequest[] @relation("TeacherRetakeRequests")
+  attempts      SubmissionAttempt[]
+  notifications Notification[]
+  Assignment    Assignment[]
+}
+
+model UserProfile {
+    userId            Int    @id
+    fullName          String?
+    profilePictureUrl String?
+    bio               String?
+    preferredName     String?
+    studentIdNumber   String?
+
+    user User @relation(fields: [userId], references: [id])
+}
+
+// ── Teaching Structure ────────────────────────────────────────────────────────
+
+model Class {
+  id        Int   @id @default(autoincrement())
+  teacherId Int
+  name      String
+  createdAt DateTime @default(now())
+
+  teacher  User      @relation("TeacherClasses", fields: [teacherId], references: [id])
+  sections Section[]
+
+  @@index([teacherId])
+}
+
+model Section {
+  id        Int   @id @default(autoincrement())
+  classId   Int
+  name      String
+  createdAt DateTime @default(now())
+
+  class       Class        @relation(fields: [classId], references: [id], onDelete: Cascade)
+  assignments Assignment[]
+
+  @@index([classId])
+}
+
+// ── Assignments & Questions ──────────────────────────────────────────────────
+
+model Assignment {
+  id          Int         @id @default(autoincrement())
+  sectionId   Int
+  teacherId   Int
+  type        AssignmentType
+  title       String
+  description String?
+  createdAt   DateTime       @default(now())
+
+  section   Section         @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  teacher   User            @relation(fields: [teacherId], references: [id])
+  questions Question[]
+  requests  RetakeRequest[]
+
+  @@index([sectionId])
+  @@index([teacherId])
+}
+
+model Question {
+  id           Int  @id @default(autoincrement())
+  assignmentId Int
+  sequence     Int
+  questionText String
+  answerKey    String?
+
+  assignment Assignment         @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  answers    SubmissionAnswer[]
+
+  @@index([assignmentId])
+}
+
+// ── Retake Flow ───────────────────────────────────────────────────────────────
+
+model RetakeRequest {
+  id           Int        @id @default(autoincrement())
+  studentId    Int
+  teacherId    Int
+  assignmentId Int?
+  requestNotes String?
+  status       RequestStatus
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  resolvedAt   DateTime?
+
+  student    User                @relation("StudentRetakeRequests", fields: [studentId], references: [id])
+  teacher    User                @relation("TeacherRetakeRequests", fields: [teacherId], references: [id])
+  assignment Assignment?          @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
+  attempts   SubmissionAttempt[]
+
+  @@index([studentId])
+}
+
+model SubmissionAttempt {
+  id              Int      @id @default(autoincrement())
+  requestId       Int
+  studentId       Int
+  submittedAt     DateTime @default(now())
+  score           Float?
+  feedback        String?
+
+  request RetakeRequest      @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  student User               @relation(fields: [studentId], references: [id])
+  answers SubmissionAnswer[]
+
+  @@index([requestId])
+  @@index([studentId])
+}
+
+model SubmissionAnswer {
+  id         Int   @id @default(autoincrement())
+  attemptId  Int
+  questionId Int
+  answerText String
+  isCorrect  Boolean?
+  feedback   String?
+
+  attempt  SubmissionAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question Question          @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([attemptId, questionId])
+  @@index([attemptId])
+  @@index([questionId])
+}
+
+// ── Notifications ─────────────────────────────────────────────────────────────
+
+model Notification {
+  id        Int   @id @default(autoincrement())
+  userId    Int
+  type      String // e.g. 'feedback' | 'grade_posted' | 'retake_approved'
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
