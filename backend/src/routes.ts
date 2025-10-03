@@ -40,7 +40,7 @@ router.use("/classes/:classId/sections/:sectionId/assignments/:assignmentId/ques
 // Managing Retake Requests
 router.use("/retake-requests", ensureAuthenticated, retakeRequestsRouter);
 
-// Manageing Retake Attemps
+// Managing Retake Attempts
 router.use("/retake-requests/:requestId/attempts", ensureAuthenticated, attemptsRouter);
 
 

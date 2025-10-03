@@ -24,12 +24,13 @@ export function getRequests(status?: string) {
         .then(handleResponse<RequestPayload[]>);
 }
 
-export function getStudentSearchResult(status?: string, emailQuery?: string) {
+export function getStudentSearchResult(status?: string, usernameQuery?: string) {
     const url = new URL(`${API_BASE}/api/retake-requests/search`);
     if (status && status !== "all") url.searchParams.set("status", status);
-    if (emailQuery && emailQuery.trim() !== "") url.searchParams.set("emailQuery", emailQuery.trim());
+    if (usernameQuery && usernameQuery.trim() !== "")
+      url.searchParams.set("usernameQuery", usernameQuery.trim());
     return fetch(url.toString(), { credentials: "include" }).then(
-        handleResponse<RequestPayload[]>
+      handleResponse<RequestPayload[]>
     );
   }
 
@@ -82,9 +83,9 @@ export function getSubmissionAttempts(requestId: number) {
     }).then(handleResponse<SubmissionAttemptPayload[]>);
 }
 
-export function getSearchStudentUsers(emailQuery: string) {
+export function getSearchStudentUsers(usernameQuery: string) {
     const url = new URL(`${API_BASE}/api/user/search`);
-    if (emailQuery && emailQuery.trim() !== "") url.searchParams.set("emailQuery", emailQuery.trim());
+    if (usernameQuery && usernameQuery.trim() !== "") url.searchParams.set("usernameQuery", usernameQuery.trim());
     return fetch(url.toString(), { credentials: "include" }).then(
         handleResponse<StudentPayload[]>
     );

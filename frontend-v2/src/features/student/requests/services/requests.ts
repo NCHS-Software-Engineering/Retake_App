@@ -28,9 +28,9 @@ export function updateRequestNotes(id: number, notes: string) {
     }).then(handleResponse<void>);
 }
 
-export const searchTeachers = async (emailQuery: string): Promise<TeacherPayload[]> => {
+export const searchTeachers = async (usernameQuery: string): Promise<TeacherPayload[]> => {
     const url = new URL(`${API_BASE}/api/user/search`);
-    if (emailQuery && emailQuery.trim() !== "") url.searchParams.set("emailQuery", emailQuery.trim());
+    if (usernameQuery && usernameQuery.trim() !== "") url.searchParams.set("usernameQuery", usernameQuery.trim());
     return fetch(url.toString(), { credentials: "include" }).then(
         handleResponse<TeacherPayload[]>
     );

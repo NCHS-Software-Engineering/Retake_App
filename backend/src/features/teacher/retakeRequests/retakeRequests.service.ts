@@ -92,14 +92,14 @@ export class RetakeRequestService {
         });
     }
 
-    public async getStudentRequests(teacherId: number, emailQuery: string, status: string) {
+    public async getStudentRequests(teacherId: number, usernameQuery: string, status: string) {
         const isSpecificStatus = !!status && status !== "all";
         const isActiveStatus = !status || status === "all";
 
         const whereClause: any = {
             student: {
-                email: {
-                    startsWith: emailQuery || "",
+                username: {
+                    startsWith: usernameQuery || "",
                 },
             },
             assignment: {

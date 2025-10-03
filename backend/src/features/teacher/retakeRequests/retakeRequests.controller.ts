@@ -18,7 +18,6 @@ export const getAllRetakeRequests = async (req: Request, res: Response, next: Ne
         } else {
             throw new Error("Unknown role");
         }
-
     } catch (err) {
         console.error(err);
         next(err);
@@ -105,12 +104,15 @@ export const deleteSubmission = async (req: Request, res: Response, next: NextFu
 export const searchStudents = async (req: Request, res: Response, next: NextFunction) => {
     try {
 
-        // email query
-        const emailQuery = req.query.emailQuery as string;
+        // username query
+        const usernameQuery = req.query.usernameQuery as string;
         const status = req.query.status as string;
         const teacherId = req.user.id;
 
-        const studentRequests = await retakeRequestService.getStudentRequests(teacherId, emailQuery, status);
+        // Test: log the incoming query
+        console.log("searchStudents called with usernameQuery:", usernameQuery, "status:", status);
+
+        const studentRequests = await retakeRequestService.getStudentRequests(teacherId, usernameQuery, status);
         res.status(200).json(studentRequests);
 
     } catch (err) {

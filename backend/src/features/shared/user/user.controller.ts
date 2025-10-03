@@ -28,13 +28,13 @@ export const getProfile = (req: Request, res: Response, next: NextFunction) => {
 export const searchUsers = async (req: Request, res: Response, next: NextFunction) => {
     try {
         if (req.user.role === "teacher") {
-            const emailQuery = req.query.emailQuery as string;
+            const usernameQuery = req.query.usernameQuery as string;
 
             const users = await prisma.user.findMany({
                 where: {
                     role: "student",
                     username: {
-                        startsWith: emailQuery
+                        startsWith: usernameQuery
                     }
                 },
                 select: {
@@ -51,13 +51,13 @@ export const searchUsers = async (req: Request, res: Response, next: NextFunctio
 
             res.json(users);
         } else if(req.user.role === "student") {
-            const emailQuery = req.query.emailQuery as string;
+            const usernameQuery = req.query.usernameQuery as string;
 
             const users = await prisma.user.findMany({
                 where: {
                     role: "teacher",
                     username: {
-                        startsWith: emailQuery
+                        startsWith: usernameQuery
                     }
                 },
                 select: {
