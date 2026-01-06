@@ -31,10 +31,10 @@ router.put("/answer/:answerId", editQuestion);
 // Set attempt score or feedback for a question
 router.put("/:attemptId", editAttempt);
 
-// Finilize a attempt
+// Finalize an attempt
 router.patch("/:attemptId", finalizeAttempt);
 
-// Score a attempt
+// Score an attempt
 router.patch("/:attemptId/score", scoreAttempt);
 
 
