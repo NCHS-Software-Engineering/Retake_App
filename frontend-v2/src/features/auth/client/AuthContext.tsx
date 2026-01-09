@@ -6,6 +6,7 @@ import {
     useCallback,
     useEffect,
     useState,
+    useMemo,
 } from "react";
 import { User } from "@/shared/types/user";
 import { fetchProfile } from "../services/authService";
@@ -14,13 +15,15 @@ interface AuthContextType {
     user: User | null;
     loading: boolean;
     refresh: () => Promise<void>;
+    setUser: (user: User | null) => void;
 }
 
 export const AuthContext = createContext<AuthContextType>({
     user: null,
     loading: true,
-    refresh: async () => { },
-})
+    refresh: async () => {},
+    setUser: () => {},
+});
 
 export function AuthProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<User | null>(null);
@@ -33,17 +36,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUser(user);
         } catch {
             setUser(null); // User is just not signed in
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     }, []);
 
     useEffect(() => {
         refresh();
     }, [refresh]);
 
-    return (
-        <AuthContext.Provider value={{ user, loading, refresh }}>
-            {children}
-        </AuthContext.Provider>
-    )
+    const value = useMemo(() => ({ user, loading, refresh, setUser }),
+        [user, loading, refresh]
+    );
+
+    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
