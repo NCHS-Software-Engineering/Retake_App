@@ -88,33 +88,35 @@ export const RequestCard: FC<RequestCardProps> = ({
         <>
             <div className="rounded-xl border border-gray-200 bg-white transition-transform duration-200 hover:shadow-md hover:scale-[1.01] overflow-hidden">
                 <div
-                    className="flex items-center px-5 py-4 cursor-pointer"
+                    className="flex flex-wrap items-center gap-y-2 px-5 py-4 cursor-pointer min-w-0"
                     onClick={onExpand}
                 >
                     <span
                         className={clsx(
                             STATUS_COLOR[request.status],
-                            "px-2 py-1 rounded-full text-sm flex-shrink-0 min-w-[120px] flex justify-center items-center text-center"
+                            "px-2 py-1 rounded-full text-sm flex-shrink-0 w-full sm:w-auto sm:min-w-[120px] flex justify-center items-center text-center"
                         )}
                     >
                         {STATUS_LABELS[request.status]}
                     </span>
 
-                    <div className="flex-1 min-w-0 px-4 truncate text-gray-900">
-                        {request.assignment?.title ?? <em className="text-gray-400">No assignment</em>}
-                    </div>
-                    <div className="flex-1 min-w-0 px-4 truncate text-gray-500">
-                        {request.student?.email ?? <em className="text-gray-400">No student</em>}
-                    </div>
-                    <div className="flex-1 min-w-0 px-4 truncate text-gray-600">
-                        {request.requestNotes}
-                    </div>
+                    <div className="w-full sm:flex-1 min-w-0 px-4 truncate text-gray-900">
+  {request.assignment?.title ?? <em className="text-gray-400">No assignment</em>}
+</div>
+
+<div className="w-full sm:flex-1 min-w-0 px-4 truncate text-gray-500">
+  {request.student?.email ?? <em className="text-gray-400">No student</em>}
+</div>
+
+<div className="w-full sm:flex-1 min-w-0 px-4 truncate text-gray-600">
+  {request.requestNotes}
+</div>
 
                     {request.status !== "resolved" && (
                         <button
                             type="button"
                             onClick={e => { e.stopPropagation(); onResolve(); }}
-                            className="ml-4 p-1 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition cursor-pointer"
+                            className="mt-2 sm:mt-0 sm:ml-4 p-1 rounded-full bg-green-100 text-green-600 hover:bg-green-200 transition cursor-pointer"
                             aria-label="Resolve request"
                         >
                             <CheckIcon className="h-5 w-5" />
@@ -125,7 +127,7 @@ export const RequestCard: FC<RequestCardProps> = ({
                         <button
                             type="button"
                             onClick={e => { e.stopPropagation(); onDelete(); }}
-                            className="ml-4 p-1 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition cursor-pointer"
+                            className="mt-2 sm:mt-0 sm:ml-4 p-1 rounded-full bg-red-100 text-red-600 hover:bg-red-200 transition cursor-pointer"
                             aria-label="Resolve request"
                         >
                             <TrashIcon className="h-5 w-5" />

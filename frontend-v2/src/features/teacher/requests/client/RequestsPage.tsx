@@ -99,7 +99,7 @@ export default function RequestsPage() {
         changeFilter(status);
 
     return (
-        <div className="p-6 space-y-6">
+        <div className="p-6 space-y-6 max-w-full overflow-x-hidden">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-bold text-gray-900">Retake Requests</h1>
                 <button
