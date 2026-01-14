@@ -44,19 +44,19 @@ export const QuestionCard: React.FC<{
             <motion.div
                 layout
                 onClick={() => setModalOpen(true)}
-                className="relative rounded-xl border border-gray-200 shadow-sm transition-transform hover:scale-[1.01] duration-150 bg-white mx-6 mb-4 cursor-pointer"
+                className="relative rounded-xl border border-gray-200 shadow-sm transition-transform hover:scale-[1.01] duration-150 bg-white mb-4 cursor-pointer"
             >
-                <div className="flex justify-between items-center px-5 py-4">
-                    <div>
+                <div className="flex items-center justify-between px-5 py-4 min-w-0">
+                    <div className="flex-1 min-w-0">
                         <h2 className="text-lg font-semibold text-gray-800">
                             Question {question.sequence}
                         </h2>
-                        <p
+                        <div
                             className="text-xs text-gray-400 truncate"
                             title={question.questionText}
                         >
                             {question.questionText}
-                        </p>
+                        </div>
                     </div>
 
                     <div className="relative">
@@ -77,7 +77,7 @@ export const QuestionCard: React.FC<{
                         </button>
 
                         {menuOpen && (
-                            <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-white border border-gray-200 rounded-full p-1 shadow-lg z-10">
+                            <div className="absolute bottom-full mb-2 right-0 flex space-x-2 bg-white border border-gray-200 rounded-full p-1 shadow-lg z-10">
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -101,8 +101,10 @@ export const QuestionCard: React.FC<{
                     </div>
                 </div>
 
-                <div className="px-5 pb-4">
-                    <p className="pl-4 text-gray-700 truncate">{answerText}</p>
+                <div className="px-5 pb-4 min-w-0">
+                    <p className="pl-4 text-gray-700 whitespace-pre-wrap break-words">
+                        {answerText}
+                    </p>
                 </div>
             </motion.div>
 
