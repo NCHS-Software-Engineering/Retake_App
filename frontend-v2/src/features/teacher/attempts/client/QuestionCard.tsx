@@ -47,16 +47,16 @@ export const QuestionCard: React.FC<{
                 className="relative rounded-xl border border-gray-200 shadow-sm transition-transform hover:scale-[1.01] duration-150 bg-white mb-4 cursor-pointer"
             >
                 <div className="flex items-center justify-between px-5 py-4 min-w-0">
-                    <div className="min-w-0">
+                    <div className="flex-1 min-w-0">
                         <h2 className="text-lg font-semibold text-gray-800">
                             Question {question.sequence}
                         </h2>
-                        <p
+                        <div
                             className="text-xs text-gray-400 truncate"
                             title={question.questionText}
                         >
                             {question.questionText}
-                        </p>
+                        </div>
                     </div>
 
                     <div className="relative">
@@ -101,8 +101,8 @@ export const QuestionCard: React.FC<{
                     </div>
                 </div>
 
-                <div className="px-5 pb-4">
-                    <p className="pl-4 text-gray-700 truncate min-w-0">
+                <div className="px-5 pb-4 min-w-0">
+                    <p className="pl-4 text-gray-700 whitespace-pre-wrap break-words">
                         {answerText}
                     </p>
                 </div>
