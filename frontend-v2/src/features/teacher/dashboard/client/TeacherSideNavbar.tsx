@@ -38,7 +38,10 @@ export default function TeacherSideNavbar() {
             ? `${sectionsHref}/assignments/${assignmentId}`
             : classesBase;
 
-    const requestsHref = requestsBase;
+    const allRequestsHref = requestsBase;
+    const pendingRequestsHref = `${requestsBase}?status=pending`;
+    const submittedRequestsHref = `${requestsBase}?status=submitted`;
+        
 
     const viewSubmissionHref =
         isValidId(requestId) && isValidId(attemptId)
@@ -57,8 +60,9 @@ export default function TeacherSideNavbar() {
         {
             title: "Manage Retake Requests",
             links: [
-                { href: requestsHref, label: "Pending Requests" },
-                { href: viewSubmissionHref, label: "View Submission" },
+                { href: allRequestsHref, label: "All Requests" },
+                { href: pendingRequestsHref, label: "Pending Requests" },
+                { href: submittedRequestsHref, label: "Submissions" },
             ],
         },
       ];

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { DocumentPlusIcon } from "@heroicons/react/24/outline";
 import useRequests from "./useRequests";
 import { Modal } from "@/shared/ui/Modal";
@@ -13,7 +14,6 @@ import {
     getClassesData,
 } from "../services/requests";
 import { StudentSearchBar } from "./StudentSearch";
-
 import type { Request, ClassData } from "../types/request";
 
 export default function RequestsPage() {
@@ -51,6 +51,31 @@ export default function RequestsPage() {
         }
     }, [statusFilter, studentQuery, setRequests, setLoading]);
 
+    const searchParams = useSearchParams();
+
+    // Sync URL query (?status=pending|resolved|all) -> statusFilter state
+    useEffect(() => {
+        const statusParam = searchParams.get("status");
+
+        const allowed = new Set([
+            "pending",
+            "assigned",
+            "submitted",
+            "graded",
+            "resolved",
+            "all",
+        ] as const);
+
+        const nextStatus =
+        statusParam && allowed.has(statusParam as any)
+            ? (statusParam as "all" | Request["status"])
+            : "all";
+
+    if (statusFilter !== nextStatus) {
+        changeFilter(nextStatus);
+    }
+}, [searchParams, statusFilter, changeFilter]);
+
     // When the search input is empty refetch all requests
     useEffect(() => {
         if (studentQuery.trim() === "") {
@@ -61,7 +86,7 @@ export default function RequestsPage() {
         }
     }, [studentQuery, statusFilter, setRequests, setLoading]);
 
-    // getRequests and filter diffrent status
+    // getRequests and filter different status
     useEffect(() => {
         setLoading(true);
         getRequests(statusFilter)
