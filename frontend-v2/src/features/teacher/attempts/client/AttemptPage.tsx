@@ -50,33 +50,22 @@ export default function AttemptPage() {
     if (!attempt) return null;
 
     return (
-        <div className="space-y-6">
-            <Header
-                assignment={attempt.request.assignment}
-                student={attempt.student}
-            />
-
-            <SubmissionInfo
-                submittedAt={attempt.submittedAt}
-                score={score}
-            />
-
-            <div className="pt-4">
-                {answers.map((ans) => (
-                    <QuestionCard
-                        key={ans.id}
-                        requestId={requestId}
-                        answer={ans}
-                        onAnswerChange={handleAnswerChange}
-                    />
-                ))}
-            </div>
-
-            <FinalFeedback
+        <div className="space-y-6 max-w-full overflow-x-hidden px-3 sm:px-6">
+          <Header assignment={attempt.request.assignment} student={attempt.student} />
+          <SubmissionInfo submittedAt={attempt.submittedAt} score={score} />
+      
+          <div className="pt-4">
+            {answers.map((ans) => (
+              <QuestionCard
+                key={ans.id}
                 requestId={requestId}
-                attemptId={attemptId}
-                initialFeedback={attempt.feedback || ""}
-            />
+                answer={ans}
+                onAnswerChange={handleAnswerChange}
+              />
+            ))}
+          </div>
+      
+          <FinalFeedback requestId={requestId} attemptId={attemptId} initialFeedback={attempt.feedback || ""} />
         </div>
-    );
+      );
 }

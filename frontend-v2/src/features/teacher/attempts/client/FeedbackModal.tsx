@@ -59,7 +59,7 @@ export const FeedbackModal: React.FC<FeedbackModalProps> = ({
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
-                className="bg-white border border-gray-200 rounded-xl w-11/12 h-5/6 overflow-auto relative p-6 shadow-lg"
+                className="bg-white border border-gray-200 rounded-xl w-11/12 max-w-3xl h-5/6 overflow-y-auto overflow-x-hidden relative p-6 shadow-lg"
             >
                 <button
                     onClick={onClose}
@@ -71,17 +71,21 @@ export const FeedbackModal: React.FC<FeedbackModalProps> = ({
                 <div className="divide-y divide-gray-200 space-y-6">
                     <section className="pt-4">
                         <h3 className="text-xl font-semibold mb-2">Question</h3>
-                        <p className="text-gray-800 whitespace-pre-wrap">{questionText}</p>
+                        <p className="text-gray-800 whitespace-pre-wrap break-words">
+                            {questionText}
+                        </p>
                     </section>
 
                     <section className="py-4">
                         <h3 className="text-xl font-semibold mb-2">Answer Key</h3>
-                        <p className="text-gray-700">{answerKey ?? "N/A"}</p>
+                        <p className="text-gray-700 break-words">{answerKey ?? "N/A"}</p>
                     </section>
 
                     <section className="py-4">
                         <h3 className="text-xl font-semibold mb-2">Student Answer</h3>
-                        <p className="text-gray-700 whitespace-pre-wrap">{studentAnswer}</p>
+                        <p className="text-gray-700 whitespace-pre-wrap break-words">
+                        {studentAnswer}
+                        </p>
                     </section>
 
                     <section className="py-4">
